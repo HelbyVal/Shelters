@@ -8,5 +8,8 @@ namespace Shelters.Models
 {
     internal class Keeping
     {
+        public int Id_Keeping { get; set; }
+        public DateOnly AccDate {  get; set; }
+        public DateOnly RelDate { get; set; }
     }
 }

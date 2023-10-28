@@ -8,5 +8,9 @@ namespace Shelters.Models
 {
     internal class Contract
     {
+        public int Number { get; set; }
+        public double CostPerDay { get; set; }
+        public DateOnly StartDate { get; set; }
+        public DateOnly EndDate { get; set; }
     }
 }

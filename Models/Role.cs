@@ -8,5 +8,6 @@ namespace Shelters.Models
 {
     internal class Role
     {
+        
     }
 }

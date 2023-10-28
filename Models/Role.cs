@@ -8,6 +8,7 @@ namespace Shelters.Models
 {
     internal class Role
     {
-        
+        public int Id_Role { get; set; }
+        public 
     }
 }

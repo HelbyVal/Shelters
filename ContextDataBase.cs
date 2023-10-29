@@ -21,5 +21,11 @@ namespace Shelters
             optionsBuilder.UseNpgsql("host=localhost;port=5432;Database=SheltersAnimals;username=postgres;password=1234;Include Error Detail=true");
         }
         public DbSet<Animal> Animal { get; set; }
+        public DbSet<City> City { get; set; }
+        public DbSet<Contract> Contract { get; set; }
+        public DbSet<Shelter> Shelter { get; set; }
+        public DbSet<Keeping> Keeping { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Role> Role { get; set; }
     }
 }

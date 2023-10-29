@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shelters.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace Shelters.Registries
 {
-    internal class UserReg
+    internal class UserReg : Registry<User>
     {
+        public UserReg()  
+        {
+            db = new ContextDataBase();
+            dbSet = db.User;
+        }
     }
 }

@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shelters.Models
+namespace Shelters.Registries
 {
-    internal class Role
+    internal class AnimalReg
     {
-        public int Id_Role { get; set; }
-        public string Name { get; set; }
     }
 }

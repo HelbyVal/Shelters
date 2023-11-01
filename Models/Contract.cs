@@ -10,9 +10,12 @@ namespace Shelters.Models
     internal class Contract
     {
         [Key]
-        public int Number { get; set; }
+        public int Number { get; }
         public double CostPerDay { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
+        public int Id_Shelter { get; set; }
+        public List<Keeping> Keepings { get; set; }
+
     }
 }

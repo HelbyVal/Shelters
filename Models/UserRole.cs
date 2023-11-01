@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    internal class City
+    internal class UserRole
     {
         [Key]
-        public int Id_City { get; }
-        public string Name { get; set; }
-        public string Subject { get; set; }
-        public List<Shelter> Shelters { get; set; }
+        public int Id_UserRole { get; }
+        public int Id_Role { get; set; }
+        public int Id_User { get; set; }
     }
 }

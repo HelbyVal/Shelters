@@ -16,6 +16,7 @@ namespace Shelters.Models
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public int Id_Shelter { get; set; }
         public List<UserRole> UserRole { get; set; }
 
     }

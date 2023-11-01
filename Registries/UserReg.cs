@@ -14,5 +14,15 @@ namespace Shelters.Registries
             db = new ContextDataBase();
             dbSet = db.User;
         }
+
+        public int TakeShelterId(int Id_User, string Password)
+        {
+            var user = dbSet.Where(us => us.Id_User == Id_User).Single();
+            if (user.Password != Password)
+            {
+                throw new Exception("Неверный пароль");
+            }
+            return user.Id_Shelter;
+        }
     }
 }

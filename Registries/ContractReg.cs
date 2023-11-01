@@ -14,5 +14,14 @@ namespace Shelters.Registries
             db = new ContextDataBase();
             dbSet = db.Contract;
         }
+        public Contract FindLastShelterContract (int id_shelter) 
+        {
+            Contract contr = dbSet.Where(ct => ct.Id_Shelter == id_shelter).Last();
+            if (contr == null)
+            {
+                throw new Exception("Не найден контракт");
+            }
+            return contr;
+        }
     }
 }

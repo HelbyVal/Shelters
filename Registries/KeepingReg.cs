@@ -14,5 +14,10 @@ namespace Shelters.Registries
             db = new ContextDataBase();
             dbSet = db.Keeping;
         }
+
+        public Keeping FindLastForAnimal(int chipNum)
+        {
+           return dbSet.Where(x => x.ChipNum == chipNum).Last();
+        }
     }
 }

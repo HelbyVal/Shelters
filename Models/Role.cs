@@ -10,8 +10,8 @@ namespace Shelters.Models
     internal class Role
     {
         [Key]
-        public int Id_Role { get; }
-        public string Name { get; set; }
-        public List<UserRole> UserRole { get; set; }
+        public int Id_Role { get; set; }
+        public string? Name { get; set; }
+        public List<UserRole>? UserRole { get; set; }
     }
 }

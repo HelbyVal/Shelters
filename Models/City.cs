@@ -10,9 +10,9 @@ namespace Shelters.Models
     internal class City
     {
         [Key]
-        public int Id_City { get; }
-        public string Name { get; set; }
-        public string Subject { get; set; }
-        public List<Shelter> Shelters { get; set; }
+        public int Id_City { get; set; }
+        public string? Name { get; set; }
+        public string? Subject { get; set; }
+        public List<Shelter>? Shelters { get; set; }
     }
 }

@@ -31,8 +31,26 @@ namespace Shelters.Services
                 Animal animal = new Animal() { ChipNum = chipNum, Size = size, Color = color,
                                                Sex = sex, Type = type};
                 animReg.Add(animal);
-                keepReg.Add(new Keeping() { AccDate = dateAdding, ChipNum = animal.ChipNum, Number = contr.Number });
+                keepReg.Add(new Keeping() { AccDate = dateAdding, IsFilled = false, ChipNum = animal.ChipNum, Number = contr.Number });
                 return true;   
+            }
+            catch (Exception exp)
+            {
+                return false;
+            }
+        }
+
+        public bool ReleaseAnimal(int chipNum, int id_User, string password, DateOnly dateRel)
+        {
+            try
+            {
+                int sheltid = FindShelter(id_User, password);
+                Contract contr = contrReg.FindLastShelterContract(sheltid);
+                var keep = keepReg.FindLastForAnimal(chipNum);
+                keep.RelDate = dateRel;
+                keep.IsFilled = true;
+                keepReg.Update(keep);
+                return true;
             }
             catch (Exception exp)
             {

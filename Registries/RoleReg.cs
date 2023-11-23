@@ -1,4 +1,6 @@
-﻿using Shelters.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+using Shelters.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +11,13 @@ namespace Shelters.Registries
 {
     internal class RoleReg : Registry<Role>
     {
-        public RoleReg() 
+        public RoleReg() {}
+        public Role FindWithRole(string name)
         {
-            db = new ContextDataBase();
-            dbSet = db.Role;
+            var entity = dbSet.Include(x => x.UserRole).Where(x => x.Name == name).Single();
+            if (entity == null)
+                throw new Exception($"Роль не найдена!");
+            return entity;
         }
     }
 }

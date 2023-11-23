@@ -15,5 +15,10 @@ namespace Shelters.Models
         public Role? Role { get; set; }
         public int Id_User { get; set; }
         public User? User { get; set; }
+
+        public bool CheckRole(string name)
+        {
+            return Role.Name == name;
+        }
     }
 }

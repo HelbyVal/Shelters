@@ -10,12 +10,8 @@ namespace Shelters
 {
     internal class ContextDataBase : DbContext
     {
-        private bool active = false;
-        public ContextDataBase()
-        {
-            if (!active)
-                active = true;
-        }
+        static public ContextDataBase DB = new ContextDataBase();
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql("host=localhost;port=5432;Database=SheltersAnimals;username=postgres;password=1234;Include Error Detail=true");

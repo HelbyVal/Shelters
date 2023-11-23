@@ -1,4 +1,5 @@
-﻿using Shelters.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Shelters.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +10,16 @@ namespace Shelters.Registries
 {
     internal class UserReg : Registry<User>
     {
-        public UserReg()  
-        {
-            db = new ContextDataBase();
-            dbSet = db.User;
-        }
+        public UserReg() {}
 
-        public int TakeShelterId(int Id_User, string Password)
+        public User CheckUser(int Id_User, string Password)
         {
             var user = dbSet.Where(us => us.Id_User == Id_User).Single();
             if (user.Password != Password)
             {
                 throw new Exception("Неверный пароль");
             }
-            return user.Id_Shelter;
+            return user;
         }
     }
 }

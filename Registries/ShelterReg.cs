@@ -9,10 +9,6 @@ namespace Shelters.Registries
 {
     internal class ShelterReg : Registry<Shelter>
     {
-        public ShelterReg() 
-        {
-            db = new ContextDataBase();
-            dbSet = db.Shelter;
-        }
+        public ShelterReg() { } 
     }
 }

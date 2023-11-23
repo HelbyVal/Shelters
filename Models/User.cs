@@ -20,5 +20,7 @@ namespace Shelters.Models
         public Shelter? Shelter { get; set; }
         public List<UserRole>? UserRole { get; set; }
 
+
+
     }
 }

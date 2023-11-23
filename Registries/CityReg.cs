@@ -10,10 +10,6 @@ namespace Shelters.Registries
 {
     internal class CityReg : Registry<City>
     {
-        public CityReg() 
-        {
-            db = new ContextDataBase();
-            dbSet = db.City;
-        }
+        public CityReg() {}
     }
 }

@@ -11,8 +11,8 @@ namespace Shelters.Registries
 {
     internal abstract class Registry<Model> where Model : class
     {
-        protected ContextDataBase db;
-        protected DbSet<Model> dbSet;
+        protected ContextDataBase db = ContextDataBase.DB;
+        protected DbSet<Model> dbSet = ContextDataBase.DB.Set<Model>();
         public void Add(Model entity)
         {
             db.Add(entity);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    internal class Contract
+    public class Contract
     {
         public Contract() { }
         public Contract(double costPerDay, DateOnly startDate, DateOnly endDate, int id_Shelter)

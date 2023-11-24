@@ -12,7 +12,7 @@ namespace Shelters.Services
     internal abstract class ProtectedService
     {
         protected UserReg userReg = new UserReg();
-        private UserRoleReg roleUserReg = new UserRoleReg();
+        protected UserRoleReg roleUserReg = new UserRoleReg();
         protected List<string> roles = new List<string>() { "Админ" };
         protected int CheckShelter(User user, int sheltid)
         {
@@ -21,10 +21,10 @@ namespace Shelters.Services
             return user.Id_Shelter;
         }
 
-        protected User TakeUser(int id_User, string Password)
-        {
-            return userReg.CheckUser(id_User, Password);
-        }
+        //protected User TakeUser(int id_User, string Password)
+        //{
+        //    return userReg.CheckUser(id_User, Password);
+        //}
         public void CheckRoles(int id_user, params string[] customRoles)
         {
             var newRoles = customRoles.ToList();

@@ -19,12 +19,11 @@ namespace Shelters.Services
             contrReg = new ContractReg();
         }
 
-        public bool CreateNewContract(int id_user, string password, double costPerDay, DateOnly startDate, DateOnly endDate, int id_Shelter)
+        public bool CreateNewContract(User user, double costPerDay, DateOnly startDate, DateOnly endDate, int id_Shelter)
         {
             try
             {
-                User user = TakeUser(id_user, password);
-                CheckRoles(id_user, "Оператор ОМСУ");
+                CheckRoles(user.Id_User, "Оператор ОМСУ");
                 var oldContr = contrReg.FindLastShelterContract(id_Shelter, true);
                 if (oldContr == null)
                 {
@@ -52,19 +51,18 @@ namespace Shelters.Services
                 return true;
             }
         }
-        public List<Contract> GetContracts(int id_user, string password, int id_shelter, bool allShelters = true)
+        public List<Contract> GetContracts(User user, int id_shelter, bool allShelters = true)
         {
             try
             {
-                User user = TakeUser(id_user, password);
                 if (allShelters == true)
                 {
-                    CheckRoles(id_user, "Оператор ОМСУ", "Куратор ОМСУ");
-                    return contrReg.GetContracts(id_shelter);
+                    CheckRoles(user.Id_User, "Оператор ОМСУ", "Куратор ОМСУ");
+                    return contrReg.GetContracts();
                 }
                 else
                 {
-                    CheckRoles(id_user, "Оператор приюта", "Куратор приюта");
+                    CheckRoles(user.Id_User, "Оператор приюта", "Куратор приюта");
                     CheckShelter(user, id_shelter);
                     return contrReg.GetContracts(id_shelter);
                 }
@@ -74,12 +72,11 @@ namespace Shelters.Services
                 return null;
             }
         }
-        public bool DeleteContract(int id_user, string password, int numberContr)
+        public bool DeleteContract(User user, int numberContr)
         {
             try
             {
-                User user = TakeUser(id_user, password);
-                CheckRoles(id_user,"Оператор ОМСУ");
+                CheckRoles(user.Id_User,"Оператор ОМСУ");
                 contrReg.Delete(contrReg.Find(numberContr));
                 return true;
             }

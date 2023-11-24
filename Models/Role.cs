@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    internal class Role
+    public class Role
     {
         [Key]
         public int Id_Role { get; set; }

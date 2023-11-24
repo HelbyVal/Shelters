@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    internal class User
+    public class User
     {
         [Key]
-        public int Id_User { get; }
+        public int Id_User { get; set; }
         public string? Name { get; set; }
         public string? Surname { get; set; }
         public string? LastName { get; set; }

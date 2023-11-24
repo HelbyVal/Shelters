@@ -21,17 +21,16 @@ namespace Shelters.Services
             contrReg = new ContractReg();
         }
 
-        public bool UpdateAnimal(int chipNum, int id_User, string password, DateOnly dateAdding, int sheltid = -1)
+        public bool UpdateAnimal(int chipNum, User user, DateOnly dateAdding, int sheltid = -1)
         {
             try
             {
-                User user = userReg.CheckUser(id_User, password);
                 if (sheltid != -1)
                 {
                     sheltid = CheckShelter(user, sheltid);
-                    CheckRoles(id_User, "Оператор приюта", "Ветврач приюта");
+                    CheckRoles(user.Id_User, "Оператор приюта", "Ветврач приюта");
                 }
-                else CheckRoles(id_User, "Ветврач");
+                else CheckRoles(user.Id_User, "Ветврач");
                 Contract contr = contrReg.FindLastShelterContract(sheltid);
                 Animal animal = animReg.Find(chipNum);
                 var keep = new Keeping() { IsFilled = false, ChipNum = animal.ChipNum, Number = contr.Number };
@@ -46,17 +45,16 @@ namespace Shelters.Services
         }
 
         public bool AddAnimal(int chipNum, double size, string color, string sex, string type,
-                            int id_User, string password, DateOnly dateAdding, int sheltid = -1)
+                            User user, DateOnly dateAdding, int sheltid = -1)
         {
             try
             {
-                User user = userReg.CheckUser(id_User, password);
                 if (sheltid != -1) 
                 {   
                     sheltid = CheckShelter(user, sheltid); 
-                    CheckRoles(id_User, "Оператор приюта", "Ветврач приюта");
+                    CheckRoles(user.Id_User, "Оператор приюта", "Ветврач приюта");
                 }
-                else CheckRoles(id_User, "Ветврач");
+                else CheckRoles(user.Id_User, "Ветврач");
                 
                 Contract contr = contrReg.FindLastShelterContract(sheltid);
                 Animal animal = new Animal() { ChipNum = chipNum, Size = size, Color = color,
@@ -73,17 +71,16 @@ namespace Shelters.Services
             }
         }
 
-        public bool ReleaseAnimal(int chipNum, int id_User, string password, DateOnly dateRel, int sheltid = -1)
+        public bool ReleaseAnimal(int chipNum, User user, DateOnly dateRel, int sheltid = -1)
         {
             try
             {
-                User user = userReg.CheckUser(id_User, password);
                 if (sheltid != -1)
                 {
                     sheltid = CheckShelter(user, sheltid);
-                    CheckRoles(id_User, "Оператор приюта", "Ветврач приюта");
+                    CheckRoles(user.Id_User, "Оператор приюта", "Ветврач приюта");
                 }
-                else CheckRoles(id_User, "Ветврач");
+                else CheckRoles(user.Id_User, "Ветврач");
                 Contract contr = contrReg.FindLastShelterContract(sheltid);
                 var keep = keepReg.FindLastForAnimal(chipNum);
                 keep.AddRelDate(dateRel);
@@ -97,17 +94,16 @@ namespace Shelters.Services
             }
         }
 
-        public List<Animal> GetAnimals(int id_user, string password, string filtSex, string filtType, string filtChip, int sheltid = -1)
+        public List<Animal> GetAnimals(User user, string filtSex, string filtType, string filtChip, int sheltid = -1)
         {
             try
             {
-                User user = userReg.CheckUser(id_user, password);
                 var res = animReg.GetAnimals();
                 List<Animal> resultAnimal = new List<Animal>();
                 if (sheltid != -1)
                 {
                     sheltid = CheckShelter(user, sheltid);
-                    CheckRoles(id_user, "Оператор приюта", "Ветврач приюта");
+                    CheckRoles(user.Id_User, "Оператор приюта", "Ветврач приюта");
                     Contract contr = contrReg.FindLastShelterContract(sheltid, true);
                     List<Keeping> keeps = contr.Keepings;
                     foreach (var anim in res)
@@ -123,7 +119,7 @@ namespace Shelters.Services
                 }
                 else 
                 {
-                    CheckRoles(id_user, "Ветврач");
+                    CheckRoles(user.Id_User, "Ветврач");
 
                 }
                 return res;

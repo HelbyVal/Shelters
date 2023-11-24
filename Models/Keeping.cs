@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    internal class Keeping
+    public class Keeping
     {
         [Key]
         public int Id_Keeping { get; set; }

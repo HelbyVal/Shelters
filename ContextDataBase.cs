@@ -8,15 +8,9 @@ using System.Threading.Tasks;
 
 namespace Shelters
 {
-    internal class ContextDataBase : DbContext
+    public class ContextDataBase : DbContext
     {
         static public ContextDataBase DB = new ContextDataBase();
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql("host=localhost;port=5432;Database=SheltersAnimals;username=postgres;password=1234;Include Error Detail=true");
-        }
-
         public DbSet<Animal> Animal { get; set; }
         public DbSet<City> City { get; set; }
         public DbSet<Contract> Contract { get; set; }
@@ -25,5 +19,19 @@ namespace Shelters
         public DbSet<User> User { get; set; }
         public DbSet<Role> Role { get; set; }
         public DbSet<UserRole> UserRole { get; set; }
+
+        public ContextDataBase() 
+        {
+            Database.EnsureCreated();
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseNpgsql("host=localhost;port=5432;Database=SheltersAnimals;username=postgres;password=1234;Include Error Detail=true");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+        }
     }
 }

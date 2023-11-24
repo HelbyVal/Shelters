@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    internal class UserRole
+    public class UserRole
     {
         [Key]
-        public int Id_UserRole { get; }
+        public int Id_UserRole { get; set; }
         public int Id_Role { get; set; }
         public Role? Role { get; set; }
         public int Id_User { get; set; }
@@ -20,5 +20,7 @@ namespace Shelters.Models
         {
             return Role.Name == name;
         }
+
+        public v
     }
 }

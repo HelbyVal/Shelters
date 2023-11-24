@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Shelters.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +20,11 @@ namespace Shelters.Registries
             if (entity == null)
                 throw new Exception($"Роль не найдена!");
             return entity;
+        }
+
+        public List<Role> GetRoles() 
+        {
+            return dbSet.Where(x => true).ToList();
         }
     }
 }

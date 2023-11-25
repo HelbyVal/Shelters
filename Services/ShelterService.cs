@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Services
 {
-    internal class ShelterService : ProtectedService
+    internal class ShelterService : Service
     {
         ShelterReg shelterReg;
         public ShelterService() 
@@ -17,13 +17,14 @@ namespace Shelters.Services
             shelterReg = new ShelterReg();
         }
 
-        public bool CreateShelter(User user, string inn, string kpp, string orgType, int id_City)
+        public bool CreateShelter(User user, string name, string inn, string kpp, string orgType, int id_City)
         {
             try
             {
                 CheckRoles(user.Id_User, "Оператор ОМСУ");
                 Shelter shelt = new Shelter()
                 {
+                    Name = name,
                     INN = inn,
                     KPP = kpp,
                     OrgType = orgType,

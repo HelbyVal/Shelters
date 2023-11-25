@@ -45,5 +45,15 @@ namespace Shelters.Models
             Keeping newKeep = new Keeping() { AccDate = cont.StartDate, ChipNum = this.ChipNum, Number = cont.Number, IsFilled = false };
             return newKeep;
         }
+
+        public int GetDays(DateOnly start, DateOnly end)
+        {
+            DateOnly accDate = AccDate;
+            DateOnly relDate = RelDate;
+            if (!IsFilled) relDate = end; 
+            if (start > accDate) accDate = start;
+            if (end < relDate) relDate = end;
+            return relDate.DayNumber - accDate.DayNumber + 1;
+        }
     }
 }

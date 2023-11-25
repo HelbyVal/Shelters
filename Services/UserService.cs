@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Services
 {
-    internal class UserService : ProtectedService
+    internal class UserService : Service
     {
         public UserService() 
         {}

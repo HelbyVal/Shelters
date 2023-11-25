@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Services
 {
-    internal class AnimalService : ProtectedService
+    internal class AnimalService : Service
     {
         AnimalReg animReg;
         ContractReg contrReg;
@@ -57,8 +57,14 @@ namespace Shelters.Services
                 else CheckRoles(user.Id_User, "Ветврач");
                 
                 Contract contr = contrReg.FindLastShelterContract(sheltid);
-                Animal animal = new Animal() { ChipNum = chipNum, Size = size, Color = color,
-                                               Sex = sex, Type = type};
+                Animal animal = new Animal() 
+                { 
+                    ChipNum = chipNum,
+                    Size = size,
+                    Color = color,
+                    Sex = sex,
+                    Type = type
+                };
                 animReg.Add(animal);
                 var keep = new Keeping() { IsFilled = false, ChipNum = animal.ChipNum, Number = contr.Number };
                 keep.AddAccDate(dateAdding);

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Services
 {
-    internal class ContractService : ProtectedService
+    internal class ContractService : Service
     {
         ContractReg contrReg;
         KeepingReg keepingReg;

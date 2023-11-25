@@ -30,8 +30,9 @@ namespace Shelters.Registries
             return contr;
         }
 
-        public List<Contract> GetContracts(int filtShelter = -1)
+        public List<Contract> GetContracts(int filtShelter = -1, bool isIncludeKeep = false)
         {
+            if (isIncludeKeep) return dbSet.Include(x => x.Keepings).Where(x => x.Id_Shelter == filtShelter).ToList();
             return dbSet.Where(x => x.Id_Shelter == filtShelter).ToList();
         }
     }

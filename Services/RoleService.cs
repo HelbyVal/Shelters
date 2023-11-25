@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Services
 {
-    internal class RoleService : ProtectedService
+    internal class RoleService : Service
     {
         RoleReg roleReg;
         public RoleService() 

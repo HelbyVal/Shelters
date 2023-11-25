@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Services
 {
-    internal abstract class ProtectedService
+    internal abstract class Service
     {
         protected UserReg userReg = new UserReg();
         protected UserRoleReg roleUserReg = new UserRoleReg();

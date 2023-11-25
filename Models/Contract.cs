@@ -28,5 +28,19 @@ namespace Shelters.Models
         public Shelter? Shelter { get; set; }
         public List<Keeping>? Keepings { get; set; }
 
+
+        public double GetKeepingSum(DateOnly start, DateOnly end)
+        {
+            int days = 0;
+            DateOnly startDate = StartDate;
+            DateOnly endDate = EndDate;
+            if (start > startDate) startDate = start;
+            if (end < endDate) EndDate = end;
+            foreach (var keep in Keepings)
+            {
+                days += keep.GetDays(startDate, endDate);    
+            }
+            return days * CostPerDay;
+        }
     }
 }

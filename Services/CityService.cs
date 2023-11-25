@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Services
 {
-    internal class CityService : ProtectedService
+    internal class CityService : Service
     {
         CityReg cityReg;
         public CityService() 

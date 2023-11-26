@@ -1,4 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.VisualBasic;
+using Shelters.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +12,16 @@ using System.Threading.Tasks;
 
 namespace Shelters.Registries
 {
-    internal abstract class Registry<Model> where Model : class
+    internal abstract class Registry<Model> where Model : class, IMyModel
     {
         protected ContextDataBase db = ContextDataBase.DB;
         protected DbSet<Model> dbSet = ContextDataBase.DB.Set<Model>();
-        public void Add(Model entity)
+        virtual public void Add(Model entity)
         {
             db.Add(entity);
             db.SaveChanges();
         }
-        public void Update(Model entity)
+        virtual public void Update(Model entity)
         {
             db.Update(entity);
             db.SaveChanges();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    public class UserRole
+    public class UserRole : IMyModel
     {
         [Key]
         public int Id_UserRole { get; set; }
@@ -21,6 +21,5 @@ namespace Shelters.Models
             return Role.Name == name;
         }
 
-        public v
     }
 }

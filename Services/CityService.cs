@@ -23,7 +23,7 @@ namespace Shelters.Services
             try
             {;
                 CheckRoles(user.Id_User, "Оператор ОМСУ");
-                City city = new City() { Name = name, Subject = subject, IsActive = true };
+                City city = new City() { Name = name, Subject = subject };
                 cityReg.Add(city);
                 return true;
             }
@@ -33,14 +33,13 @@ namespace Shelters.Services
             }
         }
 
-        public bool DeactivateCity(User user, int id_City)
+        public bool DeleteCity(User user, int id_City)
         {
             try
             {
                 CheckRoles(user.Id_User, "Оператор ОМСУ");
                 City city = cityReg.Find(id_City);
-                city.IsActive = false;
-                cityReg.Update(city);
+                cityReg.Delete(city);
                 return true;
             }
             catch (Exception ex)

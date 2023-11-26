@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    public class City
+    public class City : IMyModel
     {
         [Key]
         public int Id_City { get; set; }
         public string? Name { get; set; }
         public string? Subject { get; set; }
-        public bool IsActive { get; set; }
         public List<Shelter>? Shelters { get; set; }
     }
 }

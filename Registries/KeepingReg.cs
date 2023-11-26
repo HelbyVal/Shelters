@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 using Shelters.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +14,29 @@ namespace Shelters.Registries
     {
         public KeepingReg() {}
 
-        public Keeping FindLastForAnimal(int chipNum)
-        {
-           return dbSet.Include(x => x.Contract).Where(x => x.ChipNum == chipNum).Last();
+        public Keeping FindLastInAnimal(int chipNum)
+        { 
+            Keeping keep = dbSet.Where(x => x.ChipNum == chipNum).Last();
+            return keep;
         }
-        public List<Keeping> FindAllUndilledInContract(int id_contr)
+        public List<Keeping> FindAllInContract(int id_contr, bool isFilled = false)
         {
-            return dbSet.Where(x => x.Number == id_contr && x.IsFilled == false).ToList();
-        } 
+            return dbSet.Where(x => x.Number == id_contr && x.IsFilled == isFilled).ToList();
+        }
+        public override void Add(Keeping entity)
+        {
+            Keeping oldKeep = FindLastInAnimal(entity.ChipNum);
+            if (!oldKeep.IsFilled)
+                throw new Exception("Животное уже есть в приюте");
+            if (oldKeep.RelDate > entity.AccDate)
+                throw new Exception("Животное нельзя добавть на эту дату");
+            base.Add(entity);
+        }
+        public override void Update(Keeping entity)
+        { 
+            if (entity.IsFilled)
+                throw new Exception("Животное уже выпущено из приюта");
+            base.Update(entity);
+        }
     }
 }

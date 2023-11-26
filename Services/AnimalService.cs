@@ -34,7 +34,7 @@ namespace Shelters.Services
                 Contract contr = contrReg.FindLastShelterContract(sheltid);
                 Animal animal = animReg.Find(chipNum);
                 var keep = new Keeping() { IsFilled = false, ChipNum = animal.ChipNum, Number = contr.Number };
-                keep.AddRelDate(dateAdding);
+                keep.AddAccDate(dateAdding);
                 keepReg.Add(keep);
                 return true;
             }
@@ -45,7 +45,7 @@ namespace Shelters.Services
         }
 
         public bool AddAnimal(int chipNum, double size, string color, string sex, string type,
-                            User user, DateOnly dateAdding, int sheltid = -1)
+                            User user, DateOnly dateAdding, int contr_num ,int sheltid = -1)
         {
             try
             {
@@ -55,8 +55,7 @@ namespace Shelters.Services
                     CheckRoles(user.Id_User, "Оператор приюта", "Ветврач приюта");
                 }
                 else CheckRoles(user.Id_User, "Ветврач");
-                
-                Contract contr = contrReg.FindLastShelterContract(sheltid);
+
                 Animal animal = new Animal() 
                 { 
                     ChipNum = chipNum,
@@ -66,7 +65,7 @@ namespace Shelters.Services
                     Type = type
                 };
                 animReg.Add(animal);
-                var keep = new Keeping() { IsFilled = false, ChipNum = animal.ChipNum, Number = contr.Number };
+                var keep = new Keeping() { IsFilled = false, ChipNum = animal.ChipNum, Number = contr_num };
                 keep.AddAccDate(dateAdding);
                 keepReg.Add(keep);
                 return true;   
@@ -87,8 +86,7 @@ namespace Shelters.Services
                     CheckRoles(user.Id_User, "Оператор приюта", "Ветврач приюта");
                 }
                 else CheckRoles(user.Id_User, "Ветврач");
-                Contract contr = contrReg.FindLastShelterContract(sheltid);
-                var keep = keepReg.FindLastForAnimal(chipNum);
+                var keep = keepReg.FindLastInAnimal(chipNum);
                 keep.AddRelDate(dateRel);
                 keep.IsFilled = true;
                 keepReg.Update(keep);

@@ -18,7 +18,6 @@ namespace Shelters.Registries
             var cities = dbSet.Where(x => true);
             if (nameFilt != "") cities.Where(x => x.Name == nameFilt);
             if (subjFilt != "") cities.Where(x => x.Subject == subjFilt);
-            if (onlyActiveFilt) cities.Where(x => x.IsActive == true);
             return cities.ToList();
         }
     }

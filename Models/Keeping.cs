@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    public class Keeping
+    public class Keeping : IMyModel
     {
         [Key]
         public int Id_Keeping { get; set; }
@@ -34,9 +34,9 @@ namespace Shelters.Models
         {
             if(accDate < Contract.StartDate || accDate > Contract.EndDate)
             {
-                throw new ArgumentException("Невозможно выпустить животное из приюта в выбранную дату");
+                throw new ArgumentException("Невозможно добавть животное в выбранную дату");
             }
-            accDate = accDate;
+            AccDate = accDate;
             IsFilled = false;
         }
 

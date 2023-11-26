@@ -35,12 +35,6 @@ namespace Shelters.Services
                     {
                         Contract newContr = new Contract(costPerDay, startDate, endDate, id_Shelter);
                         contrReg.Add(newContr);
-                        var oldKeeps = keepingReg.FindAllUndilledInContract(oldContr.Number);
-                        foreach (var item in oldKeeps)
-                        {
-                            item.CreateCopy(newContr);
-                            keepingReg.Add(item);
-                        }
                     }
                     else throw new Exception("Нельзя создать новый контракт с выбранными датами");
                 }

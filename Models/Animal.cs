@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shelters.Models
 {
-    public class Animal
+    public class Animal : IMyModel
     {
         [Key]
         public int ChipNum { get; set; }

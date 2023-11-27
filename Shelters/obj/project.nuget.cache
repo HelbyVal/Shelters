@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "epyOm/nWZr2ocuMIoI/Gfe6iZAn1C6eDqJuu2pELPT/VLeNc1x0rUwKZV7ZugPNj6/D4iZcHqrPftq9PQ5pZEw==",
+  "dgSpecHash": "WV4NZUp6xgvL4HsJkdtphO4i7Cqx75/mZVRQJZ3bjjFlWGbD8CNB6Ohyp9rzuKYQvbYYoZSPqimcNpYlIn5wzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\Shelters.csproj",
+  "projectFilePath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\Shelters\\Shelters.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Пользователь\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\Пользователь\\.nuget\\packages\\grpc.core.api\\2.59.0\\grpc.core.api.2.59.0.nupkg.sha512",

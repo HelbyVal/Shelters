@@ -944,11 +944,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\Shelters.csproj",
+      "projectUniqueName": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\Shelters\\Shelters.csproj",
       "projectName": "Shelters",
-      "projectPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\Shelters.csproj",
+      "projectPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\Shelters\\Shelters.csproj",
       "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\obj\\",
+      "outputPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\Shelters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Пользователь\\AppData\\Roaming\\NuGet\\NuGet.Config",

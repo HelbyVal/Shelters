@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ServerGrpc\\ServerGrpc.csproj": {}
+    "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\ServerGrpc\\ServerGrpc.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ServerGrpc\\ServerGrpc.csproj": {
+    "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\ServerGrpc\\ServerGrpc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ServerGrpc\\ServerGrpc.csproj",
+        "projectUniqueName": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\ServerGrpc\\ServerGrpc.csproj",
         "projectName": "ServerGrpc",
-        "projectPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ServerGrpc\\ServerGrpc.csproj",
+        "projectPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\ServerGrpc\\ServerGrpc.csproj",
         "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ServerGrpc\\obj\\",
+        "outputPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\ServerGrpc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Пользователь\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "pJP+k+zTY9BE8na9Ebe+qJ5INE83bezjU1BFtuJ8kvJMrKcebkUxLeva2qg+tFFKzsldiD8PYTpoDcMBXwS6dQ==",
+  "dgSpecHash": "epyOm/nWZr2ocuMIoI/Gfe6iZAn1C6eDqJuu2pELPT/VLeNc1x0rUwKZV7ZugPNj6/D4iZcHqrPftq9PQ5pZEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\Shelters\\Shelters.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Пользователь\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
+    "C:\\Users\\Пользователь\\.nuget\\packages\\grpc.core.api\\2.59.0\\grpc.core.api.2.59.0.nupkg.sha512",
+    "C:\\Users\\Пользователь\\.nuget\\packages\\grpc.net.client\\2.59.0\\grpc.net.client.2.59.0.nupkg.sha512",
+    "C:\\Users\\Пользователь\\.nuget\\packages\\grpc.net.common\\2.59.0\\grpc.net.common.2.59.0.nupkg.sha512",
+    "C:\\Users\\Пользователь\\.nuget\\packages\\grpc.tools\\2.60.0-pre1\\grpc.tools.2.60.0-pre1.nupkg.sha512",
     "C:\\Users\\Пользователь\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
     "C:\\Users\\Пользователь\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.0\\microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Пользователь\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.0\\microsoft.entityframeworkcore.analyzers.7.0.0.nupkg.sha512",

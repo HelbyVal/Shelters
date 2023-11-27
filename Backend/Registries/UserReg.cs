@@ -21,5 +21,14 @@ namespace Shelters.Registries
             }
             return user;
         }
+        public User CheckUser(string userName, string Password)
+        {
+            var user = dbSet.Where(us => us.UserName == userName).Single();
+            if (user.Password != Password)
+            {
+                throw new Exception("Неверный пароль");
+            }
+            return user;
+        }
     }
 }

@@ -1,0 +1,6 @@
+C:\Users\Пользователь\source\repos\SheltersServer\SheltersServer\obj\Debug\net6.0\SheltersServer.csproj.AssemblyReference.cache
+C:\Users\Пользователь\source\repos\SheltersServer\SheltersServer\obj\Debug\net6.0\SheltersServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Пользователь\source\repos\SheltersServer\SheltersServer\obj\Debug\net6.0\SheltersServer.AssemblyInfoInputs.cache
+C:\Users\Пользователь\source\repos\SheltersServer\SheltersServer\obj\Debug\net6.0\SheltersServer.AssemblyInfo.cs
+C:\Users\Пользователь\source\repos\SheltersServer\SheltersServer\obj\Debug\net6.0\SheltersServer.csproj.CoreCompileInputs.cache
+C:\Users\Пользователь\source\repos\SheltersServer\SheltersServer\obj\Debug\net6.0\SheltersServer.MvcApplicationPartsAssemblyInfo.cache

@@ -35,5 +35,18 @@ namespace SheltersServer.Models
             };
         }
 
+        public static User ToUser(UserReply reply)
+        {
+            return new User()
+            {
+                Id_User = reply.IdUser,
+                Name = reply.Name,
+                Surname = reply.Surname,
+                LastName = reply.LastName,
+                UserName = reply.UserName,
+                Password = reply.Password,
+                Id_Shelter = reply.IdShelter,
+            };
+        }
     }
 }

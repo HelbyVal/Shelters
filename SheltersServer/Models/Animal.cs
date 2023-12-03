@@ -16,5 +16,16 @@ namespace SheltersServer.Models
         public string? Sex { get; set; }
         public string? Type { get; set; }
         public List<Keeping>? Keepings { get; set; }
+
+        public AnimalReply ToReply()
+        {
+            var res = new AnimalReply() { Type = Type,
+                                          ChipNum = ChipNum,
+                                          Size = Size,
+                                          Color = Color,
+                                          Sex = Sex,
+                                         };
+            return res;
+        }
     }
 }

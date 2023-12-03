@@ -18,6 +18,10 @@
 		<Protobuf Include="Protos\AnimalPr.proto" GrpcServices="Server" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Protobuf Include="Protos\ContractPr.proto" GrpcServices="Server" />
+	</ItemGroup>
+
 
 	<ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.25.1" />

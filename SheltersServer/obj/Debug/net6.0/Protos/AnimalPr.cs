@@ -36,22 +36,23 @@ namespace SheltersServer {
             "aW1lc3RhbXASEQoJY29udHJfbnVtGAggASgFEg8KB3NoZWx0aWQYCSABKAUi",
             "sQEKDEFuaW1hbHNGaWx0cxImCgR1c2VyGAEgASgLMhguQXV0aG9yaXphdGlv",
             "bi5Vc2VyUmVwbHkSDwoHZmlsdFNleBgCIAEoCRIQCghmaWx0VHlwZRgDIAEo",
-            "CRIQCghmaWx0Q2hpcBgEIAEoCRIRCglmaWx0Q29sb3IYBSABKAkSEAoIZmls",
-            "dFNpemUYBiABKAkSDwoHc2hlbHRpZBgHIAEoBRIOCgZsYXN0SWQYCCABKAUi",
+            "CRIQCghmaWx0Q2hpcBgEIAEoBRIRCglmaWx0Q29sb3IYBSABKAkSEAoIZmls",
+            "dFNpemUYBiABKAESDwoHc2hlbHRpZBgHIAEoBRIOCgZsYXN0SWQYCCABKAUi",
             "nQEKDlVwZGF0aW5nQW5pbWFsEiYKBHVzZXIYASABKAsyGC5BdXRob3JpemF0",
             "aW9uLlVzZXJSZXBseRIPCgdjaGlwTnVtGAIgASgFEi4KCmRhdGVBZGRpbmcY",
             "ByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhEKCWNvbnRyX251",
-            "bRgIIAEoBRIPCgdzaGVsdGlkGAkgASgFIjUKDEFuaW1hbHNSZXBseRIlCgZh",
-            "bmltYWwYASADKAsyFS5BbmltYWxQci5BbmltYWxSZXBseSJWCgtBbmltYWxS",
-            "ZXBseRIPCgdDaGlwTnVtGAEgASgFEgwKBFNpemUYAiABKAESDQoFQ29sb3IY",
-            "AyABKAkSCwoDU2V4GAQgASgJEgwKBFR5cGUYBSABKAkiHgoJSXNDb3JyZWN0",
-            "EhEKCWlzQ29ycmVjdBgBIAEoCDKDAgoJQW5pbWFsaW5nEjgKCUFkZEFuaW1h",
-            "bBIWLkFuaW1hbFByLkFkZGluZ0FuaW1hbBoTLkFuaW1hbFByLklzQ29ycmVj",
-            "dBI8CgpHZXRBbmltYWxzEhYuQW5pbWFsUHIuQW5pbWFsc0ZpbHRzGhYuQW5p",
-            "bWFsUHIuQW5pbWFsc1JlcGx5Ej0KDFVwZGF0ZUFuaW1hbBIYLkFuaW1hbFBy",
-            "LlVwZGF0aW5nQW5pbWFsGhMuQW5pbWFsUHIuSXNDb3JyZWN0Ej8KDVJlbGVh",
-            "c2VBbmltYWwSGS5BbmltYWxQci5SZWxlYXNpbmdBbmltYWwaEy5BbmltYWxQ",
-            "ci5Jc0NvcnJlY3RCEaoCDlNoZWx0ZXJzU2VydmVyYgZwcm90bzM="));
+            "bRgIIAEoBRIPCgdzaGVsdGlkGAkgASgFIkgKDEFuaW1hbHNSZXBseRIlCgZh",
+            "bmltYWwYASADKAsyFS5BbmltYWxQci5BbmltYWxSZXBseRIRCgljb3VudFBh",
+            "Z2UYAiABKAUiVgoLQW5pbWFsUmVwbHkSDwoHQ2hpcE51bRgBIAEoBRIMCgRT",
+            "aXplGAIgASgBEg0KBUNvbG9yGAMgASgJEgsKA1NleBgEIAEoCRIMCgRUeXBl",
+            "GAUgASgJIh4KCUlzQ29ycmVjdBIRCglpc0NvcnJlY3QYASABKAgygwIKCUFu",
+            "aW1hbGluZxI4CglBZGRBbmltYWwSFi5BbmltYWxQci5BZGRpbmdBbmltYWwa",
+            "Ey5BbmltYWxQci5Jc0NvcnJlY3QSPAoKR2V0QW5pbWFscxIWLkFuaW1hbFBy",
+            "LkFuaW1hbHNGaWx0cxoWLkFuaW1hbFByLkFuaW1hbHNSZXBseRI9CgxVcGRh",
+            "dGVBbmltYWwSGC5BbmltYWxQci5VcGRhdGluZ0FuaW1hbBoTLkFuaW1hbFBy",
+            "LklzQ29ycmVjdBI/Cg1SZWxlYXNlQW5pbWFsEhkuQW5pbWFsUHIuUmVsZWFz",
+            "aW5nQW5pbWFsGhMuQW5pbWFsUHIuSXNDb3JyZWN0QhGqAg5TaGVsdGVyc1Nl",
+            "cnZlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SheltersServer.AuthorizationPrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -59,7 +60,7 @@ namespace SheltersServer {
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AddingAnimal), global::SheltersServer.AddingAnimal.Parser, new[]{ "User", "ChipNum", "Size", "Color", "Sex", "Type", "DateAdding", "ContrNum", "Sheltid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalsFilts), global::SheltersServer.AnimalsFilts.Parser, new[]{ "User", "FiltSex", "FiltType", "FiltChip", "FiltColor", "FiltSize", "Sheltid", "LastId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UpdatingAnimal), global::SheltersServer.UpdatingAnimal.Parser, new[]{ "User", "ChipNum", "DateAdding", "ContrNum", "Sheltid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalsReply), global::SheltersServer.AnimalsReply.Parser, new[]{ "Animal" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalsReply), global::SheltersServer.AnimalsReply.Parser, new[]{ "Animal", "CountPage" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalReply), global::SheltersServer.AnimalReply.Parser, new[]{ "ChipNum", "Size", "Color", "Sex", "Type" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.IsCorrect), global::SheltersServer.IsCorrect.Parser, new[]{ "IsCorrect_" }, null, null, null, null)
           }));
@@ -981,13 +982,13 @@ namespace SheltersServer {
 
     /// <summary>Field number for the "filtChip" field.</summary>
     public const int FiltChipFieldNumber = 4;
-    private string filtChip_ = "";
+    private int filtChip_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string FiltChip {
+    public int FiltChip {
       get { return filtChip_; }
       set {
-        filtChip_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        filtChip_ = value;
       }
     }
 
@@ -1005,13 +1006,13 @@ namespace SheltersServer {
 
     /// <summary>Field number for the "filtSize" field.</summary>
     public const int FiltSizeFieldNumber = 6;
-    private string filtSize_ = "";
+    private double filtSize_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string FiltSize {
+    public double FiltSize {
       get { return filtSize_; }
       set {
-        filtSize_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        filtSize_ = value;
       }
     }
 
@@ -1059,7 +1060,7 @@ namespace SheltersServer {
       if (FiltType != other.FiltType) return false;
       if (FiltChip != other.FiltChip) return false;
       if (FiltColor != other.FiltColor) return false;
-      if (FiltSize != other.FiltSize) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(FiltSize, other.FiltSize)) return false;
       if (Sheltid != other.Sheltid) return false;
       if (LastId != other.LastId) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -1072,9 +1073,9 @@ namespace SheltersServer {
       if (user_ != null) hash ^= User.GetHashCode();
       if (FiltSex.Length != 0) hash ^= FiltSex.GetHashCode();
       if (FiltType.Length != 0) hash ^= FiltType.GetHashCode();
-      if (FiltChip.Length != 0) hash ^= FiltChip.GetHashCode();
+      if (FiltChip != 0) hash ^= FiltChip.GetHashCode();
       if (FiltColor.Length != 0) hash ^= FiltColor.GetHashCode();
-      if (FiltSize.Length != 0) hash ^= FiltSize.GetHashCode();
+      if (FiltSize != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(FiltSize);
       if (Sheltid != 0) hash ^= Sheltid.GetHashCode();
       if (LastId != 0) hash ^= LastId.GetHashCode();
       if (_unknownFields != null) {
@@ -1107,17 +1108,17 @@ namespace SheltersServer {
         output.WriteRawTag(26);
         output.WriteString(FiltType);
       }
-      if (FiltChip.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(FiltChip);
+      if (FiltChip != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(FiltChip);
       }
       if (FiltColor.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(FiltColor);
       }
-      if (FiltSize.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(FiltSize);
+      if (FiltSize != 0D) {
+        output.WriteRawTag(49);
+        output.WriteDouble(FiltSize);
       }
       if (Sheltid != 0) {
         output.WriteRawTag(56);
@@ -1149,17 +1150,17 @@ namespace SheltersServer {
         output.WriteRawTag(26);
         output.WriteString(FiltType);
       }
-      if (FiltChip.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(FiltChip);
+      if (FiltChip != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(FiltChip);
       }
       if (FiltColor.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(FiltColor);
       }
-      if (FiltSize.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(FiltSize);
+      if (FiltSize != 0D) {
+        output.WriteRawTag(49);
+        output.WriteDouble(FiltSize);
       }
       if (Sheltid != 0) {
         output.WriteRawTag(56);
@@ -1188,14 +1189,14 @@ namespace SheltersServer {
       if (FiltType.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FiltType);
       }
-      if (FiltChip.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FiltChip);
+      if (FiltChip != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FiltChip);
       }
       if (FiltColor.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FiltColor);
       }
-      if (FiltSize.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FiltSize);
+      if (FiltSize != 0D) {
+        size += 1 + 8;
       }
       if (Sheltid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sheltid);
@@ -1227,13 +1228,13 @@ namespace SheltersServer {
       if (other.FiltType.Length != 0) {
         FiltType = other.FiltType;
       }
-      if (other.FiltChip.Length != 0) {
+      if (other.FiltChip != 0) {
         FiltChip = other.FiltChip;
       }
       if (other.FiltColor.Length != 0) {
         FiltColor = other.FiltColor;
       }
-      if (other.FiltSize.Length != 0) {
+      if (other.FiltSize != 0D) {
         FiltSize = other.FiltSize;
       }
       if (other.Sheltid != 0) {
@@ -1272,16 +1273,16 @@ namespace SheltersServer {
             FiltType = input.ReadString();
             break;
           }
-          case 34: {
-            FiltChip = input.ReadString();
+          case 32: {
+            FiltChip = input.ReadInt32();
             break;
           }
           case 42: {
             FiltColor = input.ReadString();
             break;
           }
-          case 50: {
-            FiltSize = input.ReadString();
+          case 49: {
+            FiltSize = input.ReadDouble();
             break;
           }
           case 56: {
@@ -1322,16 +1323,16 @@ namespace SheltersServer {
             FiltType = input.ReadString();
             break;
           }
-          case 34: {
-            FiltChip = input.ReadString();
+          case 32: {
+            FiltChip = input.ReadInt32();
             break;
           }
           case 42: {
             FiltColor = input.ReadString();
             break;
           }
-          case 50: {
-            FiltSize = input.ReadString();
+          case 49: {
+            FiltSize = input.ReadDouble();
             break;
           }
           case 56: {
@@ -1741,6 +1742,7 @@ namespace SheltersServer {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AnimalsReply(AnimalsReply other) : this() {
       animal_ = other.animal_.Clone();
+      countPage_ = other.countPage_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1761,6 +1763,18 @@ namespace SheltersServer {
       get { return animal_; }
     }
 
+    /// <summary>Field number for the "countPage" field.</summary>
+    public const int CountPageFieldNumber = 2;
+    private int countPage_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CountPage {
+      get { return countPage_; }
+      set {
+        countPage_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1777,6 +1791,7 @@ namespace SheltersServer {
         return true;
       }
       if(!animal_.Equals(other.animal_)) return false;
+      if (CountPage != other.CountPage) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1785,6 +1800,7 @@ namespace SheltersServer {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= animal_.GetHashCode();
+      if (CountPage != 0) hash ^= CountPage.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1804,6 +1820,10 @@ namespace SheltersServer {
       output.WriteRawMessage(this);
     #else
       animal_.WriteTo(output, _repeated_animal_codec);
+      if (CountPage != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CountPage);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1815,6 +1835,10 @@ namespace SheltersServer {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       animal_.WriteTo(ref output, _repeated_animal_codec);
+      if (CountPage != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(CountPage);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1826,6 +1850,9 @@ namespace SheltersServer {
     public int CalculateSize() {
       int size = 0;
       size += animal_.CalculateSize(_repeated_animal_codec);
+      if (CountPage != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(CountPage);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1839,6 +1866,9 @@ namespace SheltersServer {
         return;
       }
       animal_.Add(other.animal_);
+      if (other.CountPage != 0) {
+        CountPage = other.CountPage;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1858,6 +1888,10 @@ namespace SheltersServer {
             animal_.AddEntriesFrom(input, _repeated_animal_codec);
             break;
           }
+          case 16: {
+            CountPage = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -1875,6 +1909,10 @@ namespace SheltersServer {
             break;
           case 10: {
             animal_.AddEntriesFrom(ref input, _repeated_animal_codec);
+            break;
+          }
+          case 16: {
+            CountPage = input.ReadInt32();
             break;
           }
         }

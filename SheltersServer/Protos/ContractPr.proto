@@ -2,13 +2,14 @@ syntax = "proto3";
 
 option csharp_namespace = "SheltersServer";
 import "Protos/AuthorizationPr.proto";
+import "Protos/AnimalPr.proto";
 import "google/protobuf/timestamp.proto";
 package ContractPr;
 
 service ContractCon {
-	rpc CreateNewContract (AddContractRequest) returns (isCorrect);
-	rpc DeleteContract (DeleteContractRequest) returns (isCorrect);
-	rpc GetContrats (GetContratsRequest) returns (isCorrect);
+	rpc CreateNewContract (AddContractRequest) returns (isCorrectContr);
+	rpc DeleteContract (DeleteContractRequest) returns (isCorrectContr);
+	rpc GetContrats (GetContratsRequest) returns (ContractsReply);
 }
 
 message AddContractRequest {
@@ -28,8 +29,28 @@ message GetContratsRequest {
 	Authorization.UserReply user = 1;
 	int32 id_shelter = 2; 
 	bool allShelters = 3;
+	int32 filtNum = 4;
+	int32 filtCostStart = 5;
+	int32 filtCostEnd = 6;
+	google.protobuf.Timestamp filtDateStart = 7;
+	google.protobuf.Timestamp filtDateEnd = 8;
+	int32 lastId = 9;
+	bool includeKeep = 10;
 }
 
-message isCorrect {
+message ContractsReply {
+	repeated ContractReply contracts = 1;
+	int32 countPage = 2;
+}
+
+message ContractReply {
+	int32 Number = 1;
+	double CostPerDay = 2;
+	google.protobuf.Timestamp StartDate = 3;
+	google.protobuf.Timestamp EndDate = 4;
+	int32 Id_Shelter = 5;
+}
+
+message isCorrectContr {
 	bool isCorrect = 1;
 }

@@ -48,35 +48,37 @@ namespace SheltersServer {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SheltersServer.AddContractRequest> __Marshaller_ContractPr_AddContractRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.AddContractRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SheltersServer.isCorrect> __Marshaller_ContractPr_isCorrect = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.isCorrect.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.isCorrectContr> __Marshaller_ContractPr_isCorrectContr = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.isCorrectContr.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SheltersServer.DeleteContractRequest> __Marshaller_ContractPr_DeleteContractRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.DeleteContractRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SheltersServer.GetContratsRequest> __Marshaller_ContractPr_GetContratsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.GetContratsRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::SheltersServer.ContractsReply> __Marshaller_ContractPr_ContractsReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.ContractsReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrect> __Method_CreateNewContract = new grpc::Method<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrect>(
+    static readonly grpc::Method<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrectContr> __Method_CreateNewContract = new grpc::Method<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrectContr>(
         grpc::MethodType.Unary,
         __ServiceName,
         "CreateNewContract",
         __Marshaller_ContractPr_AddContractRequest,
-        __Marshaller_ContractPr_isCorrect);
+        __Marshaller_ContractPr_isCorrectContr);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrect> __Method_DeleteContract = new grpc::Method<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrect>(
+    static readonly grpc::Method<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrectContr> __Method_DeleteContract = new grpc::Method<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrectContr>(
         grpc::MethodType.Unary,
         __ServiceName,
         "DeleteContract",
         __Marshaller_ContractPr_DeleteContractRequest,
-        __Marshaller_ContractPr_isCorrect);
+        __Marshaller_ContractPr_isCorrectContr);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::SheltersServer.GetContratsRequest, global::SheltersServer.isCorrect> __Method_GetContrats = new grpc::Method<global::SheltersServer.GetContratsRequest, global::SheltersServer.isCorrect>(
+    static readonly grpc::Method<global::SheltersServer.GetContratsRequest, global::SheltersServer.ContractsReply> __Method_GetContrats = new grpc::Method<global::SheltersServer.GetContratsRequest, global::SheltersServer.ContractsReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetContrats",
         __Marshaller_ContractPr_GetContratsRequest,
-        __Marshaller_ContractPr_isCorrect);
+        __Marshaller_ContractPr_ContractsReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -89,19 +91,19 @@ namespace SheltersServer {
     public abstract partial class ContractConBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.isCorrect> CreateNewContract(global::SheltersServer.AddContractRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.isCorrectContr> CreateNewContract(global::SheltersServer.AddContractRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.isCorrect> DeleteContract(global::SheltersServer.DeleteContractRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.isCorrectContr> DeleteContract(global::SheltersServer.DeleteContractRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.isCorrect> GetContrats(global::SheltersServer.GetContratsRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.ContractsReply> GetContrats(global::SheltersServer.GetContratsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -126,9 +128,9 @@ namespace SheltersServer {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ContractConBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_CreateNewContract, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrect>(serviceImpl.CreateNewContract));
-      serviceBinder.AddMethod(__Method_DeleteContract, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrect>(serviceImpl.DeleteContract));
-      serviceBinder.AddMethod(__Method_GetContrats, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.GetContratsRequest, global::SheltersServer.isCorrect>(serviceImpl.GetContrats));
+      serviceBinder.AddMethod(__Method_CreateNewContract, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrectContr>(serviceImpl.CreateNewContract));
+      serviceBinder.AddMethod(__Method_DeleteContract, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrectContr>(serviceImpl.DeleteContract));
+      serviceBinder.AddMethod(__Method_GetContrats, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.GetContratsRequest, global::SheltersServer.ContractsReply>(serviceImpl.GetContrats));
     }
 
   }

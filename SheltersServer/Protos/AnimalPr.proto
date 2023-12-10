@@ -37,9 +37,9 @@ message AnimalsFilts {
 	Authorization.UserReply user = 1;
 	string filtSex = 2;
 	string filtType = 3;
-	string filtChip = 4;
+	int32 filtChip = 4;
 	string filtColor = 5;
-	string filtSize = 6;
+	double filtSize = 6;
 	int32 sheltid = 7;
 	int32 lastId = 8;
 }
@@ -54,6 +54,7 @@ message UpdatingAnimal {
 
 message AnimalsReply {
 	repeated AnimalReply animal = 1;
+	int32 countPage = 2;
 }
 
 message AnimalReply {

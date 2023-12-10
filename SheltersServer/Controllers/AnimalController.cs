@@ -56,6 +56,7 @@ namespace SheltersServer.Controllers
         {
             AnimalsReply res = new AnimalsReply();
             var animals = animalService.GetAnimals(User.ToUser(request.User),
+                                                   request.Sheltid,
                                                    request.FiltSex,
                                                    request.FiltType,
                                                    request.FiltChip,

@@ -100,19 +100,17 @@ namespace SheltersServer.Services
         }
 
         public (List<Animal>, int) GetAnimals(User user,
-                                       int id_contract,
                                        string filtSex,
                                        string filtType,
                                        int filtChip,
                                        string filtColor,
                                        double filtSize,
-                                       int page,
                                        int lastId,
                                        int sheltid)
         {
             try
             {
-                var res = animReg.GetAnimals(lastId, filtSex, filtType, filtSize, filtColor, page, filtChip);
+                var res = animReg.GetAnimals(lastId, filtSex, filtType, filtSize, filtColor, filtChip);
                 List<Animal> resultAnimal = new List<Animal>();
                 if (sheltid == -1)
                 {

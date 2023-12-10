@@ -30,5 +30,15 @@ namespace SheltersServer.Registries
             }
             return user;
         }
+
+        public User CheckUser(User user)
+        {
+            var baseUser = dbSet.Where(us => us.Id_User == baseUser).Single();
+            if (baseUser.Password != Password)
+            {
+                throw new Exception("Неверный пароль");
+            }
+            return baseUser;
+        }
     }
 }

@@ -25,9 +25,9 @@ namespace SheltersServer.Services
             CheckRoles(user.Id_User, "Оператор ОМСУ", "Куратор ОМСУ");
             City city = cityReg.Find(id_city);
             Report report = new Report() { CityName = city.Name, Start = start, End = end}; 
-            List<Shelter> shelters = shelterReg.GetShelters(id_city);
+            var shelters = shelterReg.GetShelters(id_city);
             double summ = 0;
-            foreach (var shelter in shelters)
+            foreach (var shelter in shelters.Item1)
             {
                 double perSheltSumm = 0;
                 List<Contract> contracts = contractReg.GetContracts(shelter.Id_Shelter, true);

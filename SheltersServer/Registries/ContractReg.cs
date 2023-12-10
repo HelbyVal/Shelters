@@ -35,5 +35,31 @@ namespace SheltersServer.Registries
             if (isIncludeKeep) return dbSet.Include(x => x.Keepings).Where(x => x.Id_Shelter == filtShelter).ToList();
             return dbSet.Where(x => x.Id_Shelter == filtShelter).ToList();
         }
+
+        public (List<Contract>, int) GetContracts(DateOnly filtDateStart,
+                                           DateOnly filtDateEnd,       
+                                           int filtNum = -1,
+                                           int filtCostStart = int.MinValue,
+                                           int filtCostEnd = int.MaxValue,
+                                           int lastId = 0,
+                                           bool isIncludeKeep = false,
+                                           int filtShelter = -1,
+                                           int count = 10)
+        {
+            var contrs = dbSet.Include(x => x.Keepings).Where(x => true);
+
+            if (isIncludeKeep) contrs = contrs.Where(x => x.Id_Shelter == filtShelter);
+            if (filtNum != -1) contrs = contrs.Where(x => x.Number == filtNum);
+            if (filtShelter != -1) contrs = contrs.Where(x => x.Id_Shelter == filtShelter);
+            contrs = contrs.Where(x => (x.CostPerDay >= filtCostStart) && (x.CostPerDay <= filtCostEnd));
+            contrs = contrs.Where(x => (x.StartDate >= filtDateStart) && (x.EndDate <= filtDateEnd));
+
+            int countPage = contrs.Count() / count;
+            contrs.OrderBy(x => x.Number)
+                   .Where(x => x.Number > lastId)
+                   .Take(count);
+
+            return (contrs.ToList(), countPage);
+        }
     }
 }

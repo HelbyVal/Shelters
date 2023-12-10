@@ -13,17 +13,32 @@ namespace SheltersServer.Registries
     {
         public AnimalReg() { }
 
-        public List<Animal> GetAnimals(string filtSex = "", string filtType = "", int filtChip = -1)
+        public (List<Animal>, int) GetAnimals(int lastId = 0, 
+                                       string filtSex = "",
+                                       string filtType = "",
+                                       double filtSize = -1,
+                                       string filtColor = "",
+                                       int filtChip = -1,
+                                       int count = 20)
         {
-            var animals = dbSet.Include(x => x.ChipNum);
-            if (filtSex != "") animals.Where(anim => anim.Sex == filtSex);
-            if (filtType != "") animals.Where(anim => anim.Type == filtType);
-            if (filtChip != -1) animals.Where(anim => anim.ChipNum == filtChip);
-            return animals.ToList();
+            var animals = dbSet.Where(x => true);
+
+            if (filtColor != "") animals = animals.Where(anim => anim.Color == filtColor);
+            if (filtSize != -1) animals = animals.Where(anim => anim.Size == filtSize);
+            if (filtSex != "") animals = animals.Where(anim => anim.Sex == filtSex);
+            if (filtType != "") animals = animals.Where(anim => anim.Type == filtType);
+            if (filtChip != -1) animals = animals.Where(anim => anim.ChipNum == filtChip);
+
+            int countPage = animals.Count()/count;
+            animals.OrderBy(x => x.ChipNum)
+                   .Where(x => x.ChipNum > lastId)
+                   .Take(count);
+
+            return (animals.ToList(), countPage);
         }
         public override void Add(Animal entity)
         {
-            if (entity.ChipNum > 9999990)
+            if (entity.ChipNum > 9999999)
             {
                 throw new ArgumentException("Число чипа должно быть меньше 1000000");
             }

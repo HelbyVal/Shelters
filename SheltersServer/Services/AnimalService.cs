@@ -99,39 +99,57 @@ namespace SheltersServer.Services
             }
         }
 
-        public List<Animal> GetAnimals(User user, string filtSex, string filtType, string filtChip, int sheltid = -1)
+        public (List<Animal>, int) GetAnimals(User user,
+                                       int id_contract,
+                                       string filtSex,
+                                       string filtType,
+                                       int filtChip,
+                                       string filtColor,
+                                       double filtSize,
+                                       int page,
+                                       int lastId,
+                                       int sheltid)
         {
             try
             {
-                var res = animReg.GetAnimals();
+                var res = animReg.GetAnimals(lastId, filtSex, filtType, filtSize, filtColor, page, filtChip);
                 List<Animal> resultAnimal = new List<Animal>();
-                if (sheltid != -1)
+                if (sheltid == -1)
                 {
-                    sheltid = CheckShelter(user, sheltid);
                     CheckRoles(user.Id_User, "Оператор приюта", "Ветврач приюта");
-                    Contract contr = contrReg.FindLastShelterContract(sheltid, true);
-                    List<Keeping> keeps = contr.Keepings;
-                    foreach (var anim in res)
-                    {
-                        foreach (var keep in keeps)
-                        {
-                            if (anim.Keepings.Find(x => x.Id_Keeping == keep.Id_Keeping) != null)
-                            {
-                                resultAnimal.Add(anim);
-                            }
-                        }
-                    }
+                    sheltid = CheckShelter(user, sheltid);
+                    AddAnimalsToResult(sheltid, res.Item1, resultAnimal);
                 }
-                else 
+                else
                 {
                     CheckRoles(user.Id_User, "Ветврач");
-
+                    AddAnimalsToResult(sheltid, res.Item1, resultAnimal);
                 }
-                return res;
+                return (resultAnimal, res.Item2);
             }
             catch (Exception ex)
             {
-                return null;
+                return (new List<Animal>(), 0);
+            }
+        }
+
+        private void AddAnimalsToResult(int sheltid, List<Animal> res, List<Animal> resultAnimal)
+        {
+            List<Contract> contrs = contrReg.GetContracts(sheltid, true);
+            foreach (var contr in contrs)
+            {
+                List<Keeping> keeps = contr.Keepings;
+                foreach (var anim in res)
+                {
+                    foreach (var keep in keeps)
+                    {
+                        if (anim.Keepings.Where(x => x.Id_Keeping == keep.Id_Keeping).FirstOrDefault() != default(Keeping))
+                        {
+                            res.Remove(anim);
+                            resultAnimal.Add(anim);
+                        }
+                    }
+                }
             }
         }
     }

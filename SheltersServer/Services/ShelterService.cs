@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+﻿using Microsoft.AspNetCore.HostFiltering;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using SheltersServer.Models;
 using SheltersServer.Registries;
 using System;
@@ -38,14 +39,12 @@ namespace SheltersServer.Services
                 return false;
             }
         }
-        public bool DeactivateShelter(User user, int id_shelter) 
+        public bool DeleteShelter(User user, int id_shelter) 
         {
             try
             {
                 CheckRoles(user.Id_User, "Оператор ОМСУ");
-                Shelter shelter = shelterReg.Find(id_shelter);
-                shelter.IsActive = false;
-                shelterReg.Update(shelter);
+                shelterReg.Delete(shelterReg.Find(id_shelter));
                 return true;
             }
             catch (Exception ex)
@@ -53,16 +52,22 @@ namespace SheltersServer.Services
                 return false;
             }
         }
-        public List<Shelter> GetShelters(User user, int cityFilt, bool OnlyActiveFilt, string orgTypeFilt)
+        public (List<Shelter>, int) GetShelters(User user,
+                                         int filtCity,
+                                         int filtShelter,
+                                         string filtOrgType,
+                                         string filtName,
+                                         string filtINN,
+                                         string filtKPP)
         {
             try
             {
                 CheckRoles(user.Id_User, "Оператор ОМСУ", "Куратор ОМСУ");
-                return shelterReg.GetShelters(cityFilt, OnlyActiveFilt, orgTypeFilt);
+                return shelterReg.GetShelters();
             }
             catch (Exception ex)
             {
-                return null;
+                return (new List<Shelter>(), 0);
             }
         }
     }

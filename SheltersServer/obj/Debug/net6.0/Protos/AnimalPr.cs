@@ -34,29 +34,30 @@ namespace SheltersServer {
             "emUYAyABKAESDQoFY29sb3IYBCABKAkSCwoDc2V4GAUgASgJEgwKBHR5cGUY",
             "BiABKAkSLgoKZGF0ZUFkZGluZxgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
             "aW1lc3RhbXASEQoJY29udHJfbnVtGAggASgFEg8KB3NoZWx0aWQYCSABKAUi",
-            "fAoMQW5pbWFsc0ZpbHRzEiYKBHVzZXIYASABKAsyGC5BdXRob3JpemF0aW9u",
-            "LlVzZXJSZXBseRIPCgdmaWx0U2V4GAIgASgJEhAKCGZpbHRUeXBlGAMgASgJ",
-            "EhAKCGZpbHRDaGlwGAQgASgJEg8KB3NoZWx0aWQYBSABKAUinQEKDlVwZGF0",
-            "aW5nQW5pbWFsEiYKBHVzZXIYASABKAsyGC5BdXRob3JpemF0aW9uLlVzZXJS",
-            "ZXBseRIPCgdjaGlwTnVtGAIgASgFEi4KCmRhdGVBZGRpbmcYByABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wEhEKCWNvbnRyX251bRgIIAEoBRIP",
-            "CgdzaGVsdGlkGAkgASgFIjUKDEFuaW1hbHNSZXBseRIlCgZhbmltYWwYASAD",
-            "KAsyFS5BbmltYWxQci5BbmltYWxSZXBseSJWCgtBbmltYWxSZXBseRIPCgdD",
-            "aGlwTnVtGAEgASgFEgwKBFNpemUYAiABKAESDQoFQ29sb3IYAyABKAkSCwoD",
-            "U2V4GAQgASgJEgwKBFR5cGUYBSABKAkiHgoJSXNDb3JyZWN0EhEKCWlzQ29y",
-            "cmVjdBgBIAEoCDKDAgoJQW5pbWFsaW5nEjgKCUFkZEFuaW1hbBIWLkFuaW1h",
-            "bFByLkFkZGluZ0FuaW1hbBoTLkFuaW1hbFByLklzQ29ycmVjdBI8CgpHZXRB",
-            "bmltYWxzEhYuQW5pbWFsUHIuQW5pbWFsc0ZpbHRzGhYuQW5pbWFsUHIuQW5p",
-            "bWFsc1JlcGx5Ej0KDFVwZGF0ZUFuaW1hbBIYLkFuaW1hbFByLlVwZGF0aW5n",
-            "QW5pbWFsGhMuQW5pbWFsUHIuSXNDb3JyZWN0Ej8KDVJlbGVhc2VBbmltYWwS",
-            "GS5BbmltYWxQci5SZWxlYXNpbmdBbmltYWwaEy5BbmltYWxQci5Jc0NvcnJl",
-            "Y3RCEaoCDlNoZWx0ZXJzU2VydmVyYgZwcm90bzM="));
+            "sQEKDEFuaW1hbHNGaWx0cxImCgR1c2VyGAEgASgLMhguQXV0aG9yaXphdGlv",
+            "bi5Vc2VyUmVwbHkSDwoHZmlsdFNleBgCIAEoCRIQCghmaWx0VHlwZRgDIAEo",
+            "CRIQCghmaWx0Q2hpcBgEIAEoCRIRCglmaWx0Q29sb3IYBSABKAkSEAoIZmls",
+            "dFNpemUYBiABKAkSDwoHc2hlbHRpZBgHIAEoBRIOCgZsYXN0SWQYCCABKAUi",
+            "nQEKDlVwZGF0aW5nQW5pbWFsEiYKBHVzZXIYASABKAsyGC5BdXRob3JpemF0",
+            "aW9uLlVzZXJSZXBseRIPCgdjaGlwTnVtGAIgASgFEi4KCmRhdGVBZGRpbmcY",
+            "ByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhEKCWNvbnRyX251",
+            "bRgIIAEoBRIPCgdzaGVsdGlkGAkgASgFIjUKDEFuaW1hbHNSZXBseRIlCgZh",
+            "bmltYWwYASADKAsyFS5BbmltYWxQci5BbmltYWxSZXBseSJWCgtBbmltYWxS",
+            "ZXBseRIPCgdDaGlwTnVtGAEgASgFEgwKBFNpemUYAiABKAESDQoFQ29sb3IY",
+            "AyABKAkSCwoDU2V4GAQgASgJEgwKBFR5cGUYBSABKAkiHgoJSXNDb3JyZWN0",
+            "EhEKCWlzQ29ycmVjdBgBIAEoCDKDAgoJQW5pbWFsaW5nEjgKCUFkZEFuaW1h",
+            "bBIWLkFuaW1hbFByLkFkZGluZ0FuaW1hbBoTLkFuaW1hbFByLklzQ29ycmVj",
+            "dBI8CgpHZXRBbmltYWxzEhYuQW5pbWFsUHIuQW5pbWFsc0ZpbHRzGhYuQW5p",
+            "bWFsUHIuQW5pbWFsc1JlcGx5Ej0KDFVwZGF0ZUFuaW1hbBIYLkFuaW1hbFBy",
+            "LlVwZGF0aW5nQW5pbWFsGhMuQW5pbWFsUHIuSXNDb3JyZWN0Ej8KDVJlbGVh",
+            "c2VBbmltYWwSGS5BbmltYWxQci5SZWxlYXNpbmdBbmltYWwaEy5BbmltYWxQ",
+            "ci5Jc0NvcnJlY3RCEaoCDlNoZWx0ZXJzU2VydmVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SheltersServer.AuthorizationPrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.ReleasingAnimal), global::SheltersServer.ReleasingAnimal.Parser, new[]{ "ChipNum", "User", "DateRel", "Sheltid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AddingAnimal), global::SheltersServer.AddingAnimal.Parser, new[]{ "User", "ChipNum", "Size", "Color", "Sex", "Type", "DateAdding", "ContrNum", "Sheltid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalsFilts), global::SheltersServer.AnimalsFilts.Parser, new[]{ "User", "FiltSex", "FiltType", "FiltChip", "Sheltid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalsFilts), global::SheltersServer.AnimalsFilts.Parser, new[]{ "User", "FiltSex", "FiltType", "FiltChip", "FiltColor", "FiltSize", "Sheltid", "LastId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UpdatingAnimal), global::SheltersServer.UpdatingAnimal.Parser, new[]{ "User", "ChipNum", "DateAdding", "ContrNum", "Sheltid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalsReply), global::SheltersServer.AnimalsReply.Parser, new[]{ "Animal" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalReply), global::SheltersServer.AnimalReply.Parser, new[]{ "ChipNum", "Size", "Color", "Sex", "Type" }, null, null, null, null),
@@ -929,7 +930,10 @@ namespace SheltersServer {
       filtSex_ = other.filtSex_;
       filtType_ = other.filtType_;
       filtChip_ = other.filtChip_;
+      filtColor_ = other.filtColor_;
+      filtSize_ = other.filtSize_;
       sheltid_ = other.sheltid_;
+      lastId_ = other.lastId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -987,8 +991,32 @@ namespace SheltersServer {
       }
     }
 
+    /// <summary>Field number for the "filtColor" field.</summary>
+    public const int FiltColorFieldNumber = 5;
+    private string filtColor_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FiltColor {
+      get { return filtColor_; }
+      set {
+        filtColor_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "filtSize" field.</summary>
+    public const int FiltSizeFieldNumber = 6;
+    private string filtSize_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FiltSize {
+      get { return filtSize_; }
+      set {
+        filtSize_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "sheltid" field.</summary>
-    public const int SheltidFieldNumber = 5;
+    public const int SheltidFieldNumber = 7;
     private int sheltid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -996,6 +1024,18 @@ namespace SheltersServer {
       get { return sheltid_; }
       set {
         sheltid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "lastId" field.</summary>
+    public const int LastIdFieldNumber = 8;
+    private int lastId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LastId {
+      get { return lastId_; }
+      set {
+        lastId_ = value;
       }
     }
 
@@ -1018,7 +1058,10 @@ namespace SheltersServer {
       if (FiltSex != other.FiltSex) return false;
       if (FiltType != other.FiltType) return false;
       if (FiltChip != other.FiltChip) return false;
+      if (FiltColor != other.FiltColor) return false;
+      if (FiltSize != other.FiltSize) return false;
       if (Sheltid != other.Sheltid) return false;
+      if (LastId != other.LastId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1030,7 +1073,10 @@ namespace SheltersServer {
       if (FiltSex.Length != 0) hash ^= FiltSex.GetHashCode();
       if (FiltType.Length != 0) hash ^= FiltType.GetHashCode();
       if (FiltChip.Length != 0) hash ^= FiltChip.GetHashCode();
+      if (FiltColor.Length != 0) hash ^= FiltColor.GetHashCode();
+      if (FiltSize.Length != 0) hash ^= FiltSize.GetHashCode();
       if (Sheltid != 0) hash ^= Sheltid.GetHashCode();
+      if (LastId != 0) hash ^= LastId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1065,9 +1111,21 @@ namespace SheltersServer {
         output.WriteRawTag(34);
         output.WriteString(FiltChip);
       }
+      if (FiltColor.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(FiltColor);
+      }
+      if (FiltSize.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(FiltSize);
+      }
       if (Sheltid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteInt32(Sheltid);
+      }
+      if (LastId != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(LastId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1095,9 +1153,21 @@ namespace SheltersServer {
         output.WriteRawTag(34);
         output.WriteString(FiltChip);
       }
+      if (FiltColor.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(FiltColor);
+      }
+      if (FiltSize.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(FiltSize);
+      }
       if (Sheltid != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteInt32(Sheltid);
+      }
+      if (LastId != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(LastId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1121,8 +1191,17 @@ namespace SheltersServer {
       if (FiltChip.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FiltChip);
       }
+      if (FiltColor.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FiltColor);
+      }
+      if (FiltSize.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FiltSize);
+      }
       if (Sheltid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Sheltid);
+      }
+      if (LastId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LastId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1151,8 +1230,17 @@ namespace SheltersServer {
       if (other.FiltChip.Length != 0) {
         FiltChip = other.FiltChip;
       }
+      if (other.FiltColor.Length != 0) {
+        FiltColor = other.FiltColor;
+      }
+      if (other.FiltSize.Length != 0) {
+        FiltSize = other.FiltSize;
+      }
       if (other.Sheltid != 0) {
         Sheltid = other.Sheltid;
+      }
+      if (other.LastId != 0) {
+        LastId = other.LastId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1188,8 +1276,20 @@ namespace SheltersServer {
             FiltChip = input.ReadString();
             break;
           }
-          case 40: {
+          case 42: {
+            FiltColor = input.ReadString();
+            break;
+          }
+          case 50: {
+            FiltSize = input.ReadString();
+            break;
+          }
+          case 56: {
             Sheltid = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            LastId = input.ReadInt32();
             break;
           }
         }
@@ -1226,8 +1326,20 @@ namespace SheltersServer {
             FiltChip = input.ReadString();
             break;
           }
-          case 40: {
+          case 42: {
+            FiltColor = input.ReadString();
+            break;
+          }
+          case 50: {
+            FiltSize = input.ReadString();
+            break;
+          }
+          case 56: {
             Sheltid = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            LastId = input.ReadInt32();
             break;
           }
         }

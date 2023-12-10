@@ -38,7 +38,10 @@ message AnimalsFilts {
 	string filtSex = 2;
 	string filtType = 3;
 	string filtChip = 4;
-	int32 sheltid = 5;
+	string filtColor = 5;
+	string filtSize = 6;
+	int32 sheltid = 7;
+	int32 lastId = 8;
 }
 
 message UpdatingAnimal {

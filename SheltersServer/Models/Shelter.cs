@@ -12,7 +12,6 @@ namespace SheltersServer.Models
     {
         [Key]
         public int Id_Shelter { get; set; }
-        public bool IsActive { get; set; }
         public string? Name {get; set;}
         public string? INN { get; set; }
         public string? KPP { get; set;}

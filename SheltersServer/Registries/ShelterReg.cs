@@ -11,13 +11,29 @@ namespace SheltersServer.Registries
     {
         public ShelterReg() { } 
 
-        public List<Shelter> GetShelters(int cityFilt = -1, bool onlyActiveFilt = false, string orgTypeFilt ="")
+        public (List<Shelter>, int) GetShelters(int filtCity = -1,
+                                         int filtShelter = -1,
+                                         string filtOrgType = "",
+                                         string filtName = "",
+                                         string filtINN = "",
+                                         string filtKPP = "",
+                                         int lastId = 0,
+                                         int count = 5)
         {
             var shelters = dbSet.Where(x => true);
-            if (cityFilt != -1) shelters.Where(x => x.Id_Shelter == cityFilt);
-            if (orgTypeFilt != "") shelters.Where(x => x.OrgType == orgTypeFilt);
-            if (onlyActiveFilt) shelters.Where(x => x.IsActive == true);
-            return shelters.ToList();
+            if (filtCity != -1) shelters = shelters.Where(x => x.Id_City == filtCity);
+            if (filtShelter != -1) shelters = shelters = shelters.Where(x => x.Id_Shelter == filtShelter);
+            if (filtOrgType != "") shelters = shelters.Where(x => x.OrgType == filtOrgType);
+            if (filtName != "") shelters = shelters.Where(x => x.Name == filtName);
+            if (filtINN != "") shelters = shelters.Where(x => x.INN == filtINN);
+            if (filtKPP != "") shelters = shelters.Where(x => x.KPP == filtKPP);
+
+            int countPage = shelters.Count() / count;
+            shelters.OrderBy(x => x.Id_Shelter)
+                   .Where(x => x.Id_Shelter > lastId)
+                   .Take(count);
+
+            return (shelters.ToList(), countPage);
         }
     }
 }

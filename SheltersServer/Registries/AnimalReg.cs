@@ -19,7 +19,7 @@ namespace SheltersServer.Registries
                                        double filtSize = -1,
                                        string filtColor = "",
                                        int filtChip = -1,
-                                       int count = 20)
+                                       int count = 5)
         {
             var animals = dbSet.Where(x => true);
 

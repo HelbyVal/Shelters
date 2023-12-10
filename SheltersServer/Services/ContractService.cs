@@ -45,25 +45,34 @@ namespace SheltersServer.Services
                 return true;
             }
         }
-        public List<Contract> GetContracts(User user, int id_shelter, bool allShelters = true)
+        public (List<Contract>, int) GetContracts(User user,
+                                            int id_shelter,
+                                            int filtNum,
+                                            int filtCostStart,
+                                            int filtCostEnd,
+                                            DateOnly filtDateStart,
+                                            DateOnly filtDateEnd,
+                                            int lastId,
+                                            bool includeKeep,
+                                            bool allShelters = true)
         {
             try
             {
                 if (allShelters == true)
                 {
                     CheckRoles(user.Id_User, "Оператор ОМСУ", "Куратор ОМСУ");
-                    return contrReg.GetContracts();
+                    return contrReg.GetContracts(filtDateStart, filtDateEnd, filtNum, filtCostStart, filtCostEnd, lastId, includeKeep);
                 }
                 else
                 {
                     CheckRoles(user.Id_User, "Оператор приюта", "Куратор приюта");
                     CheckShelter(user, id_shelter);
-                    return contrReg.GetContracts(id_shelter);
+                    return contrReg.GetContracts(filtDateStart, filtDateEnd, filtNum, filtCostStart, filtCostEnd, lastId, includeKeep, id_shelter);
                 }
             }
             catch (Exception e)
             {
-                return null;
+                return (new List<Contract>(), 0);
             }
         }
         public bool DeleteContract(User user, int numberContr)

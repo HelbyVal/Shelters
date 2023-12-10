@@ -28,7 +28,6 @@ namespace SheltersServer.Models
         public Shelter? Shelter { get; set; }
         public List<Keeping>? Keepings { get; set; }
 
-
         public double GetKeepingSum(DateOnly start, DateOnly end)
         {
             int days = 0;
@@ -41,6 +40,19 @@ namespace SheltersServer.Models
                 days += keep.GetDays(startDate, endDate);    
             }
             return days * CostPerDay;
+        }
+
+        public ContractReply ToReply()
+        {
+            var res = new ContractReply()
+            {
+                Number = Number,
+                CostPerDay = CostPerDay,
+                IdShelter = Id_Shelter,
+                StartDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(StartDate.ToDateTime(new TimeOnly())),
+                EndDate = Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(EndDate.ToDateTime(new TimeOnly())),
+            };
+            return res;
         }
     }
 }

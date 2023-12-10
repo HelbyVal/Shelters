@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option csharp_namespace = "SheltersServer";
+import "Protos/AuthorizationPr.proto";
+import "google/protobuf/timestamp.proto";
+package ShelterPr;
+
+service ShelterPr {
+	rpc CreateShelter (AddShelterRequest) returns (isCorrectShelt);
+	rpc DeleteShelter (DeleteShelterRequest) returns (isCorrectShelt);
+	rpc GetShelters (GetSheltersRequest) returns (SheltersReply);
+}
+
+message AddShelterRequest {
+	Authorization.UserReply user = 1;
+	string name = 2;
+	string INN = 3;
+	string KPP = 4;
+	string orgType = 5;
+	int32 id_City = 6;
+}
+
+message DeleteShelterRequest {
+	Authorization.UserReply user = 1;
+	int32 id_shelter = 2;
+}
+
+message GetSheltersRequest {
+	Authorization.UserReply user = 1;
+	int32 filtCity = 2;
+	int32 filtShelter = 3;
+	string filtOrgType = 4;
+	string filtName = 5;
+	string filtINN = 6;
+	string filtKPP = 7;
+	int32 lastId = 8;
+}
+
+message SheltersReply {
+	repeated ShelterReply shelter = 1;
+	int32 countPage = 2;
+}
+
+message ShelterReply {
+	int32 Id_Shelter = 1;
+	string Name = 2;
+	string INN = 3;
+	string KPP = 4;
+	string OrgType = 5;
+	int32 Id_City = 6;
+}
+
+message isCorrectShelt {
+	bool isCorrect = 1;
+}

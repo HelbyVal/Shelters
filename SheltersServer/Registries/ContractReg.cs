@@ -44,7 +44,7 @@ namespace SheltersServer.Registries
                                            int lastId = 0,
                                            bool isIncludeKeep = false,
                                            int filtShelter = -1,
-                                           int count = 10)
+                                           int count = 5)
         {
             var contrs = dbSet.Include(x => x.Keepings).Where(x => true);
 

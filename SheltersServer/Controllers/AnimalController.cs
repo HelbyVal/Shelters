@@ -56,17 +56,20 @@ namespace SheltersServer.Controllers
         {
             AnimalsReply res = new AnimalsReply();
             var animals = animalService.GetAnimals(User.ToUser(request.User),
-                                                   request.Sheltid,
                                                    request.FiltSex,
                                                    request.FiltType,
                                                    request.FiltChip,
+                                                   request.FiltColor,
+                                                   request.FiltSize,
+                                                   request.LastId,
                                                    request.Sheltid);
             List<AnimalReply> repls = new List<AnimalReply>();
-            foreach (var item in animals)
+            foreach (var item in animals.Item1)
             {
                 repls.Add(item.ToReply());
             }
             res.Animal.AddRange(repls);
+            res.CountPage = repls.Count;
             return Task.FromResult(res);
         }
     }

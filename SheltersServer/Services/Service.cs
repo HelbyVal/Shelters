@@ -21,10 +21,10 @@ namespace SheltersServer.Services
             return user.Id_Shelter;
         }
 
-        //protected User TakeUser(int id_User, string Password)
-        //{
-        //    return userReg.CheckUser(id_User, Password);
-        //}
+        public void CheckUser(User user)
+        {
+            userReg.CheckUser(user);
+        }
         public void CheckRoles(int id_user, params string[] customRoles)
         {
             var newRoles = customRoles.ToList();

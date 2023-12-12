@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pjqFYIbTgGKFJrI1WdBArvOtpstsdFoY2xiBl4+zHxI=",
+  "Source": "SheltersServer",
+  "BasePath": "_content/SheltersServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

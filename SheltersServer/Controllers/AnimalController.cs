@@ -15,6 +15,8 @@ namespace SheltersServer.Controllers
 
         public override Task<IsCorrect> AddAnimal(AddingAnimal request, ServerCallContext context)
         {
+            animalService.CheckUser(User.ToUser(request.User));
+
             bool isCorrect = animalService.AddAnimal(request.ChipNum, 
                                     request.Size,
                                     request.Color,
@@ -31,6 +33,8 @@ namespace SheltersServer.Controllers
 
         public override Task<IsCorrect> UpdateAnimal(UpdatingAnimal request, ServerCallContext context)
         {
+            animalService.CheckUser(User.ToUser(request.User));
+
             bool isCorrect = animalService.UpdateAnimal(request.ChipNum,
                                                         User.ToUser(request.User),
                                                         DateOnly.FromDateTime(request.DateAdding.ToDateTime()),
@@ -43,6 +47,8 @@ namespace SheltersServer.Controllers
 
         public override Task<IsCorrect> ReleaseAnimal(ReleasingAnimal request, ServerCallContext context)
         {
+            animalService.CheckUser(User.ToUser(request.User));
+
             bool isCorrect = animalService.ReleaseAnimal(request.ChipNum,
                                                          User.ToUser(request.User),
                                                          DateOnly.FromDateTime(request.DateRel.ToDateTime()),
@@ -54,6 +60,8 @@ namespace SheltersServer.Controllers
 
         public override Task<AnimalsReply> GetAnimals(AnimalsFilts request, ServerCallContext context)
         {
+            animalService.CheckUser(User.ToUser(request.User));
+
             AnimalsReply res = new AnimalsReply();
             var animals = animalService.GetAnimals(User.ToUser(request.User),
                                                    request.FiltSex,

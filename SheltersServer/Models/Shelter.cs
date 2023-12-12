@@ -16,10 +16,24 @@ namespace SheltersServer.Models
         public string? INN { get; set; }
         public string? KPP { get; set;}
         public string? OrgType { get; set;}
-        public int? Id_City { get; set; }
+        public int Id_City { get; set; }
         public City? City { get; set; }
         public List<Contract>? Contracts { get; set; }
         public List<User>? Users { get; set; }
+
+        public ShelterReply ToReply()
+        {
+            var res = new ShelterReply()
+            {
+                IdShelter = Id_Shelter,
+                Name = Name,
+                INN = INN,
+                KPP = KPP,
+                OrgType = OrgType,
+                IdCity = Id_City
+            };
+            return res;
+        }
 
     }
 }

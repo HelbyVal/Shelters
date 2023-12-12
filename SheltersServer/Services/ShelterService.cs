@@ -58,7 +58,8 @@ namespace SheltersServer.Services
                                          string filtOrgType,
                                          string filtName,
                                          string filtINN,
-                                         string filtKPP)
+                                         string filtKPP,
+                                         int lastId = 0)
         {
             try
             {

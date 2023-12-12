@@ -14,6 +14,8 @@ using SheltersServer.Services;
 
         public override Task<ContractsReply> GetContrats(GetContratsRequest request, ServerCallContext context)
         {
+            contractService.CheckUser(User.ToUser(request.User));
+
             ContractsReply res = new ContractsReply();
             var Contracts = contractService.GetContracts(User.ToUser(request.User),
                                                       request.IdShelter,
@@ -37,6 +39,8 @@ using SheltersServer.Services;
 
         public override Task<isCorrectContr> CreateNewContract(AddContractRequest request, ServerCallContext context)
         {
+            contractService.CheckUser(User.ToUser(request.User));
+
             bool isCorrect = contractService.CreateNewContract(User.ToUser(request.User),
                                                                request.CostPerDay,
                                                                DateOnly.FromDateTime(request.StartDate.ToDateTime()),
@@ -47,7 +51,9 @@ using SheltersServer.Services;
         }
 
         public override Task<isCorrectContr> DeleteContract(DeleteContractRequest request, ServerCallContext context)
-        {
+        {   
+            contractService.CheckUser(User.ToUser(request.User));
+
             bool isCorrect = contractService.DeleteContract(User.ToUser(request.User), request.NumberContr);
             isCorrectContr res = new isCorrectContr() { IsCorrect = isCorrect };
             return Task.FromResult(res);

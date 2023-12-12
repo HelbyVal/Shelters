@@ -16,6 +16,8 @@ public class ShelterController : ShelterPr.ShelterPrBase
 
     public override Task<isCorrectShelt> CreateShelter(AddShelterRequest request, ServerCallContext context)
     {
+        shelterService.CheckUser(User.ToUser(request.User));
+
         bool res = shelterService.CreateShelter(User.ToUser(request.User),
                                                request.Name,
                                                request.INN,
@@ -29,6 +31,8 @@ public class ShelterController : ShelterPr.ShelterPrBase
 
     public override Task<isCorrectShelt> DeleteShelter(DeleteShelterRequest request, ServerCallContext context)
     {
+        shelterService.CheckUser(User.ToUser(request.User));
+
         bool res = shelterService.DeleteShelter(User.ToUser(request.User), request.IdShelter);
 
         isCorrectShelt resuslt = new isCorrectShelt() { IsCorrect = res };
@@ -37,6 +41,8 @@ public class ShelterController : ShelterPr.ShelterPrBase
 
     public override Task<SheltersReply> GetShelters(GetSheltersRequest request, ServerCallContext context)
     {
+        shelterService.CheckUser(User.ToUser(request.User));
+
         SheltersReply res = new SheltersReply();
         var shelters = shelterService.GetShelters(User.ToUser(request.User),
                                              request.FiltCity,

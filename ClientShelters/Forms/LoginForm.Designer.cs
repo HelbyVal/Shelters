@@ -42,6 +42,7 @@
             LoginBox.Name = "LoginBox";
             LoginBox.Size = new Size(171, 27);
             LoginBox.TabIndex = 0;
+            LoginBox.TextChanged += LoginBox_TextChanged;
             // 
             // PasswordBox
             // 

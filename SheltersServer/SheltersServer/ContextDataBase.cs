@@ -22,6 +22,7 @@ namespace SheltersServer
 
         public ContextDataBase() 
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
@@ -32,6 +33,44 @@ namespace SheltersServer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Shelter>().HasIndex(c => c.INN).IsUnique();
+            modelBuilder.Entity<Shelter>().HasIndex(c => c.KPP).IsUnique();
+            modelBuilder.Entity<Shelter>().HasIndex(c => c.Name).IsUnique();
+
+            modelBuilder.Entity<UserRole>()
+                .HasOne(ur => ur.User)
+                .WithMany(u => u.UserRole)
+                .HasForeignKey(ur => ur.Id_User);
+
+            modelBuilder.Entity<UserRole>()
+                .HasOne(ur => ur.Role)
+                .WithMany(r => r.UserRole)
+                .HasForeignKey(ur => ur.Id_Role);
+
+            modelBuilder.Entity<Shelter>()
+                .HasOne(ur => ur.City)
+                .WithMany(r => r.Shelters)
+                .HasForeignKey(ur => ur.Id_City);
+
+            modelBuilder.Entity<User>()
+                .HasOne(ur => ur.Shelter)
+                .WithMany(x => x.Users)
+                .HasForeignKey(ur => ur.Id_Shelter);
+
+            modelBuilder.Entity<Contract>()
+                .HasOne(ur => ur.Shelter)
+                .WithMany(x => x.Contracts)
+                .HasForeignKey(ur => ur.Id_Shelter);
+
+            modelBuilder.Entity<Keeping>()
+                .HasOne(ur => ur.Contract)
+                .WithMany(u => u.Keepings)
+                .HasForeignKey(ur => ur.Number);
+
+            modelBuilder.Entity<Keeping>()
+                .HasOne(ur => ur.Animal)
+                .WithMany(u => u.Keepings)
+                .HasForeignKey(ur => ur.ChipNum);
         }
     }
 }

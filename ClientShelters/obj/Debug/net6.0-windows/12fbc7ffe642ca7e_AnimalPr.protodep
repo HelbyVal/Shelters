@@ -1,0 +1,4 @@
+obj\Debug\net6.0-windows\Protos/AnimalPr.cs \
+obj\Debug\net6.0-windows\Protos/AnimalPrGrpc.cs: C:/Users/Пользователь/.nuget/packages/grpc.tools/2.60.0/build/native/include/google/protobuf/timestamp.proto\
+ Protos/AuthorizationPr.proto\
+ Protos/AnimalPr.proto

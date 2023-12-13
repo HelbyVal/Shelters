@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Пользователь\\source\\repos\\ClientShelters\\ClientShelters.csproj": {}
+    "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ClientShelters\\ClientShelters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Пользователь\\source\\repos\\ClientShelters\\ClientShelters.csproj": {
+    "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ClientShelters\\ClientShelters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Пользователь\\source\\repos\\ClientShelters\\ClientShelters.csproj",
+        "projectUniqueName": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ClientShelters\\ClientShelters.csproj",
         "projectName": "ClientShelters",
-        "projectPath": "C:\\Users\\Пользователь\\source\\repos\\ClientShelters\\ClientShelters.csproj",
+        "projectPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ClientShelters\\ClientShelters.csproj",
         "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Пользователь\\source\\repos\\ClientShelters\\obj\\",
+        "outputPath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\ClientShelters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Пользователь\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,22 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.25.1, )"
+            },
+            "Grpc.Net.Client": {
+              "target": "Package",
+              "version": "[2.59.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.60.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

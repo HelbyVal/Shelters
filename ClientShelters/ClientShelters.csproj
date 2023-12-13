@@ -9,6 +9,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.25.1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.59.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.60.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+	
+	
+   <ItemGroup>
+    <Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\AuthorizationPr.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\AnimalPr.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\ContractPr.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\ShelterPr.proto" GrpcServices="Client" />
+   </ItemGroup>		
+	
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

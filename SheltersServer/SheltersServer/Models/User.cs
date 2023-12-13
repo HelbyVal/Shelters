@@ -1,4 +1,5 @@
-﻿using SheltersServer;
+﻿using Microsoft.EntityFrameworkCore;
+using SheltersServer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

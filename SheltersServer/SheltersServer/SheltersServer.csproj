@@ -8,23 +8,11 @@
 
   <ItemGroup>
     <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
-  </ItemGroup>
-
-	<ItemGroup>
-		<Protobuf Include="Protos\AuthorizationPr.proto" GrpcServices="Server" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Protobuf Include="Protos\AnimalPr.proto" GrpcServices="Server" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Protobuf Include="Protos\ContractPr.proto" GrpcServices="Server" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Protobuf Include="Protos\ShelterPr.proto" GrpcServices="Server" />
-	</ItemGroup>
+	<Protobuf Include="Protos\AuthorizationPr.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\AnimalPr.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\ContractPr.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\ShelterPr.proto" GrpcServices="Server" />
+   </ItemGroup>
 	
 
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QoD7fnW7X7qtrTvI89gFXst7jfju7+h2fvJrNjFxNaB5ADTMcmb7SFuPm6ylwZgyP6tSF2/GL0OAdCOHnW0icQ==",
+  "dgSpecHash": "wddfWYJXKonAA+xZp+peLLXcT35XkMGXvD+QE6NZCCCfrTCiY3eQPzJumX8NSCEdatQ/Ff5H6WtQ/dlIoRp9gQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Пользователь\\source\\repos\\SheltersServer\\SheltersServer\\SheltersServer.csproj",
+  "projectFilePath": "C:\\Users\\Пользователь\\source\\repos\\Shelters\\SheltersServer\\SheltersServer\\SheltersServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Пользователь\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\Пользователь\\.nuget\\packages\\grpc.aspnetcore\\2.40.0\\grpc.aspnetcore.2.40.0.nupkg.sha512",

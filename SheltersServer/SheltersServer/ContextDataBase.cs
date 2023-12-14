@@ -22,8 +22,8 @@ namespace SheltersServer
 
         public ContextDataBase() 
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
+            //Database.EnsureDelete();
+            //Database.EnsureCreate();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

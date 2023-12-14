@@ -18,6 +18,7 @@ namespace ClientShelters.Models
         public int Id_Shelter { get; set; }
         public Shelter? Shelter { get; set; }
         public List<UserRole>? UserRole { get; set; }
+        public List<string>? Roles {  get; set; }
 
         public UserReply ToReply()
         {
@@ -44,6 +45,7 @@ namespace ClientShelters.Models
                 UserName = reply.UserName,
                 Password = reply.Password,
                 Id_Shelter = reply.IdShelter,
+                Roles = reply.Roles.ToList(),
             };
         }
     }

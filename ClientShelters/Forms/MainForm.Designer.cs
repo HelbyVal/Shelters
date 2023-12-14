@@ -32,14 +32,14 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             contextMenuStrip2 = new ContextMenuStrip(components);
             contextMenuStrip3 = new ContextMenuStrip(components);
-            dataGridView1 = new DataGridView();
+            dataGridView = new DataGridView();
             menuStrip1 = new MenuStrip();
             выйтиИзАккаунтаToolStripMenuItem = new ToolStripMenuItem();
-            таблицыToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripMenuItem2 = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripMenuItem();
-            отчётыToolStripMenuItem = new ToolStripMenuItem();
+            RegsMenu = new ToolStripMenuItem();
+            AnimalRegMenu = new ToolStripMenuItem();
+            ContractRegMenu = new ToolStripMenuItem();
+            SheltersRegMenu = new ToolStripMenuItem();
+            ReportMenu = new ToolStripMenuItem();
             AddButton = new Button();
             UpdateButton = new Button();
             DeleteButton = new Button();
@@ -50,9 +50,10 @@
             label2 = new Label();
             UserBox = new TextBox();
             panel1 = new Panel();
-            ShelterComboBox = new ComboBox();
+            SheltersComboBox = new ComboBox();
             label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -75,23 +76,24 @@
             contextMenuStrip3.Name = "contextMenuStrip3";
             contextMenuStrip3.Size = new Size(61, 4);
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 31);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(831, 575);
-            dataGridView1.TabIndex = 3;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Location = new Point(0, 31);
+            dataGridView.Name = "dataGridView";
+            dataGridView.ReadOnly = true;
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.RowTemplate.Height = 29;
+            dataGridView.Size = new Size(831, 575);
+            dataGridView.TabIndex = 3;
+            dataGridView.CellContentClick += dataGridView_CellContentClick;
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { выйтиИзАккаунтаToolStripMenuItem, таблицыToolStripMenuItem, отчётыToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { выйтиИзАккаунтаToolStripMenuItem, RegsMenu, ReportMenu });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1256, 28);
@@ -105,36 +107,40 @@
             выйтиИзАккаунтаToolStripMenuItem.Text = "Выйти из аккаунта";
             выйтиИзАккаунтаToolStripMenuItem.Click += выйтиИзАккаунтаToolStripMenuItem_Click;
             // 
-            // таблицыToolStripMenuItem
+            // RegsMenu
             // 
-            таблицыToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
-            таблицыToolStripMenuItem.Name = "таблицыToolStripMenuItem";
-            таблицыToolStripMenuItem.Size = new Size(80, 24);
-            таблицыToolStripMenuItem.Text = "Реестры";
+            RegsMenu.DropDownItems.AddRange(new ToolStripItem[] { AnimalRegMenu, ContractRegMenu, SheltersRegMenu });
+            RegsMenu.Name = "RegsMenu";
+            RegsMenu.Size = new Size(80, 24);
+            RegsMenu.Text = "Реестры";
             // 
-            // toolStripMenuItem1
+            // AnimalRegMenu
             // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(166, 26);
-            toolStripMenuItem1.Text = "Животные";
+            AnimalRegMenu.Name = "AnimalRegMenu";
+            AnimalRegMenu.Size = new Size(166, 26);
+            AnimalRegMenu.Text = "Животные";
+            AnimalRegMenu.Click += AnimalRegClick;
             // 
-            // toolStripMenuItem2
+            // ContractRegMenu
             // 
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(166, 26);
-            toolStripMenuItem2.Text = "Контракты";
+            ContractRegMenu.Name = "ContractRegMenu";
+            ContractRegMenu.Size = new Size(166, 26);
+            ContractRegMenu.Text = "Контракты";
+            ContractRegMenu.Click += ContractsRegClick;
             // 
-            // toolStripMenuItem3
+            // SheltersRegMenu
             // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(166, 26);
-            toolStripMenuItem3.Text = "Приюты";
+            SheltersRegMenu.Name = "SheltersRegMenu";
+            SheltersRegMenu.Size = new Size(166, 26);
+            SheltersRegMenu.Text = "Приюты";
+            SheltersRegMenu.Click += SheltersRegClick;
             // 
-            // отчётыToolStripMenuItem
+            // ReportMenu
             // 
-            отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
-            отчётыToolStripMenuItem.Size = new Size(73, 24);
-            отчётыToolStripMenuItem.Text = "Отчёты";
+            ReportMenu.Name = "ReportMenu";
+            ReportMenu.Size = new Size(73, 24);
+            ReportMenu.Text = "Отчёты";
+            ReportMenu.Click += ReportClick;
             // 
             // AddButton
             // 
@@ -144,6 +150,7 @@
             AddButton.TabIndex = 5;
             AddButton.Text = "Добавить";
             AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += AddButton_Click;
             // 
             // UpdateButton
             // 
@@ -219,7 +226,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(ShelterComboBox);
+            panel1.Controls.Add(SheltersComboBox);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(UserBox);
@@ -228,13 +235,13 @@
             panel1.Size = new Size(419, 98);
             panel1.TabIndex = 14;
             // 
-            // ShelterComboBox
+            // SheltersComboBox
             // 
-            ShelterComboBox.FormattingEnabled = true;
-            ShelterComboBox.Location = new Point(120, 51);
-            ShelterComboBox.Name = "ShelterComboBox";
-            ShelterComboBox.Size = new Size(287, 28);
-            ShelterComboBox.TabIndex = 15;
+            SheltersComboBox.FormattingEnabled = true;
+            SheltersComboBox.Location = new Point(120, 51);
+            SheltersComboBox.Name = "SheltersComboBox";
+            SheltersComboBox.Size = new Size(287, 28);
+            SheltersComboBox.TabIndex = 15;
             // 
             // label3
             // 
@@ -258,12 +265,12 @@
             Controls.Add(DeleteButton);
             Controls.Add(UpdateButton);
             Controls.Add(AddButton);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridView);
             Controls.Add(menuStrip1);
             Name = "MainForm";
             Text = " Главная";
             Load += MainForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -277,14 +284,14 @@
         private ContextMenuStrip contextMenuStrip1;
         private ContextMenuStrip contextMenuStrip2;
         private ContextMenuStrip contextMenuStrip3;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem выйтиИзАккаунтаToolStripMenuItem;
-        private ToolStripMenuItem таблицыToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem отчётыToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem2;
-        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem RegsMenu;
+        private ToolStripMenuItem AnimalRegMenu;
+        private ToolStripMenuItem ReportMenu;
+        private ToolStripMenuItem ContractRegMenu;
+        private ToolStripMenuItem SheltersRegMenu;
         private Button AddButton;
         private Button UpdateButton;
         private Button DeleteButton;
@@ -295,7 +302,8 @@
         private Label label2;
         private TextBox UserBox;
         private Panel panel1;
-        private ComboBox ShelterComboBox;
+        private ComboBox SheltersComboBox;
         private Label label3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

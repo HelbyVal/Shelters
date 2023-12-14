@@ -19,11 +19,15 @@ namespace ClientShelters.Models
             Id_Shelter = id_Shelter;
         }
 
-        [Key]
+        [NameAttribute("Номер контракта")]
         public int Number { get; set; }
+        [NameAttribute("Стоимость за день")]
         public double CostPerDay { get; set; }
+        [NameAttribute("Дата начала действия")]
         public DateOnly StartDate { get; set; }
+        [NameAttribute("Дата окончания действия")]
         public DateOnly EndDate { get; set; }
+        [NameAttribute("Номер приюта")]
         public int Id_Shelter { get; set; }
         public Shelter? Shelter { get; set; }
         public List<Keeping>? Keepings { get; set; }

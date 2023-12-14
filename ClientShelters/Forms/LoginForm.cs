@@ -5,6 +5,7 @@ namespace ClientShelters
 {
     public partial class LoginForm : Form
     {
+        User? currentUser;
         public LoginForm()
         {
             InitializeComponent();
@@ -17,14 +18,14 @@ namespace ClientShelters
 
         private void EnterClick(object sender, EventArgs e)
         {
-                var controller = new AuthController();
-                User user = User.ToUser(controller.LogIn(LoginBox.Text, PasswordBox.Text).Result);
-                AuthController.CurrentUser = user;
-                var mainForm = new MainForm();
-                if (mainForm.ShowDialog() == DialogResult.Cancel)
-                {
-                    Close();
-                }
+            var controller = new AuthController();
+            User user = controller.LogIn(LoginBox.Text, PasswordBox.Text);
+            currentUser = user;
+            var mainForm = new MainForm(currentUser);
+            if (mainForm.ShowDialog() == DialogResult.Cancel)
+            {
+               Close();
+            }
         }
 
         private void ShowPaaswordClick(object sender, EventArgs e)

@@ -9,10 +9,15 @@ namespace ClientShelters.Models
 {
     public class Animal : IMyModel
     {
+        [NameAttribute("Номер чипа")]
         public int ChipNum { get; set; }
+        [NameAttribute("Размер")]
         public double Size { get; set; }
+        [NameAttribute("Цвет")]
         public string? Color { get; set; }
+        [NameAttribute("Пол")]
         public string? Sex { get; set; }
+        [NameAttribute("Тип")]
         public string? Type { get; set; }
         public List<Keeping>? Keepings { get; set; }
 
@@ -25,6 +30,19 @@ namespace ClientShelters.Models
                                           Sex = Sex,
                                          };
             return res;
+        }
+
+        public static Animal ToAnimal(AnimalReply reply) 
+        {
+            Animal result = new Animal()
+            {
+                ChipNum = reply.ChipNum,
+                Size = reply.Size,
+                Color = reply.Color,
+                Sex = reply.Sex,
+                Type = reply.Type,
+            };
+            return result;
         }
     }
 }

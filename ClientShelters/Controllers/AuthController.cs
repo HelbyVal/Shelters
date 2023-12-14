@@ -12,8 +12,7 @@ namespace ClientShelters.Controllers
 
     internal class AuthController
     {
-        public static User? CurrentUser { get; set; }
-        public Task<UserReply> LogIn(string login, string password)
+        public User LogIn(string login, string password)
         {
             var req = new UserRequest()
             {
@@ -23,7 +22,7 @@ namespace ClientShelters.Controllers
             using var channel = GrpcChannel.ForAddress("https://localhost:7013");
             var client = new Authorization.AuthorizationClient(channel);
             var res = client.LogIn(req);
-            return Task.FromResult(res);
+            return User.ToUser(res);
         }
     }
 }

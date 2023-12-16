@@ -1,8 +1,7 @@
 syntax = "proto3";
 
-option csharp_namespace = "ClientShelters";
+option csharp_namespace = "SheltersServer";
 import "Protos/AuthorizationPr.proto";
-import "Protos/AnimalPr.proto";
 import "google/protobuf/timestamp.proto";
 package ContractPr;
 

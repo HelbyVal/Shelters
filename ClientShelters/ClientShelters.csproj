@@ -25,6 +25,7 @@
 	<Protobuf Include="Protos\AnimalPr.proto" GrpcServices="Client" />
 	<Protobuf Include="Protos\ContractPr.proto" GrpcServices="Client" />
 	<Protobuf Include="Protos\ShelterPr.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\Data.proto" GrpcServices="Client" />
    </ItemGroup>		
 	
   <ItemGroup>

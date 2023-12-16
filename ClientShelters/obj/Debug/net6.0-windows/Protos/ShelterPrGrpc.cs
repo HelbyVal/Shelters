@@ -55,6 +55,10 @@ namespace ClientShelters {
     static readonly grpc::Marshaller<global::ClientShelters.GetSheltersRequest> __Marshaller_ShelterPr_GetSheltersRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.GetSheltersRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::ClientShelters.SheltersReply> __Marshaller_ShelterPr_SheltersReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.SheltersReply.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::ClientShelters.OnlyUser> __Marshaller_ShelterPr_OnlyUser = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.OnlyUser.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::SheltersServer.CitiesReply> __Marshaller_Data_CitiesReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.CitiesReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::ClientShelters.AddShelterRequest, global::ClientShelters.isCorrectShelt> __Method_CreateShelter = new grpc::Method<global::ClientShelters.AddShelterRequest, global::ClientShelters.isCorrectShelt>(
@@ -79,6 +83,14 @@ namespace ClientShelters {
         "GetShelters",
         __Marshaller_ShelterPr_GetSheltersRequest,
         __Marshaller_ShelterPr_SheltersReply);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::ClientShelters.OnlyUser, global::SheltersServer.CitiesReply> __Method_GetCitites = new grpc::Method<global::ClientShelters.OnlyUser, global::SheltersServer.CitiesReply>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetCitites",
+        __Marshaller_ShelterPr_OnlyUser,
+        __Marshaller_Data_CitiesReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -172,6 +184,26 @@ namespace ClientShelters {
       public virtual grpc::AsyncUnaryCall<global::ClientShelters.SheltersReply> GetSheltersAsync(global::ClientShelters.GetSheltersRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetShelters, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::SheltersServer.CitiesReply GetCitites(global::ClientShelters.OnlyUser request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCitites(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::SheltersServer.CitiesReply GetCitites(global::ClientShelters.OnlyUser request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetCitites, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.CitiesReply> GetCititesAsync(global::ClientShelters.OnlyUser request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetCititesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.CitiesReply> GetCititesAsync(global::ClientShelters.OnlyUser request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetCitites, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

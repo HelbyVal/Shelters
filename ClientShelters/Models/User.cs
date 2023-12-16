@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SheltersServer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace ClientShelters.Models
                 UserName = UserName,
                 Password = Password,
                 IdShelter = Id_Shelter,
+                //Shelter = Shelter.ToReply()
             };
         }
 

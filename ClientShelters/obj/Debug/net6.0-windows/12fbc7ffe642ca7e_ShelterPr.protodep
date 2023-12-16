@@ -1,4 +1,4 @@
 obj\Debug\net6.0-windows\Protos/ShelterPr.cs \
-obj\Debug\net6.0-windows\Protos/ShelterPrGrpc.cs: Protos/AuthorizationPr.proto\
- C:/Users/Пользователь/.nuget/packages/grpc.tools/2.60.0/build/native/include/google/protobuf/timestamp.proto\
+obj\Debug\net6.0-windows\Protos/ShelterPrGrpc.cs: Protos/Data.proto\
+ Protos/AuthorizationPr.proto\
  Protos/ShelterPr.proto

@@ -1,6 +1,7 @@
 ﻿using ClientShelters.Models;
 using Grpc.Net.Client;
 using Microsoft.VisualBasic.Logging;
+using SheltersServer;
 using System;
 using System.Collections.Generic;
 using System.Linq;

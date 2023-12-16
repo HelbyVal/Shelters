@@ -25,18 +25,20 @@ namespace SheltersServer {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxQcm90b3MvQXV0aG9yaXphdGlvblByLnByb3RvEg1BdXRob3JpemF0aW9u",
-            "IjEKC1VzZXJSZXF1ZXN0EhAKCHVzZXJOYW1lGAEgASgJEhAKCHBhc3N3b3Jk",
-            "GAIgASgJIpQBCglVc2VyUmVwbHkSDwoHaWRfVXNlchgBIAEoBRIQCgh1c2Vy",
-            "TmFtZRgCIAEoCRIQCghwYXNzd29yZBgDIAEoCRIMCgRuYW1lGAQgASgJEg8K",
-            "B3N1cm5hbWUYBSABKAkSEAoIbGFzdE5hbWUYBiABKAkSEgoKaWRfc2hlbHRl",
-            "chgHIAEoBRINCgVSb2xlcxgIIAMoCTJOCg1BdXRob3JpemF0aW9uEj0KBUxv",
-            "Z0luEhouQXV0aG9yaXphdGlvbi5Vc2VyUmVxdWVzdBoYLkF1dGhvcml6YXRp",
-            "b24uVXNlclJlcGx5QhGqAg5TaGVsdGVyc1NlcnZlcmIGcHJvdG8z"));
+            "GhFQcm90b3MvRGF0YS5wcm90byIxCgtVc2VyUmVxdWVzdBIQCgh1c2VyTmFt",
+            "ZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSK+AQoJVXNlclJlcGx5Eg8KB2lk",
+            "X1VzZXIYASABKAUSEAoIdXNlck5hbWUYAiABKAkSEAoIcGFzc3dvcmQYAyAB",
+            "KAkSDAoEbmFtZRgEIAEoCRIPCgdzdXJuYW1lGAUgASgJEhAKCGxhc3ROYW1l",
+            "GAYgASgJEhIKCmlkX3NoZWx0ZXIYByABKAUSDQoFUm9sZXMYCCADKAkSKAoM",
+            "c2hlbHRlclJlcGx5GAkgASgLMhIuRGF0YS5TaGVsdGVyUmVwbHkyTgoNQXV0",
+            "aG9yaXphdGlvbhI9CgVMb2dJbhIaLkF1dGhvcml6YXRpb24uVXNlclJlcXVl",
+            "c3QaGC5BdXRob3JpemF0aW9uLlVzZXJSZXBseUIRqgIOU2hlbHRlcnNTZXJ2",
+            "ZXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::SheltersServer.DataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UserRequest), global::SheltersServer.UserRequest.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UserReply), global::SheltersServer.UserReply.Parser, new[]{ "IdUser", "UserName", "Password", "Name", "Surname", "LastName", "IdShelter", "Roles" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UserReply), global::SheltersServer.UserReply.Parser, new[]{ "IdUser", "UserName", "Password", "Name", "Surname", "LastName", "IdShelter", "Roles", "ShelterReply" }, null, null, null, null)
           }));
     }
     #endregion
@@ -313,6 +315,7 @@ namespace SheltersServer {
       lastName_ = other.lastName_;
       idShelter_ = other.idShelter_;
       roles_ = other.roles_.Clone();
+      shelterReply_ = other.shelterReply_ != null ? other.shelterReply_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -417,6 +420,18 @@ namespace SheltersServer {
       get { return roles_; }
     }
 
+    /// <summary>Field number for the "shelterReply" field.</summary>
+    public const int ShelterReplyFieldNumber = 9;
+    private global::SheltersServer.ShelterReply shelterReply_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SheltersServer.ShelterReply ShelterReply {
+      get { return shelterReply_; }
+      set {
+        shelterReply_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -440,6 +455,7 @@ namespace SheltersServer {
       if (LastName != other.LastName) return false;
       if (IdShelter != other.IdShelter) return false;
       if(!roles_.Equals(other.roles_)) return false;
+      if (!object.Equals(ShelterReply, other.ShelterReply)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -455,6 +471,7 @@ namespace SheltersServer {
       if (LastName.Length != 0) hash ^= LastName.GetHashCode();
       if (IdShelter != 0) hash ^= IdShelter.GetHashCode();
       hash ^= roles_.GetHashCode();
+      if (shelterReply_ != null) hash ^= ShelterReply.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -502,6 +519,10 @@ namespace SheltersServer {
         output.WriteInt32(IdShelter);
       }
       roles_.WriteTo(output, _repeated_roles_codec);
+      if (shelterReply_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(ShelterReply);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -541,6 +562,10 @@ namespace SheltersServer {
         output.WriteInt32(IdShelter);
       }
       roles_.WriteTo(ref output, _repeated_roles_codec);
+      if (shelterReply_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(ShelterReply);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -573,6 +598,9 @@ namespace SheltersServer {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(IdShelter);
       }
       size += roles_.CalculateSize(_repeated_roles_codec);
+      if (shelterReply_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ShelterReply);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -607,6 +635,12 @@ namespace SheltersServer {
         IdShelter = other.IdShelter;
       }
       roles_.Add(other.roles_);
+      if (other.shelterReply_ != null) {
+        if (shelterReply_ == null) {
+          ShelterReply = new global::SheltersServer.ShelterReply();
+        }
+        ShelterReply.MergeFrom(other.ShelterReply);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -654,6 +688,13 @@ namespace SheltersServer {
             roles_.AddEntriesFrom(input, _repeated_roles_codec);
             break;
           }
+          case 74: {
+            if (shelterReply_ == null) {
+              ShelterReply = new global::SheltersServer.ShelterReply();
+            }
+            input.ReadMessage(ShelterReply);
+            break;
+          }
         }
       }
     #endif
@@ -699,6 +740,13 @@ namespace SheltersServer {
           }
           case 66: {
             roles_.AddEntriesFrom(ref input, _repeated_roles_codec);
+            break;
+          }
+          case 74: {
+            if (shelterReply_ == null) {
+              ShelterReply = new global::SheltersServer.ShelterReply();
+            }
+            input.ReadMessage(ShelterReply);
             break;
           }
         }

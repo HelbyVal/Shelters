@@ -13,11 +13,9 @@ namespace SheltersServer.Registries
     {
         public CityReg() {}
 
-        public List<City> GetCities(string nameFilt = "", string subjFilt = "", bool onlyActiveFilt = false)
+        public List<City> GetCities()
         {
             var cities = dbSet.Where(x => true);
-            if (nameFilt != "") cities.Where(x => x.Name == nameFilt);
-            if (subjFilt != "") cities.Where(x => x.Subject == subjFilt);
             return cities.ToList();
         }
     }

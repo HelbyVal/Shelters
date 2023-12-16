@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ClientShelters.Models;
 using Grpc.Core;
 using Grpc.Net.Client;
+using SheltersServer;
 
 namespace ClientShelters.Controllers
 {

@@ -28,8 +28,12 @@ namespace SheltersServer.Registries
             if (filtINN != "") shelters = shelters.Where(x => x.INN == filtINN);
             if (filtKPP != "") shelters = shelters.Where(x => x.KPP == filtKPP);
 
-            int countPage = shelters.Count() / count;
-            shelters.OrderBy(x => x.Id_Shelter)
+            int countPage = 0;
+            if (shelters.Count() % count == 0)
+                countPage = shelters.Count() / count;
+            else
+                countPage = shelters.Count() / count + 1;
+            shelters = shelters.OrderBy(x => x.Id_Shelter)
                    .Where(x => x.Id_Shelter > lastId)
                    .Take(count);
 

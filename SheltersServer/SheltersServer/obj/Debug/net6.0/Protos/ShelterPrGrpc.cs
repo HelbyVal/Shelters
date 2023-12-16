@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace SheltersServer {
+namespace ClientShelters {
   public static partial class ShelterPr
   {
     static readonly string __ServiceName = "ShelterPr.ShelterPr";
@@ -46,18 +46,22 @@ namespace SheltersServer {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SheltersServer.AddShelterRequest> __Marshaller_ShelterPr_AddShelterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.AddShelterRequest.Parser));
+    static readonly grpc::Marshaller<global::ClientShelters.AddShelterRequest> __Marshaller_ShelterPr_AddShelterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.AddShelterRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SheltersServer.isCorrectShelt> __Marshaller_ShelterPr_isCorrectShelt = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.isCorrectShelt.Parser));
+    static readonly grpc::Marshaller<global::ClientShelters.isCorrectShelt> __Marshaller_ShelterPr_isCorrectShelt = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.isCorrectShelt.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SheltersServer.DeleteShelterRequest> __Marshaller_ShelterPr_DeleteShelterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.DeleteShelterRequest.Parser));
+    static readonly grpc::Marshaller<global::ClientShelters.DeleteShelterRequest> __Marshaller_ShelterPr_DeleteShelterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.DeleteShelterRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SheltersServer.GetSheltersRequest> __Marshaller_ShelterPr_GetSheltersRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.GetSheltersRequest.Parser));
+    static readonly grpc::Marshaller<global::ClientShelters.GetSheltersRequest> __Marshaller_ShelterPr_GetSheltersRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.GetSheltersRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::SheltersServer.SheltersReply> __Marshaller_ShelterPr_SheltersReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.SheltersReply.Parser));
+    static readonly grpc::Marshaller<global::ClientShelters.SheltersReply> __Marshaller_ShelterPr_SheltersReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.SheltersReply.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::ClientShelters.OnlyUser> __Marshaller_ShelterPr_OnlyUser = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.OnlyUser.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::SheltersServer.CitiesReply> __Marshaller_Data_CitiesReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.CitiesReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::SheltersServer.AddShelterRequest, global::SheltersServer.isCorrectShelt> __Method_CreateShelter = new grpc::Method<global::SheltersServer.AddShelterRequest, global::SheltersServer.isCorrectShelt>(
+    static readonly grpc::Method<global::ClientShelters.AddShelterRequest, global::ClientShelters.isCorrectShelt> __Method_CreateShelter = new grpc::Method<global::ClientShelters.AddShelterRequest, global::ClientShelters.isCorrectShelt>(
         grpc::MethodType.Unary,
         __ServiceName,
         "CreateShelter",
@@ -65,7 +69,7 @@ namespace SheltersServer {
         __Marshaller_ShelterPr_isCorrectShelt);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::SheltersServer.DeleteShelterRequest, global::SheltersServer.isCorrectShelt> __Method_DeleteShelter = new grpc::Method<global::SheltersServer.DeleteShelterRequest, global::SheltersServer.isCorrectShelt>(
+    static readonly grpc::Method<global::ClientShelters.DeleteShelterRequest, global::ClientShelters.isCorrectShelt> __Method_DeleteShelter = new grpc::Method<global::ClientShelters.DeleteShelterRequest, global::ClientShelters.isCorrectShelt>(
         grpc::MethodType.Unary,
         __ServiceName,
         "DeleteShelter",
@@ -73,17 +77,25 @@ namespace SheltersServer {
         __Marshaller_ShelterPr_isCorrectShelt);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::SheltersServer.GetSheltersRequest, global::SheltersServer.SheltersReply> __Method_GetShelters = new grpc::Method<global::SheltersServer.GetSheltersRequest, global::SheltersServer.SheltersReply>(
+    static readonly grpc::Method<global::ClientShelters.GetSheltersRequest, global::ClientShelters.SheltersReply> __Method_GetShelters = new grpc::Method<global::ClientShelters.GetSheltersRequest, global::ClientShelters.SheltersReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetShelters",
         __Marshaller_ShelterPr_GetSheltersRequest,
         __Marshaller_ShelterPr_SheltersReply);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::ClientShelters.OnlyUser, global::SheltersServer.CitiesReply> __Method_GetCitites = new grpc::Method<global::ClientShelters.OnlyUser, global::SheltersServer.CitiesReply>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetCitites",
+        __Marshaller_ShelterPr_OnlyUser,
+        __Marshaller_Data_CitiesReply);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::SheltersServer.ShelterPrReflection.Descriptor.Services[0]; }
+      get { return global::ClientShelters.ShelterPrReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of ShelterPr</summary>
@@ -91,19 +103,25 @@ namespace SheltersServer {
     public abstract partial class ShelterPrBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.isCorrectShelt> CreateShelter(global::SheltersServer.AddShelterRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ClientShelters.isCorrectShelt> CreateShelter(global::ClientShelters.AddShelterRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.isCorrectShelt> DeleteShelter(global::SheltersServer.DeleteShelterRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ClientShelters.isCorrectShelt> DeleteShelter(global::ClientShelters.DeleteShelterRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.SheltersReply> GetShelters(global::SheltersServer.GetSheltersRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ClientShelters.SheltersReply> GetShelters(global::ClientShelters.GetSheltersRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.CitiesReply> GetCitites(global::ClientShelters.OnlyUser request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -118,7 +136,8 @@ namespace SheltersServer {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CreateShelter, serviceImpl.CreateShelter)
           .AddMethod(__Method_DeleteShelter, serviceImpl.DeleteShelter)
-          .AddMethod(__Method_GetShelters, serviceImpl.GetShelters).Build();
+          .AddMethod(__Method_GetShelters, serviceImpl.GetShelters)
+          .AddMethod(__Method_GetCitites, serviceImpl.GetCitites).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -128,9 +147,10 @@ namespace SheltersServer {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ShelterPrBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_CreateShelter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.AddShelterRequest, global::SheltersServer.isCorrectShelt>(serviceImpl.CreateShelter));
-      serviceBinder.AddMethod(__Method_DeleteShelter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.DeleteShelterRequest, global::SheltersServer.isCorrectShelt>(serviceImpl.DeleteShelter));
-      serviceBinder.AddMethod(__Method_GetShelters, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.GetSheltersRequest, global::SheltersServer.SheltersReply>(serviceImpl.GetShelters));
+      serviceBinder.AddMethod(__Method_CreateShelter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ClientShelters.AddShelterRequest, global::ClientShelters.isCorrectShelt>(serviceImpl.CreateShelter));
+      serviceBinder.AddMethod(__Method_DeleteShelter, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ClientShelters.DeleteShelterRequest, global::ClientShelters.isCorrectShelt>(serviceImpl.DeleteShelter));
+      serviceBinder.AddMethod(__Method_GetShelters, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ClientShelters.GetSheltersRequest, global::ClientShelters.SheltersReply>(serviceImpl.GetShelters));
+      serviceBinder.AddMethod(__Method_GetCitites, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ClientShelters.OnlyUser, global::SheltersServer.CitiesReply>(serviceImpl.GetCitites));
     }
 
   }

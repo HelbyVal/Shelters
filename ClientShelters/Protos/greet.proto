@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "ClientShelters";
+option csharp_namespace = "SheltersServer";
 
 package greet;
 

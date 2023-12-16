@@ -12,6 +12,7 @@
 	<Protobuf Include="Protos\AnimalPr.proto" GrpcServices="Server" />
 	<Protobuf Include="Protos\ContractPr.proto" GrpcServices="Server" />
 	<Protobuf Include="Protos\ShelterPr.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\Data.proto" GrpcServices="Server" />
    </ItemGroup>
 	
 

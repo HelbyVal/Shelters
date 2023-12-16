@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using ClientShelters;
+using Grpc.Core;
 using Microsoft.AspNetCore.Components.Routing;
 using SheltersServer;
 using SheltersServer.Models;
@@ -9,6 +10,7 @@ public class ShelterController : ShelterPr.ShelterPrBase
 {
     private readonly ILogger<ShelterController> _logger;
     private readonly ShelterService shelterService = new ShelterService();
+    private readonly CityService cityService = new CityService();
     public ShelterController(ILogger<ShelterController> logger)
     {
         _logger = logger;
@@ -51,7 +53,8 @@ public class ShelterController : ShelterPr.ShelterPrBase
                                              request.FiltName,
                                              request.FiltINN,
                                              request.FiltKPP,
-                                             request.LastId);
+                                             request.LastId,
+                                             request.PageSize);
 
         List<ShelterReply> repls = new List<ShelterReply>();
         foreach (var item in shelters.Item1)
@@ -59,7 +62,20 @@ public class ShelterController : ShelterPr.ShelterPrBase
             repls.Add(item.ToReply());
         }
         res.Shelter.AddRange(repls);
-        res.CountPage = repls.Count;
+        res.CountPage = shelters.Item2;
+        return Task.FromResult(res);
+    }
+
+    public override Task<CitiesReply> GetCitites(OnlyUser request, ServerCallContext context)
+    {
+        CitiesReply res = new CitiesReply();
+        var cities = cityService.GetCities(User.ToUser(request.User));
+        List<CityReply> repls = new List<CityReply>();
+        foreach (var item in cities)
+        {
+            repls.Add(item.ToReply());
+        }
+        res.CityReply.Add(repls);
         return Task.FromResult(res);
     }
 }

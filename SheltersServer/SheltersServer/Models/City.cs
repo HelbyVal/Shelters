@@ -16,5 +16,15 @@ namespace SheltersServer.Models
         public string? Name { get; set; }
         public string? Subject { get; set; }
         public List<Shelter>? Shelters { get; set; }
+
+        public CityReply ToReply()
+        {
+            return new CityReply
+            {
+                IdCity = Id_City,
+                Name = Name,
+                Subject = Subject
+            };
+        }
     }
 }

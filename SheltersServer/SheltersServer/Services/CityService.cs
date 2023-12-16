@@ -47,12 +47,12 @@ namespace SheltersServer.Services
                 return false;
             }
         }
-        public List<City> GetCities(User user, string filtname, string subjFilt, bool activeFilt)
+        public List<City> GetCities(User user)
         {
             try
             {
                 CheckRoles(user.Id_User, "Оператор ОМСУ", "Куратор ОМСУ");
-                return cityReg.GetCities(filtname, subjFilt, activeFilt);
+                return cityReg.GetCities();
             }
             catch(Exception ex)
             {

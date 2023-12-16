@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace ClientShelters {
+namespace SheltersServer {
 
   /// <summary>Holder for reflection information generated from Protos/AuthorizationPr.proto</summary>
   public static partial class AuthorizationPrReflection {
@@ -25,18 +25,20 @@ namespace ClientShelters {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChxQcm90b3MvQXV0aG9yaXphdGlvblByLnByb3RvEg1BdXRob3JpemF0aW9u",
-            "IjEKC1VzZXJSZXF1ZXN0EhAKCHVzZXJOYW1lGAEgASgJEhAKCHBhc3N3b3Jk",
-            "GAIgASgJIpQBCglVc2VyUmVwbHkSDwoHaWRfVXNlchgBIAEoBRIQCgh1c2Vy",
-            "TmFtZRgCIAEoCRIQCghwYXNzd29yZBgDIAEoCRIMCgRuYW1lGAQgASgJEg8K",
-            "B3N1cm5hbWUYBSABKAkSEAoIbGFzdE5hbWUYBiABKAkSEgoKaWRfc2hlbHRl",
-            "chgHIAEoBRINCgVSb2xlcxgIIAMoCTJOCg1BdXRob3JpemF0aW9uEj0KBUxv",
-            "Z0luEhouQXV0aG9yaXphdGlvbi5Vc2VyUmVxdWVzdBoYLkF1dGhvcml6YXRp",
-            "b24uVXNlclJlcGx5QhGqAg5DbGllbnRTaGVsdGVyc2IGcHJvdG8z"));
+            "GhFQcm90b3MvRGF0YS5wcm90byIxCgtVc2VyUmVxdWVzdBIQCgh1c2VyTmFt",
+            "ZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSK5AQoJVXNlclJlcGx5Eg8KB2lk",
+            "X1VzZXIYASABKAUSEAoIdXNlck5hbWUYAiABKAkSEAoIcGFzc3dvcmQYAyAB",
+            "KAkSDAoEbmFtZRgEIAEoCRIPCgdzdXJuYW1lGAUgASgJEhAKCGxhc3ROYW1l",
+            "GAYgASgJEhIKCmlkX3NoZWx0ZXIYByABKAUSDQoFUm9sZXMYCCADKAkSIwoH",
+            "c2hlbHRlchgJIAEoCzISLkRhdGEuU2hlbHRlclJlcGx5Mk4KDUF1dGhvcml6",
+            "YXRpb24SPQoFTG9nSW4SGi5BdXRob3JpemF0aW9uLlVzZXJSZXF1ZXN0Ghgu",
+            "QXV0aG9yaXphdGlvbi5Vc2VyUmVwbHlCEaoCDlNoZWx0ZXJzU2VydmVyYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::SheltersServer.DataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.UserRequest), global::ClientShelters.UserRequest.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.UserReply), global::ClientShelters.UserReply.Parser, new[]{ "IdUser", "UserName", "Password", "Name", "Surname", "LastName", "IdShelter", "Roles" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UserRequest), global::SheltersServer.UserRequest.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UserReply), global::SheltersServer.UserReply.Parser, new[]{ "IdUser", "UserName", "Password", "Name", "Surname", "LastName", "IdShelter", "Roles", "Shelter" }, null, null, null, null)
           }));
     }
     #endregion
@@ -58,7 +60,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AuthorizationPrReflection.Descriptor.MessageTypes[0]; }
+      get { return global::SheltersServer.AuthorizationPrReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -285,7 +287,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AuthorizationPrReflection.Descriptor.MessageTypes[1]; }
+      get { return global::SheltersServer.AuthorizationPrReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -313,6 +315,7 @@ namespace ClientShelters {
       lastName_ = other.lastName_;
       idShelter_ = other.idShelter_;
       roles_ = other.roles_.Clone();
+      shelter_ = other.shelter_ != null ? other.shelter_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -417,6 +420,18 @@ namespace ClientShelters {
       get { return roles_; }
     }
 
+    /// <summary>Field number for the "shelter" field.</summary>
+    public const int ShelterFieldNumber = 9;
+    private global::SheltersServer.ShelterReply shelter_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SheltersServer.ShelterReply Shelter {
+      get { return shelter_; }
+      set {
+        shelter_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -440,6 +455,7 @@ namespace ClientShelters {
       if (LastName != other.LastName) return false;
       if (IdShelter != other.IdShelter) return false;
       if(!roles_.Equals(other.roles_)) return false;
+      if (!object.Equals(Shelter, other.Shelter)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -455,6 +471,7 @@ namespace ClientShelters {
       if (LastName.Length != 0) hash ^= LastName.GetHashCode();
       if (IdShelter != 0) hash ^= IdShelter.GetHashCode();
       hash ^= roles_.GetHashCode();
+      if (shelter_ != null) hash ^= Shelter.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -502,6 +519,10 @@ namespace ClientShelters {
         output.WriteInt32(IdShelter);
       }
       roles_.WriteTo(output, _repeated_roles_codec);
+      if (shelter_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Shelter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -541,6 +562,10 @@ namespace ClientShelters {
         output.WriteInt32(IdShelter);
       }
       roles_.WriteTo(ref output, _repeated_roles_codec);
+      if (shelter_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Shelter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -573,6 +598,9 @@ namespace ClientShelters {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(IdShelter);
       }
       size += roles_.CalculateSize(_repeated_roles_codec);
+      if (shelter_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Shelter);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -607,6 +635,12 @@ namespace ClientShelters {
         IdShelter = other.IdShelter;
       }
       roles_.Add(other.roles_);
+      if (other.shelter_ != null) {
+        if (shelter_ == null) {
+          Shelter = new global::SheltersServer.ShelterReply();
+        }
+        Shelter.MergeFrom(other.Shelter);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -654,6 +688,13 @@ namespace ClientShelters {
             roles_.AddEntriesFrom(input, _repeated_roles_codec);
             break;
           }
+          case 74: {
+            if (shelter_ == null) {
+              Shelter = new global::SheltersServer.ShelterReply();
+            }
+            input.ReadMessage(Shelter);
+            break;
+          }
         }
       }
     #endif
@@ -699,6 +740,13 @@ namespace ClientShelters {
           }
           case 66: {
             roles_.AddEntriesFrom(ref input, _repeated_roles_codec);
+            break;
+          }
+          case 74: {
+            if (shelter_ == null) {
+              Shelter = new global::SheltersServer.ShelterReply();
+            }
+            input.ReadMessage(Shelter);
             break;
           }
         }

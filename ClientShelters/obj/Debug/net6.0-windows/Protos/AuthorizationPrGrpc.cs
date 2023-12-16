@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace ClientShelters {
+namespace SheltersServer {
   public static partial class Authorization
   {
     static readonly string __ServiceName = "Authorization.Authorization";
@@ -46,12 +46,12 @@ namespace ClientShelters {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.UserRequest> __Marshaller_Authorization_UserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.UserRequest.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.UserRequest> __Marshaller_Authorization_UserRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.UserRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.UserReply> __Marshaller_Authorization_UserReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.UserReply.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.UserReply> __Marshaller_Authorization_UserReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.UserReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ClientShelters.UserRequest, global::ClientShelters.UserReply> __Method_LogIn = new grpc::Method<global::ClientShelters.UserRequest, global::ClientShelters.UserReply>(
+    static readonly grpc::Method<global::SheltersServer.UserRequest, global::SheltersServer.UserReply> __Method_LogIn = new grpc::Method<global::SheltersServer.UserRequest, global::SheltersServer.UserReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "LogIn",
@@ -61,7 +61,7 @@ namespace ClientShelters {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::ClientShelters.AuthorizationPrReflection.Descriptor.Services[0]; }
+      get { return global::SheltersServer.AuthorizationPrReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Client for Authorization</summary>
@@ -92,22 +92,22 @@ namespace ClientShelters {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.UserReply LogIn(global::ClientShelters.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::SheltersServer.UserReply LogIn(global::SheltersServer.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return LogIn(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.UserReply LogIn(global::ClientShelters.UserRequest request, grpc::CallOptions options)
+      public virtual global::SheltersServer.UserReply LogIn(global::SheltersServer.UserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_LogIn, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.UserReply> LogInAsync(global::ClientShelters.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.UserReply> LogInAsync(global::SheltersServer.UserRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return LogInAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.UserReply> LogInAsync(global::ClientShelters.UserRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.UserReply> LogInAsync(global::SheltersServer.UserRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_LogIn, null, options, request);
       }

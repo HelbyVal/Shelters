@@ -33,6 +33,7 @@ namespace SheltersServer.Models
                 UserName = UserName,
                 Password = Password,
                 IdShelter = Id_Shelter,
+                ShelterReply = Shelter.ToReply(),
             };
         }
 

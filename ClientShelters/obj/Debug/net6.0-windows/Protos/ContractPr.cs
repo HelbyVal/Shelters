@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace ClientShelters {
+namespace SheltersServer {
 
   /// <summary>Holder for reflection information generated from Protos/ContractPr.proto</summary>
   public static partial class ContractPrReflection {
@@ -25,43 +25,42 @@ namespace ClientShelters {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdQcm90b3MvQ29udHJhY3RQci5wcm90bxIKQ29udHJhY3RQchocUHJvdG9z",
-            "L0F1dGhvcml6YXRpb25Qci5wcm90bxoVUHJvdG9zL0FuaW1hbFByLnByb3Rv",
-            "Gh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvIsABChJBZGRDb250",
-            "cmFjdFJlcXVlc3QSJgoEdXNlchgBIAEoCzIYLkF1dGhvcml6YXRpb24uVXNl",
-            "clJlcGx5EhIKCmNvc3RQZXJEYXkYAiABKAESLQoJc3RhcnREYXRlGAMgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIrCgdlbmREYXRlGAQgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBISCgppZF9TaGVsdGVyGAUg",
-            "ASgFIlQKFURlbGV0ZUNvbnRyYWN0UmVxdWVzdBImCgR1c2VyGAEgASgLMhgu",
-            "QXV0aG9yaXphdGlvbi5Vc2VyUmVwbHkSEwoLbnVtYmVyQ29udHIYAiABKAUi",
-            "qwIKEkdldENvbnRyYXRzUmVxdWVzdBImCgR1c2VyGAEgASgLMhguQXV0aG9y",
-            "aXphdGlvbi5Vc2VyUmVwbHkSEgoKaWRfc2hlbHRlchgCIAEoBRITCgthbGxT",
-            "aGVsdGVycxgDIAEoCBIPCgdmaWx0TnVtGAQgASgFEhUKDWZpbHRDb3N0U3Rh",
-            "cnQYBSABKAUSEwoLZmlsdENvc3RFbmQYBiABKAUSMQoNZmlsdERhdGVTdGFy",
-            "dBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLwoLZmlsdERh",
-            "dGVFbmQYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEg4KBmxh",
-            "c3RJZBgJIAEoBRITCgtpbmNsdWRlS2VlcBgKIAEoCCJRCg5Db250cmFjdHNS",
-            "ZXBseRIsCgljb250cmFjdHMYASADKAsyGS5Db250cmFjdFByLkNvbnRyYWN0",
-            "UmVwbHkSEQoJY291bnRQYWdlGAIgASgFIqMBCg1Db250cmFjdFJlcGx5Eg4K",
-            "Bk51bWJlchgBIAEoBRISCgpDb3N0UGVyRGF5GAIgASgBEi0KCVN0YXJ0RGF0",
-            "ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASKwoHRW5kRGF0",
-            "ZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEgoKSWRfU2hl",
-            "bHRlchgFIAEoBSIjCg5pc0NvcnJlY3RDb250chIRCglpc0NvcnJlY3QYASAB",
-            "KAgy+gEKC0NvbnRyYWN0Q29uEk8KEUNyZWF0ZU5ld0NvbnRyYWN0Eh4uQ29u",
-            "dHJhY3RQci5BZGRDb250cmFjdFJlcXVlc3QaGi5Db250cmFjdFByLmlzQ29y",
-            "cmVjdENvbnRyEk8KDkRlbGV0ZUNvbnRyYWN0EiEuQ29udHJhY3RQci5EZWxl",
-            "dGVDb250cmFjdFJlcXVlc3QaGi5Db250cmFjdFByLmlzQ29ycmVjdENvbnRy",
-            "EkkKC0dldENvbnRyYXRzEh4uQ29udHJhY3RQci5HZXRDb250cmF0c1JlcXVl",
-            "c3QaGi5Db250cmFjdFByLkNvbnRyYWN0c1JlcGx5QhGqAg5DbGllbnRTaGVs",
-            "dGVyc2IGcHJvdG8z"));
+            "L0F1dGhvcml6YXRpb25Qci5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVz",
+            "dGFtcC5wcm90byLAAQoSQWRkQ29udHJhY3RSZXF1ZXN0EiYKBHVzZXIYASAB",
+            "KAsyGC5BdXRob3JpemF0aW9uLlVzZXJSZXBseRISCgpjb3N0UGVyRGF5GAIg",
+            "ASgBEi0KCXN0YXJ0RGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
+            "c3RhbXASKwoHZW5kRGF0ZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
+            "c3RhbXASEgoKaWRfU2hlbHRlchgFIAEoBSJUChVEZWxldGVDb250cmFjdFJl",
+            "cXVlc3QSJgoEdXNlchgBIAEoCzIYLkF1dGhvcml6YXRpb24uVXNlclJlcGx5",
+            "EhMKC251bWJlckNvbnRyGAIgASgFIqsCChJHZXRDb250cmF0c1JlcXVlc3QS",
+            "JgoEdXNlchgBIAEoCzIYLkF1dGhvcml6YXRpb24uVXNlclJlcGx5EhIKCmlk",
+            "X3NoZWx0ZXIYAiABKAUSEwoLYWxsU2hlbHRlcnMYAyABKAgSDwoHZmlsdE51",
+            "bRgEIAEoBRIVCg1maWx0Q29zdFN0YXJ0GAUgASgFEhMKC2ZpbHRDb3N0RW5k",
+            "GAYgASgFEjEKDWZpbHREYXRlU3RhcnQYByABKAsyGi5nb29nbGUucHJvdG9i",
+            "dWYuVGltZXN0YW1wEi8KC2ZpbHREYXRlRW5kGAggASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcBIOCgZsYXN0SWQYCSABKAUSEwoLaW5jbHVkZUtl",
+            "ZXAYCiABKAgiUQoOQ29udHJhY3RzUmVwbHkSLAoJY29udHJhY3RzGAEgAygL",
+            "MhkuQ29udHJhY3RQci5Db250cmFjdFJlcGx5EhEKCWNvdW50UGFnZRgCIAEo",
+            "BSKjAQoNQ29udHJhY3RSZXBseRIOCgZOdW1iZXIYASABKAUSEgoKQ29zdFBl",
+            "ckRheRgCIAEoARItCglTdGFydERhdGUYAyABKAsyGi5nb29nbGUucHJvdG9i",
+            "dWYuVGltZXN0YW1wEisKB0VuZERhdGUYBCABKAsyGi5nb29nbGUucHJvdG9i",
+            "dWYuVGltZXN0YW1wEhIKCklkX1NoZWx0ZXIYBSABKAUiIwoOaXNDb3JyZWN0",
+            "Q29udHISEQoJaXNDb3JyZWN0GAEgASgIMvoBCgtDb250cmFjdENvbhJPChFD",
+            "cmVhdGVOZXdDb250cmFjdBIeLkNvbnRyYWN0UHIuQWRkQ29udHJhY3RSZXF1",
+            "ZXN0GhouQ29udHJhY3RQci5pc0NvcnJlY3RDb250chJPCg5EZWxldGVDb250",
+            "cmFjdBIhLkNvbnRyYWN0UHIuRGVsZXRlQ29udHJhY3RSZXF1ZXN0GhouQ29u",
+            "dHJhY3RQci5pc0NvcnJlY3RDb250chJJCgtHZXRDb250cmF0cxIeLkNvbnRy",
+            "YWN0UHIuR2V0Q29udHJhdHNSZXF1ZXN0GhouQ29udHJhY3RQci5Db250cmFj",
+            "dHNSZXBseUIRqgIOU2hlbHRlcnNTZXJ2ZXJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ClientShelters.AuthorizationPrReflection.Descriptor, global::ClientShelters.AnimalPrReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::SheltersServer.AuthorizationPrReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.AddContractRequest), global::ClientShelters.AddContractRequest.Parser, new[]{ "User", "CostPerDay", "StartDate", "EndDate", "IdShelter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.DeleteContractRequest), global::ClientShelters.DeleteContractRequest.Parser, new[]{ "User", "NumberContr" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.GetContratsRequest), global::ClientShelters.GetContratsRequest.Parser, new[]{ "User", "IdShelter", "AllShelters", "FiltNum", "FiltCostStart", "FiltCostEnd", "FiltDateStart", "FiltDateEnd", "LastId", "IncludeKeep" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.ContractsReply), global::ClientShelters.ContractsReply.Parser, new[]{ "Contracts", "CountPage" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.ContractReply), global::ClientShelters.ContractReply.Parser, new[]{ "Number", "CostPerDay", "StartDate", "EndDate", "IdShelter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.isCorrectContr), global::ClientShelters.isCorrectContr.Parser, new[]{ "IsCorrect" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AddContractRequest), global::SheltersServer.AddContractRequest.Parser, new[]{ "User", "CostPerDay", "StartDate", "EndDate", "IdShelter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.DeleteContractRequest), global::SheltersServer.DeleteContractRequest.Parser, new[]{ "User", "NumberContr" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.GetContratsRequest), global::SheltersServer.GetContratsRequest.Parser, new[]{ "User", "IdShelter", "AllShelters", "FiltNum", "FiltCostStart", "FiltCostEnd", "FiltDateStart", "FiltDateEnd", "LastId", "IncludeKeep" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.ContractsReply), global::SheltersServer.ContractsReply.Parser, new[]{ "Contracts", "CountPage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.ContractReply), global::SheltersServer.ContractReply.Parser, new[]{ "Number", "CostPerDay", "StartDate", "EndDate", "IdShelter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.isCorrectContr), global::SheltersServer.isCorrectContr.Parser, new[]{ "IsCorrect" }, null, null, null, null)
           }));
     }
     #endregion
@@ -83,7 +82,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.ContractPrReflection.Descriptor.MessageTypes[0]; }
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -119,10 +118,10 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::ClientShelters.UserReply user_;
+    private global::SheltersServer.UserReply user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ClientShelters.UserReply User {
+    public global::SheltersServer.UserReply User {
       get { return user_; }
       set {
         user_ = value;
@@ -316,7 +315,7 @@ namespace ClientShelters {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::ClientShelters.UserReply();
+          User = new global::SheltersServer.UserReply();
         }
         User.MergeFrom(other.User);
       }
@@ -355,7 +354,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -399,7 +398,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -448,7 +447,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.ContractPrReflection.Descriptor.MessageTypes[1]; }
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -481,10 +480,10 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::ClientShelters.UserReply user_;
+    private global::SheltersServer.UserReply user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ClientShelters.UserReply User {
+    public global::SheltersServer.UserReply User {
       get { return user_; }
       set {
         user_ = value;
@@ -603,7 +602,7 @@ namespace ClientShelters {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::ClientShelters.UserReply();
+          User = new global::SheltersServer.UserReply();
         }
         User.MergeFrom(other.User);
       }
@@ -627,7 +626,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -653,7 +652,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -684,7 +683,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.ContractPrReflection.Descriptor.MessageTypes[2]; }
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -725,10 +724,10 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::ClientShelters.UserReply user_;
+    private global::SheltersServer.UserReply user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ClientShelters.UserReply User {
+    public global::SheltersServer.UserReply User {
       get { return user_; }
       set {
         user_ = value;
@@ -1047,7 +1046,7 @@ namespace ClientShelters {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::ClientShelters.UserReply();
+          User = new global::SheltersServer.UserReply();
         }
         User.MergeFrom(other.User);
       }
@@ -1101,7 +1100,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -1165,7 +1164,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -1234,7 +1233,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.ContractPrReflection.Descriptor.MessageTypes[3]; }
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1267,12 +1266,12 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "contracts" field.</summary>
     public const int ContractsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::ClientShelters.ContractReply> _repeated_contracts_codec
-        = pb::FieldCodec.ForMessage(10, global::ClientShelters.ContractReply.Parser);
-    private readonly pbc::RepeatedField<global::ClientShelters.ContractReply> contracts_ = new pbc::RepeatedField<global::ClientShelters.ContractReply>();
+    private static readonly pb::FieldCodec<global::SheltersServer.ContractReply> _repeated_contracts_codec
+        = pb::FieldCodec.ForMessage(10, global::SheltersServer.ContractReply.Parser);
+    private readonly pbc::RepeatedField<global::SheltersServer.ContractReply> contracts_ = new pbc::RepeatedField<global::SheltersServer.ContractReply>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::ClientShelters.ContractReply> Contracts {
+    public pbc::RepeatedField<global::SheltersServer.ContractReply> Contracts {
       get { return contracts_; }
     }
 
@@ -1450,7 +1449,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.ContractPrReflection.Descriptor.MessageTypes[4]; }
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1806,7 +1805,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.ContractPrReflection.Descriptor.MessageTypes[5]; }
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

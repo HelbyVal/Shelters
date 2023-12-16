@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "SheltersServer";
+
+package Data;
+
+service Data {
+} 
+
+message ShelterReply {
+	int32 Id_Shelter = 1;
+	int32 Id_City = 2;
+	string Name = 3;
+	string INN = 4;
+	string KPP = 5;
+	string OrgType = 6;
+}
+
+message CityReply {
+	int32 Id_City = 1;
+	string Name = 2;
+	string Subject = 3;
+}
+
+message CitiesReply {
+	repeated CityReply CityReply = 1;
+}

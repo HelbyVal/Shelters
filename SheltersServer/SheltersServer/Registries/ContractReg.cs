@@ -54,7 +54,7 @@ namespace SheltersServer.Registries
             contrs = contrs.Where(x => (x.CostPerDay >= filtCostStart) && (x.CostPerDay <= filtCostEnd));
             contrs = contrs.Where(x => (x.StartDate >= filtDateStart) && (x.EndDate <= filtDateEnd));
 
-            int countPage = contrs.Count() / count;
+            int countPage = contrs.Count() / count + 1;
             contrs.OrderBy(x => x.Number)
                    .Where(x => x.Number > lastId)
                    .Take(count);

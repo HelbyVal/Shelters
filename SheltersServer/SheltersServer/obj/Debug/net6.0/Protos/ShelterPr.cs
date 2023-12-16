@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace SheltersServer {
+namespace ClientShelters {
 
   /// <summary>Holder for reflection information generated from Protos/ShelterPr.proto</summary>
   public static partial class ShelterPrReflection {
@@ -25,37 +25,37 @@ namespace SheltersServer {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZQcm90b3MvU2hlbHRlclByLnByb3RvEglTaGVsdGVyUHIaHFByb3Rvcy9B",
-            "dXRob3JpemF0aW9uUHIucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3Rh",
-            "bXAucHJvdG8ihQEKEUFkZFNoZWx0ZXJSZXF1ZXN0EiYKBHVzZXIYASABKAsy",
-            "GC5BdXRob3JpemF0aW9uLlVzZXJSZXBseRIMCgRuYW1lGAIgASgJEgsKA0lO",
-            "ThgDIAEoCRILCgNLUFAYBCABKAkSDwoHb3JnVHlwZRgFIAEoCRIPCgdpZF9D",
-            "aXR5GAYgASgFIlIKFERlbGV0ZVNoZWx0ZXJSZXF1ZXN0EiYKBHVzZXIYASAB",
-            "KAsyGC5BdXRob3JpemF0aW9uLlVzZXJSZXBseRISCgppZF9zaGVsdGVyGAIg",
-            "ASgFIrwBChJHZXRTaGVsdGVyc1JlcXVlc3QSJgoEdXNlchgBIAEoCzIYLkF1",
-            "dGhvcml6YXRpb24uVXNlclJlcGx5EhAKCGZpbHRDaXR5GAIgASgFEhMKC2Zp",
-            "bHRTaGVsdGVyGAMgASgFEhMKC2ZpbHRPcmdUeXBlGAQgASgJEhAKCGZpbHRO",
-            "YW1lGAUgASgJEg8KB2ZpbHRJTk4YBiABKAkSDwoHZmlsdEtQUBgHIAEoCRIO",
-            "CgZsYXN0SWQYCCABKAUiTAoNU2hlbHRlcnNSZXBseRIoCgdzaGVsdGVyGAEg",
-            "AygLMhcuU2hlbHRlclByLlNoZWx0ZXJSZXBseRIRCgljb3VudFBhZ2UYAiAB",
-            "KAUibAoMU2hlbHRlclJlcGx5EhIKCklkX1NoZWx0ZXIYASABKAUSDAoETmFt",
-            "ZRgCIAEoCRILCgNJTk4YAyABKAkSCwoDS1BQGAQgASgJEg8KB09yZ1R5cGUY",
-            "BSABKAkSDwoHSWRfQ2l0eRgGIAEoBSIjCg5pc0NvcnJlY3RTaGVsdBIRCglp",
-            "c0NvcnJlY3QYASABKAgy6gEKCVNoZWx0ZXJQchJICg1DcmVhdGVTaGVsdGVy",
-            "EhwuU2hlbHRlclByLkFkZFNoZWx0ZXJSZXF1ZXN0GhkuU2hlbHRlclByLmlz",
-            "Q29ycmVjdFNoZWx0EksKDURlbGV0ZVNoZWx0ZXISHy5TaGVsdGVyUHIuRGVs",
-            "ZXRlU2hlbHRlclJlcXVlc3QaGS5TaGVsdGVyUHIuaXNDb3JyZWN0U2hlbHQS",
-            "RgoLR2V0U2hlbHRlcnMSHS5TaGVsdGVyUHIuR2V0U2hlbHRlcnNSZXF1ZXN0",
-            "GhguU2hlbHRlclByLlNoZWx0ZXJzUmVwbHlCEaoCDlNoZWx0ZXJzU2VydmVy",
-            "YgZwcm90bzM="));
+            "dXRob3JpemF0aW9uUHIucHJvdG8aEVByb3Rvcy9EYXRhLnByb3RvIoUBChFB",
+            "ZGRTaGVsdGVyUmVxdWVzdBImCgR1c2VyGAEgASgLMhguQXV0aG9yaXphdGlv",
+            "bi5Vc2VyUmVwbHkSDAoEbmFtZRgCIAEoCRILCgNJTk4YAyABKAkSCwoDS1BQ",
+            "GAQgASgJEg8KB29yZ1R5cGUYBSABKAkSDwoHaWRfQ2l0eRgGIAEoBSJSChRE",
+            "ZWxldGVTaGVsdGVyUmVxdWVzdBImCgR1c2VyGAEgASgLMhguQXV0aG9yaXph",
+            "dGlvbi5Vc2VyUmVwbHkSEgoKaWRfc2hlbHRlchgCIAEoBSLOAQoSR2V0U2hl",
+            "bHRlcnNSZXF1ZXN0EiYKBHVzZXIYASABKAsyGC5BdXRob3JpemF0aW9uLlVz",
+            "ZXJSZXBseRIQCghmaWx0Q2l0eRgCIAEoBRITCgtmaWx0U2hlbHRlchgDIAEo",
+            "BRITCgtmaWx0T3JnVHlwZRgEIAEoCRIQCghmaWx0TmFtZRgFIAEoCRIPCgdm",
+            "aWx0SU5OGAYgASgJEg8KB2ZpbHRLUFAYByABKAkSDgoGbGFzdElkGAggASgF",
+            "EhAKCHBhZ2VTaXplGAkgASgFIkcKDVNoZWx0ZXJzUmVwbHkSIwoHc2hlbHRl",
+            "chgBIAMoCzISLkRhdGEuU2hlbHRlclJlcGx5EhEKCWNvdW50UGFnZRgCIAEo",
+            "BSIjCg5pc0NvcnJlY3RTaGVsdBIRCglpc0NvcnJlY3QYASABKAgiMgoIT25s",
+            "eVVzZXISJgoEdXNlchgBIAEoCzIYLkF1dGhvcml6YXRpb24uVXNlclJlcGx5",
+            "MqACCglTaGVsdGVyUHISSAoNQ3JlYXRlU2hlbHRlchIcLlNoZWx0ZXJQci5B",
+            "ZGRTaGVsdGVyUmVxdWVzdBoZLlNoZWx0ZXJQci5pc0NvcnJlY3RTaGVsdBJL",
+            "Cg1EZWxldGVTaGVsdGVyEh8uU2hlbHRlclByLkRlbGV0ZVNoZWx0ZXJSZXF1",
+            "ZXN0GhkuU2hlbHRlclByLmlzQ29ycmVjdFNoZWx0EkYKC0dldFNoZWx0ZXJz",
+            "Eh0uU2hlbHRlclByLkdldFNoZWx0ZXJzUmVxdWVzdBoYLlNoZWx0ZXJQci5T",
+            "aGVsdGVyc1JlcGx5EjQKCkdldENpdGl0ZXMSEy5TaGVsdGVyUHIuT25seVVz",
+            "ZXIaES5EYXRhLkNpdGllc1JlcGx5QhGqAg5DbGllbnRTaGVsdGVyc2IGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::SheltersServer.AuthorizationPrReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::SheltersServer.AuthorizationPrReflection.Descriptor, global::SheltersServer.DataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AddShelterRequest), global::SheltersServer.AddShelterRequest.Parser, new[]{ "User", "Name", "INN", "KPP", "OrgType", "IdCity" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.DeleteShelterRequest), global::SheltersServer.DeleteShelterRequest.Parser, new[]{ "User", "IdShelter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.GetSheltersRequest), global::SheltersServer.GetSheltersRequest.Parser, new[]{ "User", "FiltCity", "FiltShelter", "FiltOrgType", "FiltName", "FiltINN", "FiltKPP", "LastId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.SheltersReply), global::SheltersServer.SheltersReply.Parser, new[]{ "Shelter", "CountPage" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.ShelterReply), global::SheltersServer.ShelterReply.Parser, new[]{ "IdShelter", "Name", "INN", "KPP", "OrgType", "IdCity" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.isCorrectShelt), global::SheltersServer.isCorrectShelt.Parser, new[]{ "IsCorrect" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.AddShelterRequest), global::ClientShelters.AddShelterRequest.Parser, new[]{ "User", "Name", "INN", "KPP", "OrgType", "IdCity" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.DeleteShelterRequest), global::ClientShelters.DeleteShelterRequest.Parser, new[]{ "User", "IdShelter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.GetSheltersRequest), global::ClientShelters.GetSheltersRequest.Parser, new[]{ "User", "FiltCity", "FiltShelter", "FiltOrgType", "FiltName", "FiltINN", "FiltKPP", "LastId", "PageSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.SheltersReply), global::ClientShelters.SheltersReply.Parser, new[]{ "Shelter", "CountPage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.isCorrectShelt), global::ClientShelters.isCorrectShelt.Parser, new[]{ "IsCorrect" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.OnlyUser), global::ClientShelters.OnlyUser.Parser, new[]{ "User" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,7 +77,7 @@ namespace SheltersServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SheltersServer.ShelterPrReflection.Descriptor.MessageTypes[0]; }
+      get { return global::ClientShelters.ShelterPrReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -461,7 +461,7 @@ namespace SheltersServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SheltersServer.ShelterPrReflection.Descriptor.MessageTypes[1]; }
+      get { return global::ClientShelters.ShelterPrReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -697,7 +697,7 @@ namespace SheltersServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SheltersServer.ShelterPrReflection.Descriptor.MessageTypes[2]; }
+      get { return global::ClientShelters.ShelterPrReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -725,6 +725,7 @@ namespace SheltersServer {
       filtINN_ = other.filtINN_;
       filtKPP_ = other.filtKPP_;
       lastId_ = other.lastId_;
+      pageSize_ = other.pageSize_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -830,6 +831,18 @@ namespace SheltersServer {
       }
     }
 
+    /// <summary>Field number for the "pageSize" field.</summary>
+    public const int PageSizeFieldNumber = 9;
+    private int pageSize_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int PageSize {
+      get { return pageSize_; }
+      set {
+        pageSize_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -853,6 +866,7 @@ namespace SheltersServer {
       if (FiltINN != other.FiltINN) return false;
       if (FiltKPP != other.FiltKPP) return false;
       if (LastId != other.LastId) return false;
+      if (PageSize != other.PageSize) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -868,6 +882,7 @@ namespace SheltersServer {
       if (FiltINN.Length != 0) hash ^= FiltINN.GetHashCode();
       if (FiltKPP.Length != 0) hash ^= FiltKPP.GetHashCode();
       if (LastId != 0) hash ^= LastId.GetHashCode();
+      if (PageSize != 0) hash ^= PageSize.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -918,6 +933,10 @@ namespace SheltersServer {
         output.WriteRawTag(64);
         output.WriteInt32(LastId);
       }
+      if (PageSize != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(PageSize);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -960,6 +979,10 @@ namespace SheltersServer {
         output.WriteRawTag(64);
         output.WriteInt32(LastId);
       }
+      if (PageSize != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(PageSize);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -993,6 +1016,9 @@ namespace SheltersServer {
       }
       if (LastId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(LastId);
+      }
+      if (PageSize != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PageSize);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1032,6 +1058,9 @@ namespace SheltersServer {
       }
       if (other.LastId != 0) {
         LastId = other.LastId;
+      }
+      if (other.PageSize != 0) {
+        PageSize = other.PageSize;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1081,6 +1110,10 @@ namespace SheltersServer {
           }
           case 64: {
             LastId = input.ReadInt32();
+            break;
+          }
+          case 72: {
+            PageSize = input.ReadInt32();
             break;
           }
         }
@@ -1133,6 +1166,10 @@ namespace SheltersServer {
             LastId = input.ReadInt32();
             break;
           }
+          case 72: {
+            PageSize = input.ReadInt32();
+            break;
+          }
         }
       }
     }
@@ -1155,7 +1192,7 @@ namespace SheltersServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SheltersServer.ShelterPrReflection.Descriptor.MessageTypes[3]; }
+      get { return global::ClientShelters.ShelterPrReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1357,381 +1394,6 @@ namespace SheltersServer {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ShelterReply : pb::IMessage<ShelterReply>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<ShelterReply> _parser = new pb::MessageParser<ShelterReply>(() => new ShelterReply());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<ShelterReply> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::SheltersServer.ShelterPrReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ShelterReply() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ShelterReply(ShelterReply other) : this() {
-      idShelter_ = other.idShelter_;
-      name_ = other.name_;
-      iNN_ = other.iNN_;
-      kPP_ = other.kPP_;
-      orgType_ = other.orgType_;
-      idCity_ = other.idCity_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ShelterReply Clone() {
-      return new ShelterReply(this);
-    }
-
-    /// <summary>Field number for the "Id_Shelter" field.</summary>
-    public const int IdShelterFieldNumber = 1;
-    private int idShelter_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int IdShelter {
-      get { return idShelter_; }
-      set {
-        idShelter_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "Name" field.</summary>
-    public const int NameFieldNumber = 2;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "INN" field.</summary>
-    public const int INNFieldNumber = 3;
-    private string iNN_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string INN {
-      get { return iNN_; }
-      set {
-        iNN_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "KPP" field.</summary>
-    public const int KPPFieldNumber = 4;
-    private string kPP_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string KPP {
-      get { return kPP_; }
-      set {
-        kPP_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "OrgType" field.</summary>
-    public const int OrgTypeFieldNumber = 5;
-    private string orgType_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string OrgType {
-      get { return orgType_; }
-      set {
-        orgType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "Id_City" field.</summary>
-    public const int IdCityFieldNumber = 6;
-    private int idCity_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int IdCity {
-      get { return idCity_; }
-      set {
-        idCity_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as ShelterReply);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(ShelterReply other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (IdShelter != other.IdShelter) return false;
-      if (Name != other.Name) return false;
-      if (INN != other.INN) return false;
-      if (KPP != other.KPP) return false;
-      if (OrgType != other.OrgType) return false;
-      if (IdCity != other.IdCity) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (IdShelter != 0) hash ^= IdShelter.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (INN.Length != 0) hash ^= INN.GetHashCode();
-      if (KPP.Length != 0) hash ^= KPP.GetHashCode();
-      if (OrgType.Length != 0) hash ^= OrgType.GetHashCode();
-      if (IdCity != 0) hash ^= IdCity.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (IdShelter != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(IdShelter);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (INN.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(INN);
-      }
-      if (KPP.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(KPP);
-      }
-      if (OrgType.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(OrgType);
-      }
-      if (IdCity != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(IdCity);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (IdShelter != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(IdShelter);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (INN.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(INN);
-      }
-      if (KPP.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(KPP);
-      }
-      if (OrgType.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(OrgType);
-      }
-      if (IdCity != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(IdCity);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (IdShelter != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IdShelter);
-      }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (INN.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(INN);
-      }
-      if (KPP.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(KPP);
-      }
-      if (OrgType.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(OrgType);
-      }
-      if (IdCity != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(IdCity);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(ShelterReply other) {
-      if (other == null) {
-        return;
-      }
-      if (other.IdShelter != 0) {
-        IdShelter = other.IdShelter;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.INN.Length != 0) {
-        INN = other.INN;
-      }
-      if (other.KPP.Length != 0) {
-        KPP = other.KPP;
-      }
-      if (other.OrgType.Length != 0) {
-        OrgType = other.OrgType;
-      }
-      if (other.IdCity != 0) {
-        IdCity = other.IdCity;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            IdShelter = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 26: {
-            INN = input.ReadString();
-            break;
-          }
-          case 34: {
-            KPP = input.ReadString();
-            break;
-          }
-          case 42: {
-            OrgType = input.ReadString();
-            break;
-          }
-          case 48: {
-            IdCity = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 8: {
-            IdShelter = input.ReadInt32();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 26: {
-            INN = input.ReadString();
-            break;
-          }
-          case 34: {
-            KPP = input.ReadString();
-            break;
-          }
-          case 42: {
-            OrgType = input.ReadString();
-            break;
-          }
-          case 48: {
-            IdCity = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class isCorrectShelt : pb::IMessage<isCorrectShelt>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1746,7 +1408,7 @@ namespace SheltersServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SheltersServer.ShelterPrReflection.Descriptor.MessageTypes[5]; }
+      get { return global::ClientShelters.ShelterPrReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1912,6 +1574,205 @@ namespace SheltersServer {
             break;
           case 8: {
             IsCorrect = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class OnlyUser : pb::IMessage<OnlyUser>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<OnlyUser> _parser = new pb::MessageParser<OnlyUser>(() => new OnlyUser());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<OnlyUser> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::ClientShelters.ShelterPrReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OnlyUser() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OnlyUser(OnlyUser other) : this() {
+      user_ = other.user_ != null ? other.user_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OnlyUser Clone() {
+      return new OnlyUser(this);
+    }
+
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 1;
+    private global::SheltersServer.UserReply user_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SheltersServer.UserReply User {
+      get { return user_; }
+      set {
+        user_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as OnlyUser);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(OnlyUser other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(User, other.User)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (user_ != null) hash ^= User.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (user_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(User);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (user_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(User);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (user_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(User);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(OnlyUser other) {
+      if (other == null) {
+        return;
+      }
+      if (other.user_ != null) {
+        if (user_ == null) {
+          User = new global::SheltersServer.UserReply();
+        }
+        User.MergeFrom(other.User);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (user_ == null) {
+              User = new global::SheltersServer.UserReply();
+            }
+            input.ReadMessage(User);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (user_ == null) {
+              User = new global::SheltersServer.UserReply();
+            }
+            input.ReadMessage(User);
             break;
           }
         }

@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace ClientShelters {
+namespace SheltersServer {
   public static partial class ContractCon
   {
     static readonly string __ServiceName = "ContractPr.ContractCon";
@@ -46,18 +46,18 @@ namespace ClientShelters {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.AddContractRequest> __Marshaller_ContractPr_AddContractRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.AddContractRequest.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.AddContractRequest> __Marshaller_ContractPr_AddContractRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.AddContractRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.isCorrectContr> __Marshaller_ContractPr_isCorrectContr = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.isCorrectContr.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.isCorrectContr> __Marshaller_ContractPr_isCorrectContr = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.isCorrectContr.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.DeleteContractRequest> __Marshaller_ContractPr_DeleteContractRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.DeleteContractRequest.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.DeleteContractRequest> __Marshaller_ContractPr_DeleteContractRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.DeleteContractRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.GetContratsRequest> __Marshaller_ContractPr_GetContratsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.GetContratsRequest.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.GetContratsRequest> __Marshaller_ContractPr_GetContratsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.GetContratsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.ContractsReply> __Marshaller_ContractPr_ContractsReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.ContractsReply.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.ContractsReply> __Marshaller_ContractPr_ContractsReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.ContractsReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ClientShelters.AddContractRequest, global::ClientShelters.isCorrectContr> __Method_CreateNewContract = new grpc::Method<global::ClientShelters.AddContractRequest, global::ClientShelters.isCorrectContr>(
+    static readonly grpc::Method<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrectContr> __Method_CreateNewContract = new grpc::Method<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrectContr>(
         grpc::MethodType.Unary,
         __ServiceName,
         "CreateNewContract",
@@ -65,7 +65,7 @@ namespace ClientShelters {
         __Marshaller_ContractPr_isCorrectContr);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ClientShelters.DeleteContractRequest, global::ClientShelters.isCorrectContr> __Method_DeleteContract = new grpc::Method<global::ClientShelters.DeleteContractRequest, global::ClientShelters.isCorrectContr>(
+    static readonly grpc::Method<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrectContr> __Method_DeleteContract = new grpc::Method<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrectContr>(
         grpc::MethodType.Unary,
         __ServiceName,
         "DeleteContract",
@@ -73,7 +73,7 @@ namespace ClientShelters {
         __Marshaller_ContractPr_isCorrectContr);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ClientShelters.GetContratsRequest, global::ClientShelters.ContractsReply> __Method_GetContrats = new grpc::Method<global::ClientShelters.GetContratsRequest, global::ClientShelters.ContractsReply>(
+    static readonly grpc::Method<global::SheltersServer.GetContratsRequest, global::SheltersServer.ContractsReply> __Method_GetContrats = new grpc::Method<global::SheltersServer.GetContratsRequest, global::SheltersServer.ContractsReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetContrats",
@@ -83,7 +83,7 @@ namespace ClientShelters {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::ClientShelters.ContractPrReflection.Descriptor.Services[0]; }
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Client for ContractCon</summary>
@@ -114,62 +114,62 @@ namespace ClientShelters {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.isCorrectContr CreateNewContract(global::ClientShelters.AddContractRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::SheltersServer.isCorrectContr CreateNewContract(global::SheltersServer.AddContractRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateNewContract(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.isCorrectContr CreateNewContract(global::ClientShelters.AddContractRequest request, grpc::CallOptions options)
+      public virtual global::SheltersServer.isCorrectContr CreateNewContract(global::SheltersServer.AddContractRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_CreateNewContract, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.isCorrectContr> CreateNewContractAsync(global::ClientShelters.AddContractRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.isCorrectContr> CreateNewContractAsync(global::SheltersServer.AddContractRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateNewContractAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.isCorrectContr> CreateNewContractAsync(global::ClientShelters.AddContractRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.isCorrectContr> CreateNewContractAsync(global::SheltersServer.AddContractRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_CreateNewContract, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.isCorrectContr DeleteContract(global::ClientShelters.DeleteContractRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::SheltersServer.isCorrectContr DeleteContract(global::SheltersServer.DeleteContractRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return DeleteContract(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.isCorrectContr DeleteContract(global::ClientShelters.DeleteContractRequest request, grpc::CallOptions options)
+      public virtual global::SheltersServer.isCorrectContr DeleteContract(global::SheltersServer.DeleteContractRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_DeleteContract, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.isCorrectContr> DeleteContractAsync(global::ClientShelters.DeleteContractRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.isCorrectContr> DeleteContractAsync(global::SheltersServer.DeleteContractRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return DeleteContractAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.isCorrectContr> DeleteContractAsync(global::ClientShelters.DeleteContractRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.isCorrectContr> DeleteContractAsync(global::SheltersServer.DeleteContractRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteContract, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.ContractsReply GetContrats(global::ClientShelters.GetContratsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::SheltersServer.ContractsReply GetContrats(global::SheltersServer.GetContratsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetContrats(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.ContractsReply GetContrats(global::ClientShelters.GetContratsRequest request, grpc::CallOptions options)
+      public virtual global::SheltersServer.ContractsReply GetContrats(global::SheltersServer.GetContratsRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetContrats, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.ContractsReply> GetContratsAsync(global::ClientShelters.GetContratsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.ContractsReply> GetContratsAsync(global::SheltersServer.GetContratsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetContratsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.ContractsReply> GetContratsAsync(global::ClientShelters.GetContratsRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.ContractsReply> GetContratsAsync(global::SheltersServer.GetContratsRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetContrats, null, options, request);
       }

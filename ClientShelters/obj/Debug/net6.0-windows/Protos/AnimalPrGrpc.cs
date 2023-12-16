@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace ClientShelters {
+namespace SheltersServer {
   public static partial class Animaling
   {
     static readonly string __ServiceName = "AnimalPr.Animaling";
@@ -46,20 +46,20 @@ namespace ClientShelters {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.AddingAnimal> __Marshaller_AnimalPr_AddingAnimal = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.AddingAnimal.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.AddingAnimal> __Marshaller_AnimalPr_AddingAnimal = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.AddingAnimal.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.IsCorrect> __Marshaller_AnimalPr_IsCorrect = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.IsCorrect.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.IsCorrect> __Marshaller_AnimalPr_IsCorrect = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.IsCorrect.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.AnimalsFilts> __Marshaller_AnimalPr_AnimalsFilts = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.AnimalsFilts.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.AnimalsFilts> __Marshaller_AnimalPr_AnimalsFilts = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.AnimalsFilts.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.AnimalsReply> __Marshaller_AnimalPr_AnimalsReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.AnimalsReply.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.AnimalsReply> __Marshaller_AnimalPr_AnimalsReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.AnimalsReply.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.UpdatingAnimal> __Marshaller_AnimalPr_UpdatingAnimal = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.UpdatingAnimal.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.UpdatingAnimal> __Marshaller_AnimalPr_UpdatingAnimal = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.UpdatingAnimal.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ClientShelters.ReleasingAnimal> __Marshaller_AnimalPr_ReleasingAnimal = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.ReleasingAnimal.Parser));
+    static readonly grpc::Marshaller<global::SheltersServer.ReleasingAnimal> __Marshaller_AnimalPr_ReleasingAnimal = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.ReleasingAnimal.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ClientShelters.AddingAnimal, global::ClientShelters.IsCorrect> __Method_AddAnimal = new grpc::Method<global::ClientShelters.AddingAnimal, global::ClientShelters.IsCorrect>(
+    static readonly grpc::Method<global::SheltersServer.AddingAnimal, global::SheltersServer.IsCorrect> __Method_AddAnimal = new grpc::Method<global::SheltersServer.AddingAnimal, global::SheltersServer.IsCorrect>(
         grpc::MethodType.Unary,
         __ServiceName,
         "AddAnimal",
@@ -67,7 +67,7 @@ namespace ClientShelters {
         __Marshaller_AnimalPr_IsCorrect);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ClientShelters.AnimalsFilts, global::ClientShelters.AnimalsReply> __Method_GetAnimals = new grpc::Method<global::ClientShelters.AnimalsFilts, global::ClientShelters.AnimalsReply>(
+    static readonly grpc::Method<global::SheltersServer.AnimalsFilts, global::SheltersServer.AnimalsReply> __Method_GetAnimals = new grpc::Method<global::SheltersServer.AnimalsFilts, global::SheltersServer.AnimalsReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetAnimals",
@@ -75,7 +75,7 @@ namespace ClientShelters {
         __Marshaller_AnimalPr_AnimalsReply);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ClientShelters.UpdatingAnimal, global::ClientShelters.IsCorrect> __Method_UpdateAnimal = new grpc::Method<global::ClientShelters.UpdatingAnimal, global::ClientShelters.IsCorrect>(
+    static readonly grpc::Method<global::SheltersServer.UpdatingAnimal, global::SheltersServer.IsCorrect> __Method_UpdateAnimal = new grpc::Method<global::SheltersServer.UpdatingAnimal, global::SheltersServer.IsCorrect>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdateAnimal",
@@ -83,7 +83,7 @@ namespace ClientShelters {
         __Marshaller_AnimalPr_IsCorrect);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ClientShelters.ReleasingAnimal, global::ClientShelters.IsCorrect> __Method_ReleaseAnimal = new grpc::Method<global::ClientShelters.ReleasingAnimal, global::ClientShelters.IsCorrect>(
+    static readonly grpc::Method<global::SheltersServer.ReleasingAnimal, global::SheltersServer.IsCorrect> __Method_ReleaseAnimal = new grpc::Method<global::SheltersServer.ReleasingAnimal, global::SheltersServer.IsCorrect>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ReleaseAnimal",
@@ -93,7 +93,7 @@ namespace ClientShelters {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::ClientShelters.AnimalPrReflection.Descriptor.Services[0]; }
+      get { return global::SheltersServer.AnimalPrReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Client for Animaling</summary>
@@ -124,82 +124,82 @@ namespace ClientShelters {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.IsCorrect AddAnimal(global::ClientShelters.AddingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::SheltersServer.IsCorrect AddAnimal(global::SheltersServer.AddingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AddAnimal(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.IsCorrect AddAnimal(global::ClientShelters.AddingAnimal request, grpc::CallOptions options)
+      public virtual global::SheltersServer.IsCorrect AddAnimal(global::SheltersServer.AddingAnimal request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_AddAnimal, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.IsCorrect> AddAnimalAsync(global::ClientShelters.AddingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.IsCorrect> AddAnimalAsync(global::SheltersServer.AddingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return AddAnimalAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.IsCorrect> AddAnimalAsync(global::ClientShelters.AddingAnimal request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.IsCorrect> AddAnimalAsync(global::SheltersServer.AddingAnimal request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_AddAnimal, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.AnimalsReply GetAnimals(global::ClientShelters.AnimalsFilts request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::SheltersServer.AnimalsReply GetAnimals(global::SheltersServer.AnimalsFilts request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetAnimals(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.AnimalsReply GetAnimals(global::ClientShelters.AnimalsFilts request, grpc::CallOptions options)
+      public virtual global::SheltersServer.AnimalsReply GetAnimals(global::SheltersServer.AnimalsFilts request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetAnimals, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.AnimalsReply> GetAnimalsAsync(global::ClientShelters.AnimalsFilts request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.AnimalsReply> GetAnimalsAsync(global::SheltersServer.AnimalsFilts request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetAnimalsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.AnimalsReply> GetAnimalsAsync(global::ClientShelters.AnimalsFilts request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.AnimalsReply> GetAnimalsAsync(global::SheltersServer.AnimalsFilts request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetAnimals, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.IsCorrect UpdateAnimal(global::ClientShelters.UpdatingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::SheltersServer.IsCorrect UpdateAnimal(global::SheltersServer.UpdatingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateAnimal(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.IsCorrect UpdateAnimal(global::ClientShelters.UpdatingAnimal request, grpc::CallOptions options)
+      public virtual global::SheltersServer.IsCorrect UpdateAnimal(global::SheltersServer.UpdatingAnimal request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateAnimal, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.IsCorrect> UpdateAnimalAsync(global::ClientShelters.UpdatingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.IsCorrect> UpdateAnimalAsync(global::SheltersServer.UpdatingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return UpdateAnimalAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.IsCorrect> UpdateAnimalAsync(global::ClientShelters.UpdatingAnimal request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.IsCorrect> UpdateAnimalAsync(global::SheltersServer.UpdatingAnimal request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateAnimal, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.IsCorrect ReleaseAnimal(global::ClientShelters.ReleasingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::SheltersServer.IsCorrect ReleaseAnimal(global::SheltersServer.ReleasingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ReleaseAnimal(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ClientShelters.IsCorrect ReleaseAnimal(global::ClientShelters.ReleasingAnimal request, grpc::CallOptions options)
+      public virtual global::SheltersServer.IsCorrect ReleaseAnimal(global::SheltersServer.ReleasingAnimal request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ReleaseAnimal, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.IsCorrect> ReleaseAnimalAsync(global::ClientShelters.ReleasingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.IsCorrect> ReleaseAnimalAsync(global::SheltersServer.ReleasingAnimal request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ReleaseAnimalAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ClientShelters.IsCorrect> ReleaseAnimalAsync(global::ClientShelters.ReleasingAnimal request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::SheltersServer.IsCorrect> ReleaseAnimalAsync(global::SheltersServer.ReleasingAnimal request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ReleaseAnimal, null, options, request);
       }

@@ -59,12 +59,13 @@ namespace SheltersServer.Services
                                          string filtName,
                                          string filtINN,
                                          string filtKPP,
-                                         int lastId = 0)
+                                         int lastId = 0,
+                                         int countEl = 5)
         {
             try
             {
                 CheckRoles(user.Id_User, "Оператор ОМСУ", "Куратор ОМСУ");
-                return shelterReg.GetShelters();
+                return shelterReg.GetShelters(filtCity, filtShelter, filtOrgType, filtName, filtINN, filtKPP, lastId, countEl);
             }
             catch (Exception ex)
             {

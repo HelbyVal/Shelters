@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace ClientShelters {
+namespace SheltersServer {
 
   /// <summary>Holder for reflection information generated from Protos/AnimalPr.proto</summary>
   public static partial class AnimalPrReflection {
@@ -51,18 +51,18 @@ namespace ClientShelters {
             "LkFuaW1hbHNGaWx0cxoWLkFuaW1hbFByLkFuaW1hbHNSZXBseRI9CgxVcGRh",
             "dGVBbmltYWwSGC5BbmltYWxQci5VcGRhdGluZ0FuaW1hbBoTLkFuaW1hbFBy",
             "LklzQ29ycmVjdBI/Cg1SZWxlYXNlQW5pbWFsEhkuQW5pbWFsUHIuUmVsZWFz",
-            "aW5nQW5pbWFsGhMuQW5pbWFsUHIuSXNDb3JyZWN0QhGqAg5DbGllbnRTaGVs",
-            "dGVyc2IGcHJvdG8z"));
+            "aW5nQW5pbWFsGhMuQW5pbWFsUHIuSXNDb3JyZWN0QhGqAg5TaGVsdGVyc1Nl",
+            "cnZlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::ClientShelters.AuthorizationPrReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::SheltersServer.AuthorizationPrReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.ReleasingAnimal), global::ClientShelters.ReleasingAnimal.Parser, new[]{ "ChipNum", "User", "DateRel", "Sheltid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.AddingAnimal), global::ClientShelters.AddingAnimal.Parser, new[]{ "User", "ChipNum", "Size", "Color", "Sex", "Type", "DateAdding", "ContrNum", "Sheltid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.AnimalsFilts), global::ClientShelters.AnimalsFilts.Parser, new[]{ "User", "FiltSex", "FiltType", "FiltChip", "FiltColor", "FiltSize", "Sheltid", "LastId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.UpdatingAnimal), global::ClientShelters.UpdatingAnimal.Parser, new[]{ "User", "ChipNum", "DateAdding", "ContrNum", "Sheltid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.AnimalsReply), global::ClientShelters.AnimalsReply.Parser, new[]{ "Animal", "CountPage" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.AnimalReply), global::ClientShelters.AnimalReply.Parser, new[]{ "ChipNum", "Size", "Color", "Sex", "Type" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ClientShelters.IsCorrect), global::ClientShelters.IsCorrect.Parser, new[]{ "IsCorrect_" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.ReleasingAnimal), global::SheltersServer.ReleasingAnimal.Parser, new[]{ "ChipNum", "User", "DateRel", "Sheltid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AddingAnimal), global::SheltersServer.AddingAnimal.Parser, new[]{ "User", "ChipNum", "Size", "Color", "Sex", "Type", "DateAdding", "ContrNum", "Sheltid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalsFilts), global::SheltersServer.AnimalsFilts.Parser, new[]{ "User", "FiltSex", "FiltType", "FiltChip", "FiltColor", "FiltSize", "Sheltid", "LastId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UpdatingAnimal), global::SheltersServer.UpdatingAnimal.Parser, new[]{ "User", "ChipNum", "DateAdding", "ContrNum", "Sheltid" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalsReply), global::SheltersServer.AnimalsReply.Parser, new[]{ "Animal", "CountPage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.AnimalReply), global::SheltersServer.AnimalReply.Parser, new[]{ "ChipNum", "Size", "Color", "Sex", "Type" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.IsCorrect), global::SheltersServer.IsCorrect.Parser, new[]{ "IsCorrect_" }, null, null, null, null)
           }));
     }
     #endregion
@@ -84,7 +84,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AnimalPrReflection.Descriptor.MessageTypes[0]; }
+      get { return global::SheltersServer.AnimalPrReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -131,10 +131,10 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 2;
-    private global::ClientShelters.UserReply user_;
+    private global::SheltersServer.UserReply user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ClientShelters.UserReply User {
+    public global::SheltersServer.UserReply User {
       get { return user_; }
       set {
         user_ = value;
@@ -294,7 +294,7 @@ namespace ClientShelters {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::ClientShelters.UserReply();
+          User = new global::SheltersServer.UserReply();
         }
         User.MergeFrom(other.User);
       }
@@ -328,7 +328,7 @@ namespace ClientShelters {
           }
           case 18: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -365,7 +365,7 @@ namespace ClientShelters {
           }
           case 18: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -403,7 +403,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AnimalPrReflection.Descriptor.MessageTypes[1]; }
+      get { return global::SheltersServer.AnimalPrReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -443,10 +443,10 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::ClientShelters.UserReply user_;
+    private global::SheltersServer.UserReply user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ClientShelters.UserReply User {
+    public global::SheltersServer.UserReply User {
       get { return user_; }
       set {
         user_ = value;
@@ -740,7 +740,7 @@ namespace ClientShelters {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::ClientShelters.UserReply();
+          User = new global::SheltersServer.UserReply();
         }
         User.MergeFrom(other.User);
       }
@@ -788,7 +788,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -845,7 +845,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -907,7 +907,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AnimalPrReflection.Descriptor.MessageTypes[2]; }
+      get { return global::SheltersServer.AnimalPrReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -946,10 +946,10 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::ClientShelters.UserReply user_;
+    private global::SheltersServer.UserReply user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ClientShelters.UserReply User {
+    public global::SheltersServer.UserReply User {
       get { return user_; }
       set {
         user_ = value;
@@ -1218,7 +1218,7 @@ namespace ClientShelters {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::ClientShelters.UserReply();
+          User = new global::SheltersServer.UserReply();
         }
         User.MergeFrom(other.User);
       }
@@ -1260,7 +1260,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -1310,7 +1310,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -1365,7 +1365,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AnimalPrReflection.Descriptor.MessageTypes[3]; }
+      get { return global::SheltersServer.AnimalPrReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1401,10 +1401,10 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::ClientShelters.UserReply user_;
+    private global::SheltersServer.UserReply user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ClientShelters.UserReply User {
+    public global::SheltersServer.UserReply User {
       get { return user_; }
       set {
         user_ = value;
@@ -1598,7 +1598,7 @@ namespace ClientShelters {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::ClientShelters.UserReply();
+          User = new global::SheltersServer.UserReply();
         }
         User.MergeFrom(other.User);
       }
@@ -1634,7 +1634,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -1675,7 +1675,7 @@ namespace ClientShelters {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::ClientShelters.UserReply();
+              User = new global::SheltersServer.UserReply();
             }
             input.ReadMessage(User);
             break;
@@ -1721,7 +1721,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AnimalPrReflection.Descriptor.MessageTypes[4]; }
+      get { return global::SheltersServer.AnimalPrReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1754,12 +1754,12 @@ namespace ClientShelters {
 
     /// <summary>Field number for the "animal" field.</summary>
     public const int AnimalFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::ClientShelters.AnimalReply> _repeated_animal_codec
-        = pb::FieldCodec.ForMessage(10, global::ClientShelters.AnimalReply.Parser);
-    private readonly pbc::RepeatedField<global::ClientShelters.AnimalReply> animal_ = new pbc::RepeatedField<global::ClientShelters.AnimalReply>();
+    private static readonly pb::FieldCodec<global::SheltersServer.AnimalReply> _repeated_animal_codec
+        = pb::FieldCodec.ForMessage(10, global::SheltersServer.AnimalReply.Parser);
+    private readonly pbc::RepeatedField<global::SheltersServer.AnimalReply> animal_ = new pbc::RepeatedField<global::SheltersServer.AnimalReply>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::ClientShelters.AnimalReply> Animal {
+    public pbc::RepeatedField<global::SheltersServer.AnimalReply> Animal {
       get { return animal_; }
     }
 
@@ -1937,7 +1937,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AnimalPrReflection.Descriptor.MessageTypes[5]; }
+      get { return global::SheltersServer.AnimalPrReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2275,7 +2275,7 @@ namespace ClientShelters {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::ClientShelters.AnimalPrReflection.Descriptor.MessageTypes[6]; }
+      get { return global::SheltersServer.AnimalPrReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

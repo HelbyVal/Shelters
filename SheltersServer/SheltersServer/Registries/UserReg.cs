@@ -23,7 +23,8 @@ namespace SheltersServer.Registries
         }
         public User CheckUser(string userName, string Password)
         {
-            var user = dbSet.Where(us => us.UserName == userName).Single();
+
+            var user = dbSet.Include(x => x.Shelter).Where(us => us.UserName == userName).Single();
             if (user.Password != Password)
             {
                 throw new Exception("Неверный пароль");

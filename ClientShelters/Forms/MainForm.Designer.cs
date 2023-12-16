@@ -169,6 +169,7 @@
             DeleteButton.TabIndex = 7;
             DeleteButton.Text = "Удалить";
             DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Click += DeleteButton_Click;
             // 
             // NextPage
             // 
@@ -178,6 +179,7 @@
             NextPage.TabIndex = 8;
             NextPage.Text = ">";
             NextPage.UseVisualStyleBackColor = true;
+            NextPage.Click += NextPage_Click;
             // 
             // PerviousPage
             // 
@@ -187,6 +189,7 @@
             PerviousPage.TabIndex = 9;
             PerviousPage.Text = "<";
             PerviousPage.UseVisualStyleBackColor = true;
+            PerviousPage.Click += PerviousPage_Click;
             // 
             // label1
             // 
@@ -242,6 +245,7 @@
             SheltersComboBox.Name = "SheltersComboBox";
             SheltersComboBox.Size = new Size(287, 28);
             SheltersComboBox.TabIndex = 15;
+            SheltersComboBox.SelectedIndexChanged += SheltersComboBox_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -267,6 +271,7 @@
             Controls.Add(AddButton);
             Controls.Add(dataGridView);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MainForm";
             Text = " Главная";
             Load += MainForm_Load;

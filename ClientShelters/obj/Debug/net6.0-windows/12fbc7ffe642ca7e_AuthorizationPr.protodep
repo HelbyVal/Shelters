@@ -1,2 +1,3 @@
 obj\Debug\net6.0-windows\Protos/AuthorizationPr.cs \
-obj\Debug\net6.0-windows\Protos/AuthorizationPrGrpc.cs: Protos/AuthorizationPr.proto
+obj\Debug\net6.0-windows\Protos/AuthorizationPrGrpc.cs: Protos/Data.proto\
+ Protos/AuthorizationPr.proto

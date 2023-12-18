@@ -11,6 +11,7 @@ service ShelterPr {
 	rpc DeleteShelter (DeleteShelterRequest) returns (isCorrectShelt);
 	rpc GetShelters (GetSheltersRequest) returns (SheltersReply);
 	rpc GetCitites (OnlyUser) returns (Data.CitiesReply);
+	rpc UpdateShelter (ShelterRequest) returns (isCorrectShelt);
 }
 
 message AddShelterRequest {
@@ -52,3 +53,7 @@ message OnlyUser {
 	Authorization.UserReply user = 1;
 }
 
+message ShelterRequest {
+	Authorization.UserReply user = 1;
+	Data.ShelterReply shelt = 2;
+}

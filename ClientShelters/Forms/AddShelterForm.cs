@@ -5,13 +5,31 @@ namespace ClientShelters.Forms
 {
     public partial class AddShelterForm : Form
     {
-        User user;
         ShelterController shelterController = new ShelterController();
+        Shelter? shelt;
+        int idShelt = 0;
         internal AddShelterForm(User user)
         {
             InitializeComponent();
-            this.user = user;
             FillCityComboBox(shelterController.GetCities(user));
+        }
+
+        internal AddShelterForm(User user,
+                                int id_Shelter,
+                                int id_City,
+                                string Name,
+                                string OrgType,
+                                string KPP,
+                                string INN)
+        {
+            InitializeComponent();
+            FillCityComboBox(shelterController.GetCities(user));
+            CityComboBox.Enabled = false;
+            idShelt = id_Shelter;
+            NameBox.Text = Name;
+            OrgTypeBox.Text = OrgType;
+            INNBox.Text = INN;
+            KPPBox.Text = KPP;
         }
 
         private void AcceptButton_Click(object sender, EventArgs e)
@@ -25,15 +43,14 @@ namespace ClientShelters.Forms
 
                 var result = new Shelter()
                 {
+                    Id_Shelter = idShelt,
                     Name = NameBox.Text,
                     INN = INNBox.Text,
                     KPP = KPPBox.Text,
                     OrgType = OrgTypeBox.Text,
                     Id_City = int.Parse(CityComboBox.SelectedValue.ToString())
                 };
-                if (!shelterController.AddShelter(user, result))
-                    throw new Exception("Сервер не может обработать корректно введеные данные! Возможно, есть повторяющиеся данные.");
-                
+                shelt = result;
                 Close();
             }
             catch (Exception ex)
@@ -59,6 +76,11 @@ namespace ClientShelters.Forms
             CityComboBox.DataSource = cities.Select(p => new KeyValuePair<int, string>(p.Id_City, p.Name)).ToList();
             CityComboBox.DisplayMember = "Value";
             CityComboBox.ValueMember = "Key";
+        }
+
+        public Shelter ReturnShelter()
+        {
+            return shelt;
         }
     }
 }

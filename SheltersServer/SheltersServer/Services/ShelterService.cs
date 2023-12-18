@@ -71,6 +71,20 @@ namespace SheltersServer.Services
             {
                 return (new List<Shelter>(), 0);
             }
+
+        }
+        public bool UpdateShelter(User user, Shelter shelter)
+        {
+            try
+            {
+                CheckRoles(user.Id_User, "Оператор ОМСУ", "Куратор ОМСУ");
+                shelterReg.Update(shelter);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

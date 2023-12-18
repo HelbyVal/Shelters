@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClientShelters.Models
 {
+    [Id("ChipNum")]
     public class Animal : IMyModel
     {
         [NameAttribute("Номер чипа")]

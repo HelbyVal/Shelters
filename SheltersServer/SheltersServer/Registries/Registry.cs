@@ -14,29 +14,40 @@ namespace SheltersServer.Registries
 {
     internal abstract class Registry<Model> where Model : class, IMyModel
     {
-        protected ContextDataBase db = ContextDataBase.DB;
-        protected DbSet<Model> dbSet = ContextDataBase.DB.Set<Model>();
         virtual public void Add(Model entity)
         {
-            db.Add(entity);
-            db.SaveChanges();
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                db.Add(entity);
+                db.SaveChanges();
+            }
         }
         virtual public void Update(Model entity)
         {
-            db.Update(entity);
-            db.SaveChanges();
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                db.Update(entity);
+                db.SaveChanges();
+            }
         }
         public void Delete(Model entity)
         {
-            db.Remove(entity);
-            db.SaveChanges();
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                db.Remove(entity);
+                db.SaveChanges();
+            }
         }
         public Model Find(int id)
         {
-            var entity = dbSet.Find(id);
-            if (entity == null)
-                throw new Exception($"Ошибка! Значения идентификатора = {id} для таблицы {dbSet.EntityType.ShortName} не существует");
-            return entity;
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                DbSet<Model> dbSet = ContextDataBase.DB.Set<Model>();
+                var entity = dbSet.Find(id);
+                if (entity == null)
+                    throw new Exception($"Ошибка! Значения идентификатора = {id} для таблицы {dbSet.EntityType.ShortName} не существует");
+                return entity;
+            }
         }
     }
 }

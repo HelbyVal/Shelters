@@ -14,30 +14,41 @@ namespace SheltersServer.Registries
 
         public User CheckUser(int Id_User, string Password)
         {
-            var user = dbSet.Where(us => us.Id_User == Id_User).Single();
-            if (user.Password != Password)
+            using (ContextDataBase db = new ContextDataBase())
             {
-                throw new Exception("Неверный пароль");
+                DbSet<User> dbSet = ContextDataBase.DB.Set<User>();
+                var user = dbSet.Where(us => us.Id_User == Id_User).Single();
+                if (user.Password != Password)
+                {
+                    throw new Exception("Неверный пароль");
+                }
+                return user;
             }
-            return user;
         }
         public User CheckUser(string userName, string Password)
         {
-
-            var user = dbSet.Include(x => x.Shelter).Where(us => us.UserName == userName).Single();
-            if (user.Password != Password)
+            using (ContextDataBase db = new ContextDataBase())
             {
-                throw new Exception("Неверный пароль");
+                DbSet<User> dbSet = ContextDataBase.DB.Set<User>();
+                var user = dbSet.Include(x => x.Shelter).Where(us => us.UserName == userName).Single();
+                if (user.Password != Password)
+                {
+                    throw new Exception("Неверный пароль");
+                }
+                return user;
             }
-            return user;
         }
 
         public void CheckUser(User user)
         {
-            var baseUser = dbSet.Where(us => us.Id_User == user.Id_User).Single();
-            if (baseUser.Password != user.Password)
+            using (ContextDataBase db = new ContextDataBase())
             {
-                throw new Exception("Неверный пароль");
+                DbSet<User> dbSet = ContextDataBase.DB.Set<User>();
+                var baseUser = dbSet.Where(us => us.Id_User == user.Id_User).Single();
+                if (baseUser.Password != user.Password)
+                {
+                    throw new Exception("Неверный пароль");
+                }
             }
         }
     }

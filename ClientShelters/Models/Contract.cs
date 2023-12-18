@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClientShelters.Models
 {
+    [Id("Number")]
     public class Contract : IMyModel
     {
         public Contract() { }
@@ -59,5 +60,18 @@ namespace ClientShelters.Models
             };
             return res;
         }
+
+        public static Contract ToContract(ContractReply reply)
+        {
+            var result = new Contract()
+            {
+                Number = reply.Number,
+                CostPerDay = reply.CostPerDay,
+                StartDate = DateOnly.FromDateTime(reply.StartDate.ToDateTime()),
+                EndDate = DateOnly.FromDateTime(reply.EndDate.ToDateTime()),
+                Id_Shelter = reply.IdShelter
+            };
+            return result;
+        } 
     }
 }

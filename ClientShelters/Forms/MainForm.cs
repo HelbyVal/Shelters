@@ -1,27 +1,22 @@
 ﻿using ClientShelters.Controllers;
 using ClientShelters.Forms;
 using ClientShelters.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.Drawing.Design;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
+
 
 namespace ClientShelters
 {
     public partial class MainForm : Form
     {
+        IController currentController;
         List<int> ides = new List<int>();
         private int currentPage = 1;
         readonly User user;
         readonly AnimalController animalController = new AnimalController();
         readonly ShelterController shelterController = new ShelterController();
+        readonly ContractController contractController = new ContractController();
         public MainForm(User user)
         {
             InitializeComponent();
@@ -53,46 +48,51 @@ namespace ClientShelters
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddShelter();
+            if (currentController == shelterController)
+            {
+                AddShelter();
+            }
+            if (currentController == contractController) 
+            {
+                AddContract();
+            }
         }
 
         private void AnimalRegClick(object sender, EventArgs e)
         {
-            UploadDataGrid(animalController.GetAnimals(user,
-                                           "",
-                                           "",
-                                           -1,
-                                           "",
-                                           -1,
-                                           0,
-                                           1));
+            currentController = animalController;
+            UpdateGrid();
         }
 
         private void ContractsRegClick(object sender, EventArgs e)
         {
-
+            currentController = contractController;
+            ShelterFilters.Visible = false;
+            EnterFilters.Visible = false;
+            CancelFilters.Visible = false;
+            UpdateGrid();
         }
 
         private void SheltersRegClick(object sender, EventArgs e)
         {
-            UpdateShelterGrid();
+            currentController = shelterController;
+            ShelterFilters.Visible = true;
+            EnterFilters.Visible = true;
+            CancelFilters.Visible = true;
+            FillCityComboBox(shelterController.GetCities(user));
+            UpdateGrid();
+
         }
 
-        private void UpdateShelterGrid()
+        private void FillCityComboBox(List<City> cities)
         {
-            DataGridAllClear();
-            ides.Clear();
-            ides.Add(0);
-            ides.Add(0);
-            NextPage.Enabled = true;
-            PerviousPage.Enabled = false;
-            currentPage = 1;
+            CityComboBox.Enabled = true;
 
-            var res = shelterController.GetShelters(user, 2, ides.Last());
-            ides.Add(res.Item1.Last().Id_Shelter);
-            Page.Text = $"{currentPage}/{res.Item2}";
-            UploadDataGrid(res.Item1);
+            CityComboBox.DataSource = cities.Select(p => new KeyValuePair<int, string>(p.Id_City, p.Name)).ToList();
+            CityComboBox.DisplayMember = "Value";
+            CityComboBox.ValueMember = "Key";
         }
+
 
         private void ReportClick(object sender, EventArgs e)
         {
@@ -112,6 +112,18 @@ namespace ClientShelters
         private void UploadDataGrid<T>(List<T> data) where T : IMyModel
         {
             Type t = typeof(T);
+            if (currentController == shelterController)
+            {
+                t = typeof(Shelter);
+            }
+            if (currentController == animalController)
+            {
+                t = typeof(Animal);
+            }
+            if (currentController == contractController)
+            {
+                t = typeof(Contract);
+            }
             var props = t.GetProperties()
                 .Select(proper => (proper, proper.GetCustomAttributes(false)))
                 .ToList();
@@ -182,10 +194,8 @@ namespace ClientShelters
         private void NextPage_Click(object sender, EventArgs e)
         {
             DataGridAllClear();
-
-            var res = shelterController.GetShelters(user, 2, ides.Last());
+            var res = InsertNextPage(currentController, 2);
             UploadDataGrid(res.Item1);
-            ides.Add(res.Item1.Last().Id_Shelter);
             currentPage++;
             Page.Text = $"{currentPage}/{res.Item2}";
             if (currentPage == res.Item2)
@@ -200,12 +210,23 @@ namespace ClientShelters
             }
         }
 
+        private (List<IMyModel>, int) InsertNextPage(IController controller, int pageSize)
+        {
+            var res = controller.GetEntities(user, pageSize, ides.Last());
+            Type t = res.Item1.Last().GetType();
+            var attr = t.GetCustomAttribute(typeof(Id));
+            var currentAttr = (Id)attr;
+            var requiredProperty = t.GetProperty(currentAttr.IdName);
+            ides.Add((int)requiredProperty.GetValue(res.Item1.Last()));
+            return res;
+        }
+
 
         private void PerviousPage_Click(object sender, EventArgs e)
         {
             DataGridAllClear();
             ides.RemoveAt(ides.Count() - 1);
-            var res = shelterController.GetShelters(user, 2, ides.IndexOf(ides.Count() - 2));
+            var res = InsertPreviousPage(shelterController, 2);
             UploadDataGrid(res.Item1);
             currentPage--;
             Page.Text = $"{currentPage}/{res.Item2}";
@@ -221,6 +242,12 @@ namespace ClientShelters
             }
         }
 
+        private (List<IMyModel>, int) InsertPreviousPage(IController controller, int pageSize)
+        {
+            var res = controller.GetEntities(user, pageSize, ides.IndexOf(ides.Count() - 2));
+            return res;
+        }
+
         private void DataGridAllClear()
         {
             dataGridView.Columns.Clear();
@@ -229,20 +256,164 @@ namespace ClientShelters
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            DeleteShelter();
-        }
-
-        void DeleteShelter()
-        {
-            shelterController.DeleteShelter(user, int.Parse(dataGridView.CurrentRow.Cells[0].Value.ToString()));
-            UpdateShelterGrid();
+            currentController.DeleteEntity(user, int.Parse(dataGridView.CurrentRow.Cells[0].Value.ToString()));
+            UpdateGrid();
         }
 
         void AddShelter()
         {
             var addForm = new AddShelterForm(user);
             addForm.ShowDialog();
-            UpdateShelterGrid();
+            if (addForm.DialogResult == DialogResult.OK)
+            {
+                Shelter shelt = addForm.ReturnShelter();
+                if (!shelterController.AddShelter(user, shelt))
+                {
+                    MessageBox.Show("Сервер не может обработать корректно введеные данные! Возможно, есть повторяющиеся данные.");
+                }
+                UpdateGrid();
+            }
+        }
+
+        void UpdateContract()
+        {
+            var addForm = new AddContractForm(user,
+                                              int.Parse(dataGridView.CurrentRow.Cells[0].Value.ToString()),
+                                              Convert.ToDouble(dataGridView.CurrentRow.Cells[1].Value.ToString()),
+                                              DateOnly.FromDateTime(Convert.ToDateTime(dataGridView.CurrentRow.Cells[2].Value.ToString())),
+                                              DateOnly.FromDateTime(Convert.ToDateTime(dataGridView.CurrentRow.Cells[3].Value.ToString())));
+            addForm.ShowDialog();
+            if (addForm.DialogResult == DialogResult.OK)
+            {
+                Contract contr = addForm.GetContract();
+                if (contractController.UpadateContract(user, contr))
+                {
+                    MessageBox.Show("Сервер не может обработать корректно введеные данные!");
+                }
+                else
+                {
+                    UpdateGrid();
+                }
+            }
+        }
+
+        void UpdateShelter()
+        {
+            var addForm = new AddShelterForm(user,
+                                             int.Parse(dataGridView.CurrentRow.Cells[0].Value.ToString()),
+                                             int.Parse(dataGridView.CurrentRow.Cells[5].Value.ToString()),
+                                             dataGridView.CurrentRow.Cells[1].Value.ToString(),
+                                             dataGridView.CurrentRow.Cells[4].Value.ToString(),
+                                             dataGridView.CurrentRow.Cells[3].Value.ToString(),
+                                             dataGridView.CurrentRow.Cells[2].Value.ToString());
+            addForm.ShowDialog();
+            if (addForm.DialogResult == DialogResult.OK)
+            {
+                Shelter shelt = addForm.ReturnShelter();
+                if (!shelterController.UpdateShelter(user, shelt))
+                {
+                    MessageBox.Show("Сервер не может обработать корректно введеные данные!");
+                }
+                else
+                {
+                    UpdateGrid();
+                }
+            }
+
+        } 
+
+        void AddContract()
+        {
+            var addForm = new AddContractForm(user);
+            addForm.ShowDialog();
+            if (addForm.DialogResult == DialogResult.OK)
+            {
+                Contract contract = addForm.GetContract();
+                if (!contractController.CreateContract(user, contract))
+                {
+                    MessageBox.Show("Сервер не может обработать корректно введеные данные! Возможно, есть повторяющиеся данные.");
+                }
+                else
+                {
+                    UpdateGrid();
+                }
+            }
+        }
+
+        private void UpdateGrid()
+        {
+            DataGridAllClear();
+            ides.Clear();
+            ides.Add(0);
+            ides.Add(0);
+            try
+            {
+                var res = InsertNextPage(currentController, 2);
+                currentPage = 1;
+                if (currentPage != res.Item2)
+                {
+                    NextPage.Enabled = true;
+                    PerviousPage.Enabled = false;
+                }
+                else
+                {
+                    NextPage.Enabled = false;
+                    PerviousPage.Enabled = false;
+                }
+                Page.Text = $"{currentPage}/{res.Item2}";
+                UploadDataGrid(res.Item1);
+            }
+            catch (Exception)
+            {
+                NextPage.Enabled = false;
+                PerviousPage.Enabled = false;
+                Page.Text = "0/0";
+            }
+        }
+
+        private void EnterFilters_Click(object sender, EventArgs e)
+        {
+            if (currentController == shelterController)
+            {
+                int idcity = -1;
+                int idshelt = -1;
+                if (IsShelterNeedCheck.Checked)
+                {
+                    idshelt = int.Parse(SheltersComboBox.SelectedValue.ToString());
+                }
+
+                if (IsCityNeedCheck.Checked)
+                {
+                    idcity = int.Parse(CityComboBox.SelectedValue.ToString());
+                }
+
+                shelterController.SetFilters(idcity,
+                                             idshelt,
+                                             OrgTypeBox.Text.ToString(),
+                                             NameShelterBox.Text.ToString(),
+                                             INNBox.Text.ToString(),
+                                             KPPBox.Text.ToString());
+            }
+
+            UpdateGrid();
+        }
+
+        private void CancelFilters_Click(object sender, EventArgs e)
+        {
+            currentController.CancelFilters();
+            UpdateGrid();
+        }
+
+        private void IsShelterNeedButton_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            if (currentController == shelterController)
+            {
+                UpdateShelter();
+            }
         }
     }
 }

@@ -59,6 +59,8 @@ namespace ClientShelters {
     static readonly grpc::Marshaller<global::ClientShelters.OnlyUser> __Marshaller_ShelterPr_OnlyUser = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.OnlyUser.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SheltersServer.CitiesReply> __Marshaller_Data_CitiesReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.CitiesReply.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::ClientShelters.ShelterRequest> __Marshaller_ShelterPr_ShelterRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ClientShelters.ShelterRequest.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::ClientShelters.AddShelterRequest, global::ClientShelters.isCorrectShelt> __Method_CreateShelter = new grpc::Method<global::ClientShelters.AddShelterRequest, global::ClientShelters.isCorrectShelt>(
@@ -91,6 +93,14 @@ namespace ClientShelters {
         "GetCitites",
         __Marshaller_ShelterPr_OnlyUser,
         __Marshaller_Data_CitiesReply);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::ClientShelters.ShelterRequest, global::ClientShelters.isCorrectShelt> __Method_UpdateShelter = new grpc::Method<global::ClientShelters.ShelterRequest, global::ClientShelters.isCorrectShelt>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateShelter",
+        __Marshaller_ShelterPr_ShelterRequest,
+        __Marshaller_ShelterPr_isCorrectShelt);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -204,6 +214,26 @@ namespace ClientShelters {
       public virtual grpc::AsyncUnaryCall<global::SheltersServer.CitiesReply> GetCititesAsync(global::ClientShelters.OnlyUser request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetCitites, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::ClientShelters.isCorrectShelt UpdateShelter(global::ClientShelters.ShelterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateShelter(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::ClientShelters.isCorrectShelt UpdateShelter(global::ClientShelters.ShelterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateShelter, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::ClientShelters.isCorrectShelt> UpdateShelterAsync(global::ClientShelters.ShelterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateShelterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::ClientShelters.isCorrectShelt> UpdateShelterAsync(global::ClientShelters.ShelterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateShelter, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

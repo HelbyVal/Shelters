@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace ClientShelters.Models
 {
+    [Id("Id_Shelter")]
     public class Shelter : IMyModel
     {
         string inn;

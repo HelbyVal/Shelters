@@ -16,15 +16,23 @@ namespace SheltersServer.Registries
         public RoleReg() {}
         public Role FindWithRole(string name)
         {
-            var entity = dbSet.Include(x => x.UserRole).Where(x => x.Name == name).Single();
-            if (entity == null)
-                throw new Exception($"Роль не найдена!");
-            return entity;
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                DbSet<Role> dbSet = ContextDataBase.DB.Set<Role>();
+                var entity = dbSet.Include(x => x.UserRole).Where(x => x.Name == name).Single();
+                if (entity == null)
+                    throw new Exception($"Роль не найдена!");
+                return entity;
+            }
         }
 
-        public List<Role> GetRoles() 
+        public List<Role> GetRoles()
         {
-            return dbSet.Where(x => true).ToList();
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                DbSet<Role> dbSet = ContextDataBase.DB.Set<Role>();
+                return dbSet.Where(x => true).ToList();
+            }
         }
     }
 }

@@ -55,6 +55,8 @@ namespace SheltersServer {
     static readonly grpc::Marshaller<global::SheltersServer.GetContratsRequest> __Marshaller_ContractPr_GetContratsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.GetContratsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::SheltersServer.ContractsReply> __Marshaller_ContractPr_ContractsReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.ContractsReply.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::SheltersServer.UpdateContractRequest> __Marshaller_ContractPr_UpdateContractRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::SheltersServer.UpdateContractRequest.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrectContr> __Method_CreateNewContract = new grpc::Method<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrectContr>(
@@ -79,6 +81,14 @@ namespace SheltersServer {
         "GetContrats",
         __Marshaller_ContractPr_GetContratsRequest,
         __Marshaller_ContractPr_ContractsReply);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::SheltersServer.UpdateContractRequest, global::SheltersServer.isCorrectContr> __Method_UpdateContract = new grpc::Method<global::SheltersServer.UpdateContractRequest, global::SheltersServer.isCorrectContr>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateContract",
+        __Marshaller_ContractPr_UpdateContractRequest,
+        __Marshaller_ContractPr_isCorrectContr);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -108,6 +118,12 @@ namespace SheltersServer {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::SheltersServer.isCorrectContr> UpdateContract(global::SheltersServer.UpdateContractRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -118,7 +134,8 @@ namespace SheltersServer {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CreateNewContract, serviceImpl.CreateNewContract)
           .AddMethod(__Method_DeleteContract, serviceImpl.DeleteContract)
-          .AddMethod(__Method_GetContrats, serviceImpl.GetContrats).Build();
+          .AddMethod(__Method_GetContrats, serviceImpl.GetContrats)
+          .AddMethod(__Method_UpdateContract, serviceImpl.UpdateContract).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -131,6 +148,7 @@ namespace SheltersServer {
       serviceBinder.AddMethod(__Method_CreateNewContract, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.AddContractRequest, global::SheltersServer.isCorrectContr>(serviceImpl.CreateNewContract));
       serviceBinder.AddMethod(__Method_DeleteContract, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.DeleteContractRequest, global::SheltersServer.isCorrectContr>(serviceImpl.DeleteContract));
       serviceBinder.AddMethod(__Method_GetContrats, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.GetContratsRequest, global::SheltersServer.ContractsReply>(serviceImpl.GetContrats));
+      serviceBinder.AddMethod(__Method_UpdateContract, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SheltersServer.UpdateContractRequest, global::SheltersServer.isCorrectContr>(serviceImpl.UpdateContract));
     }
 
   }

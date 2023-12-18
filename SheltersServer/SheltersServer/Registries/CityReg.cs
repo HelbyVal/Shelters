@@ -15,8 +15,12 @@ namespace SheltersServer.Registries
 
         public List<City> GetCities()
         {
-            var cities = dbSet.Where(x => true);
-            return cities.ToList();
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                DbSet<City> dbSet = ContextDataBase.DB.Set<City>();
+                var cities = dbSet.Where(x => true);
+                return cities.ToList();
+            }
         }
     }
 }

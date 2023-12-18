@@ -3,12 +3,14 @@ syntax = "proto3";
 option csharp_namespace = "SheltersServer";
 import "Protos/AuthorizationPr.proto";
 import "google/protobuf/timestamp.proto";
+//import "google/protobuf/datetime.proto";
 package ContractPr;
 
 service ContractCon {
 	rpc CreateNewContract (AddContractRequest) returns (isCorrectContr);
 	rpc DeleteContract (DeleteContractRequest) returns (isCorrectContr);
 	rpc GetContrats (GetContratsRequest) returns (ContractsReply);
+		rpc UpdateContract(UpdateContractRequest) returns(isCorrectContr);
 }
 
 message AddContractRequest {
@@ -29,8 +31,8 @@ message GetContratsRequest {
 	int32 id_shelter = 2; 
 	bool allShelters = 3;
 	int32 filtNum = 4;
-	int32 filtCostStart = 5;
-	int32 filtCostEnd = 6;
+	double filtCostStart = 5;
+	double filtCostEnd = 6;
 	google.protobuf.Timestamp filtDateStart = 7;
 	google.protobuf.Timestamp filtDateEnd = 8;
 	int32 lastId = 9;
@@ -48,6 +50,11 @@ message ContractReply {
 	google.protobuf.Timestamp StartDate = 3;
 	google.protobuf.Timestamp EndDate = 4;
 	int32 Id_Shelter = 5;
+}
+
+message UpdateContractRequest {
+	Authorization.UserReply user = 1;
+	ContractReply contract = 2;
 }
 
 message isCorrectContr {

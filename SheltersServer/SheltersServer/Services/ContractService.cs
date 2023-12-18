@@ -13,7 +13,6 @@ namespace SheltersServer.Services
     internal class ContractService : Service
     {
         ContractReg contrReg;
-        KeepingReg keepingReg;
         public ContractService() 
         {
             contrReg = new ContractReg();
@@ -24,32 +23,28 @@ namespace SheltersServer.Services
             try
             {
                 CheckRoles(user.Id_User, "Оператор ОМСУ");
-                var oldContr = contrReg.FindLastShelterContract(id_Shelter, true);
-                if (oldContr == null)
+
+                if (startDate < endDate)
                 {
                     Contract newContr = new Contract(costPerDay, startDate, endDate, id_Shelter);
+                    contrReg.Add(newContr);
                 }
                 else
                 {
-                    if (oldContr.EndDate > startDate && oldContr.StartDate < startDate)
-                    {
-                        Contract newContr = new Contract(costPerDay, startDate, endDate, id_Shelter);
-                        contrReg.Add(newContr);
-                    }
-                    else throw new Exception("Нельзя создать новый контракт с выбранными датами");
+                    throw new Exception("Нельзя создать новый контракт с выбранными датами");
                 }
-                return false;
+                return true;
             }
             catch (Exception ex) 
             {
-                return true;
+                return false;
             }
         }
         public (List<Contract>, int) GetContracts(User user,
                                             int id_shelter,
                                             int filtNum,
-                                            int filtCostStart,
-                                            int filtCostEnd,
+                                            double filtCostStart,
+                                            double filtCostEnd,
                                             DateOnly filtDateStart,
                                             DateOnly filtDateEnd,
                                             int lastId,
@@ -88,5 +83,27 @@ namespace SheltersServer.Services
                 return false;
             }
         }
+
+        public bool UpdateContract(User user, Contract contract)
+        {
+            try
+            {
+                CheckRoles(user.Id_User, "Оператор ОМСУ");
+
+                if (contract.StartDate < contract.EndDate)
+                {
+                    contrReg.Update(contract);
+                }
+                else
+                {
+                    throw new Exception("Нельзя изменить контракт с выбранными датами");
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        } 
     }
 }

@@ -35,8 +35,8 @@ namespace SheltersServer {
             "EhMKC251bWJlckNvbnRyGAIgASgFIqsCChJHZXRDb250cmF0c1JlcXVlc3QS",
             "JgoEdXNlchgBIAEoCzIYLkF1dGhvcml6YXRpb24uVXNlclJlcGx5EhIKCmlk",
             "X3NoZWx0ZXIYAiABKAUSEwoLYWxsU2hlbHRlcnMYAyABKAgSDwoHZmlsdE51",
-            "bRgEIAEoBRIVCg1maWx0Q29zdFN0YXJ0GAUgASgFEhMKC2ZpbHRDb3N0RW5k",
-            "GAYgASgFEjEKDWZpbHREYXRlU3RhcnQYByABKAsyGi5nb29nbGUucHJvdG9i",
+            "bRgEIAEoBRIVCg1maWx0Q29zdFN0YXJ0GAUgASgBEhMKC2ZpbHRDb3N0RW5k",
+            "GAYgASgBEjEKDWZpbHREYXRlU3RhcnQYByABKAsyGi5nb29nbGUucHJvdG9i",
             "dWYuVGltZXN0YW1wEi8KC2ZpbHREYXRlRW5kGAggASgLMhouZ29vZ2xlLnBy",
             "b3RvYnVmLlRpbWVzdGFtcBIOCgZsYXN0SWQYCSABKAUSEwoLaW5jbHVkZUtl",
             "ZXAYCiABKAgiUQoOQ29udHJhY3RzUmVwbHkSLAoJY29udHJhY3RzGAEgAygL",
@@ -44,14 +44,18 @@ namespace SheltersServer {
             "BSKjAQoNQ29udHJhY3RSZXBseRIOCgZOdW1iZXIYASABKAUSEgoKQ29zdFBl",
             "ckRheRgCIAEoARItCglTdGFydERhdGUYAyABKAsyGi5nb29nbGUucHJvdG9i",
             "dWYuVGltZXN0YW1wEisKB0VuZERhdGUYBCABKAsyGi5nb29nbGUucHJvdG9i",
-            "dWYuVGltZXN0YW1wEhIKCklkX1NoZWx0ZXIYBSABKAUiIwoOaXNDb3JyZWN0",
-            "Q29udHISEQoJaXNDb3JyZWN0GAEgASgIMvoBCgtDb250cmFjdENvbhJPChFD",
-            "cmVhdGVOZXdDb250cmFjdBIeLkNvbnRyYWN0UHIuQWRkQ29udHJhY3RSZXF1",
-            "ZXN0GhouQ29udHJhY3RQci5pc0NvcnJlY3RDb250chJPCg5EZWxldGVDb250",
-            "cmFjdBIhLkNvbnRyYWN0UHIuRGVsZXRlQ29udHJhY3RSZXF1ZXN0GhouQ29u",
-            "dHJhY3RQci5pc0NvcnJlY3RDb250chJJCgtHZXRDb250cmF0cxIeLkNvbnRy",
-            "YWN0UHIuR2V0Q29udHJhdHNSZXF1ZXN0GhouQ29udHJhY3RQci5Db250cmFj",
-            "dHNSZXBseUIRqgIOU2hlbHRlcnNTZXJ2ZXJiBnByb3RvMw=="));
+            "dWYuVGltZXN0YW1wEhIKCklkX1NoZWx0ZXIYBSABKAUibAoVVXBkYXRlQ29u",
+            "dHJhY3RSZXF1ZXN0EiYKBHVzZXIYASABKAsyGC5BdXRob3JpemF0aW9uLlVz",
+            "ZXJSZXBseRIrCghjb250cmFjdBgCIAEoCzIZLkNvbnRyYWN0UHIuQ29udHJh",
+            "Y3RSZXBseSIjCg5pc0NvcnJlY3RDb250chIRCglpc0NvcnJlY3QYASABKAgy",
+            "ywIKC0NvbnRyYWN0Q29uEk8KEUNyZWF0ZU5ld0NvbnRyYWN0Eh4uQ29udHJh",
+            "Y3RQci5BZGRDb250cmFjdFJlcXVlc3QaGi5Db250cmFjdFByLmlzQ29ycmVj",
+            "dENvbnRyEk8KDkRlbGV0ZUNvbnRyYWN0EiEuQ29udHJhY3RQci5EZWxldGVD",
+            "b250cmFjdFJlcXVlc3QaGi5Db250cmFjdFByLmlzQ29ycmVjdENvbnRyEkkK",
+            "C0dldENvbnRyYXRzEh4uQ29udHJhY3RQci5HZXRDb250cmF0c1JlcXVlc3Qa",
+            "Gi5Db250cmFjdFByLkNvbnRyYWN0c1JlcGx5Ek8KDlVwZGF0ZUNvbnRyYWN0",
+            "EiEuQ29udHJhY3RQci5VcGRhdGVDb250cmFjdFJlcXVlc3QaGi5Db250cmFj",
+            "dFByLmlzQ29ycmVjdENvbnRyQhGqAg5TaGVsdGVyc1NlcnZlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::SheltersServer.AuthorizationPrReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -60,6 +64,7 @@ namespace SheltersServer {
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.GetContratsRequest), global::SheltersServer.GetContratsRequest.Parser, new[]{ "User", "IdShelter", "AllShelters", "FiltNum", "FiltCostStart", "FiltCostEnd", "FiltDateStart", "FiltDateEnd", "LastId", "IncludeKeep" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.ContractsReply), global::SheltersServer.ContractsReply.Parser, new[]{ "Contracts", "CountPage" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.ContractReply), global::SheltersServer.ContractReply.Parser, new[]{ "Number", "CostPerDay", "StartDate", "EndDate", "IdShelter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.UpdateContractRequest), global::SheltersServer.UpdateContractRequest.Parser, new[]{ "User", "Contract" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::SheltersServer.isCorrectContr), global::SheltersServer.isCorrectContr.Parser, new[]{ "IsCorrect" }, null, null, null, null)
           }));
     }
@@ -772,10 +777,10 @@ namespace SheltersServer {
 
     /// <summary>Field number for the "filtCostStart" field.</summary>
     public const int FiltCostStartFieldNumber = 5;
-    private int filtCostStart_;
+    private double filtCostStart_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int FiltCostStart {
+    public double FiltCostStart {
       get { return filtCostStart_; }
       set {
         filtCostStart_ = value;
@@ -784,10 +789,10 @@ namespace SheltersServer {
 
     /// <summary>Field number for the "filtCostEnd" field.</summary>
     public const int FiltCostEndFieldNumber = 6;
-    private int filtCostEnd_;
+    private double filtCostEnd_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int FiltCostEnd {
+    public double FiltCostEnd {
       get { return filtCostEnd_; }
       set {
         filtCostEnd_ = value;
@@ -861,8 +866,8 @@ namespace SheltersServer {
       if (IdShelter != other.IdShelter) return false;
       if (AllShelters != other.AllShelters) return false;
       if (FiltNum != other.FiltNum) return false;
-      if (FiltCostStart != other.FiltCostStart) return false;
-      if (FiltCostEnd != other.FiltCostEnd) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(FiltCostStart, other.FiltCostStart)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(FiltCostEnd, other.FiltCostEnd)) return false;
       if (!object.Equals(FiltDateStart, other.FiltDateStart)) return false;
       if (!object.Equals(FiltDateEnd, other.FiltDateEnd)) return false;
       if (LastId != other.LastId) return false;
@@ -878,8 +883,8 @@ namespace SheltersServer {
       if (IdShelter != 0) hash ^= IdShelter.GetHashCode();
       if (AllShelters != false) hash ^= AllShelters.GetHashCode();
       if (FiltNum != 0) hash ^= FiltNum.GetHashCode();
-      if (FiltCostStart != 0) hash ^= FiltCostStart.GetHashCode();
-      if (FiltCostEnd != 0) hash ^= FiltCostEnd.GetHashCode();
+      if (FiltCostStart != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(FiltCostStart);
+      if (FiltCostEnd != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(FiltCostEnd);
       if (filtDateStart_ != null) hash ^= FiltDateStart.GetHashCode();
       if (filtDateEnd_ != null) hash ^= FiltDateEnd.GetHashCode();
       if (LastId != 0) hash ^= LastId.GetHashCode();
@@ -918,13 +923,13 @@ namespace SheltersServer {
         output.WriteRawTag(32);
         output.WriteInt32(FiltNum);
       }
-      if (FiltCostStart != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(FiltCostStart);
+      if (FiltCostStart != 0D) {
+        output.WriteRawTag(41);
+        output.WriteDouble(FiltCostStart);
       }
-      if (FiltCostEnd != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(FiltCostEnd);
+      if (FiltCostEnd != 0D) {
+        output.WriteRawTag(49);
+        output.WriteDouble(FiltCostEnd);
       }
       if (filtDateStart_ != null) {
         output.WriteRawTag(58);
@@ -968,13 +973,13 @@ namespace SheltersServer {
         output.WriteRawTag(32);
         output.WriteInt32(FiltNum);
       }
-      if (FiltCostStart != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(FiltCostStart);
+      if (FiltCostStart != 0D) {
+        output.WriteRawTag(41);
+        output.WriteDouble(FiltCostStart);
       }
-      if (FiltCostEnd != 0) {
-        output.WriteRawTag(48);
-        output.WriteInt32(FiltCostEnd);
+      if (FiltCostEnd != 0D) {
+        output.WriteRawTag(49);
+        output.WriteDouble(FiltCostEnd);
       }
       if (filtDateStart_ != null) {
         output.WriteRawTag(58);
@@ -1014,11 +1019,11 @@ namespace SheltersServer {
       if (FiltNum != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(FiltNum);
       }
-      if (FiltCostStart != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FiltCostStart);
+      if (FiltCostStart != 0D) {
+        size += 1 + 8;
       }
-      if (FiltCostEnd != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FiltCostEnd);
+      if (FiltCostEnd != 0D) {
+        size += 1 + 8;
       }
       if (filtDateStart_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FiltDateStart);
@@ -1059,10 +1064,10 @@ namespace SheltersServer {
       if (other.FiltNum != 0) {
         FiltNum = other.FiltNum;
       }
-      if (other.FiltCostStart != 0) {
+      if (other.FiltCostStart != 0D) {
         FiltCostStart = other.FiltCostStart;
       }
-      if (other.FiltCostEnd != 0) {
+      if (other.FiltCostEnd != 0D) {
         FiltCostEnd = other.FiltCostEnd;
       }
       if (other.filtDateStart_ != null) {
@@ -1117,12 +1122,12 @@ namespace SheltersServer {
             FiltNum = input.ReadInt32();
             break;
           }
-          case 40: {
-            FiltCostStart = input.ReadInt32();
+          case 41: {
+            FiltCostStart = input.ReadDouble();
             break;
           }
-          case 48: {
-            FiltCostEnd = input.ReadInt32();
+          case 49: {
+            FiltCostEnd = input.ReadDouble();
             break;
           }
           case 58: {
@@ -1181,12 +1186,12 @@ namespace SheltersServer {
             FiltNum = input.ReadInt32();
             break;
           }
-          case 40: {
-            FiltCostStart = input.ReadInt32();
+          case 41: {
+            FiltCostStart = input.ReadDouble();
             break;
           }
-          case 48: {
-            FiltCostEnd = input.ReadInt32();
+          case 49: {
+            FiltCostEnd = input.ReadDouble();
             break;
           }
           case 58: {
@@ -1791,6 +1796,251 @@ namespace SheltersServer {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class UpdateContractRequest : pb::IMessage<UpdateContractRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdateContractRequest> _parser = new pb::MessageParser<UpdateContractRequest>(() => new UpdateContractRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<UpdateContractRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateContractRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateContractRequest(UpdateContractRequest other) : this() {
+      user_ = other.user_ != null ? other.user_.Clone() : null;
+      contract_ = other.contract_ != null ? other.contract_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateContractRequest Clone() {
+      return new UpdateContractRequest(this);
+    }
+
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 1;
+    private global::SheltersServer.UserReply user_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SheltersServer.UserReply User {
+      get { return user_; }
+      set {
+        user_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "contract" field.</summary>
+    public const int ContractFieldNumber = 2;
+    private global::SheltersServer.ContractReply contract_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::SheltersServer.ContractReply Contract {
+      get { return contract_; }
+      set {
+        contract_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateContractRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(UpdateContractRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(User, other.User)) return false;
+      if (!object.Equals(Contract, other.Contract)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (user_ != null) hash ^= User.GetHashCode();
+      if (contract_ != null) hash ^= Contract.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (user_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(User);
+      }
+      if (contract_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Contract);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (user_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(User);
+      }
+      if (contract_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Contract);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (user_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(User);
+      }
+      if (contract_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Contract);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(UpdateContractRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.user_ != null) {
+        if (user_ == null) {
+          User = new global::SheltersServer.UserReply();
+        }
+        User.MergeFrom(other.User);
+      }
+      if (other.contract_ != null) {
+        if (contract_ == null) {
+          Contract = new global::SheltersServer.ContractReply();
+        }
+        Contract.MergeFrom(other.Contract);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (user_ == null) {
+              User = new global::SheltersServer.UserReply();
+            }
+            input.ReadMessage(User);
+            break;
+          }
+          case 18: {
+            if (contract_ == null) {
+              Contract = new global::SheltersServer.ContractReply();
+            }
+            input.ReadMessage(Contract);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (user_ == null) {
+              User = new global::SheltersServer.UserReply();
+            }
+            input.ReadMessage(User);
+            break;
+          }
+          case 18: {
+            if (contract_ == null) {
+              Contract = new global::SheltersServer.ContractReply();
+            }
+            input.ReadMessage(Contract);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class isCorrectContr : pb::IMessage<isCorrectContr>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1805,7 +2055,7 @@ namespace SheltersServer {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[5]; }
+      get { return global::SheltersServer.ContractPrReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

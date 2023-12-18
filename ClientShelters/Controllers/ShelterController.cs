@@ -10,17 +10,41 @@ using System.Threading.Tasks;
 
 namespace ClientShelters.Controllers
 {
-    internal class ShelterController
+    internal class ShelterController : IController
     {
+        int filtCity = -1;
+        int filtShelter = -1;
+        string filtOrgType = "";
+        string filtName = "";
+        string filtINN = "";
+        string filtKPP = "";
+        public void SetFilters(int filtCity = -1,
+                               int filtShelter = -1,
+                               string filtOrgType = "",
+                               string filtName = "",
+                               string filtINN = "",
+                               string filtKPP = "")
+        {
+            this.filtCity = filtCity;
+            this.filtShelter = filtShelter;
+            this.filtOrgType = filtOrgType;
+            this.filtName = filtName;
+            this.filtINN = filtINN;
+            this.filtKPP = filtKPP;
+        }
+
+        public void CancelFilters()
+        {
+            filtCity = -1;
+            filtShelter = -1;
+            filtOrgType = "";
+            filtName = "";
+            filtINN = "";
+            filtKPP = "";
+        }
         public (List<Shelter>, int) GetShelters(User user,
                                          int pageSize,
-                                         int lastId = 0,
-                                         int filtCity = -1,
-                                         int filtShelter = -1,
-                                         string filtOrgType = "",
-                                         string filtName = "",
-                                         string filtINN = "",
-                                         string filtKPP = "")
+                                         int lastId = 0)
         {
             GetSheltersRequest req = new GetSheltersRequest()
             {
@@ -41,6 +65,10 @@ namespace ClientShelters.Controllers
             foreach (var item in reply.Shelter.ToList())
             {
                 result.Add(Shelter.ToShelter(item));
+            }
+            if (result.Count() == 0)
+            {
+                throw new Exception("Нет данных");
             }
             return (result, reply.CountPage);
         }
@@ -90,6 +118,38 @@ namespace ClientShelters.Controllers
             var client = new ShelterPr.ShelterPrClient(channel);
             var res = client.DeleteShelter(req);
             return res.IsCorrect;
+        }
+
+        public (List<IMyModel>, int) GetEntities(User user, int pageSize, int lastId)
+        {
+            var result = new List<IMyModel>();
+            var entities = GetShelters(user, pageSize, lastId);
+            result.AddRange(entities.Item1);
+            return (result, entities.Item2);
+        }
+
+        public bool UpdateShelter(User user, Shelter shelter)
+        {
+            ShelterReply shelt = shelter.ToReply();
+            ShelterRequest req = new ShelterRequest()
+            {
+                User = user.ToReply(),
+                Shelt = shelt
+            };
+            using var channel = GrpcChannel.ForAddress("https://localhost:7013");
+            var client = new ShelterPr.ShelterPrClient(channel);
+            var result = client.UpdateShelter(req);
+            return result.IsCorrect;
+        }
+
+        public bool DeleteEntity(User user, int id)
+        {
+            return DeleteShelter(user, id);
+        }
+
+        public bool UpdateEntity(User user, IMyModel entity)
+        {
+            return UpdateShelter(user, (Shelter)entity);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using ClientShelters;
+using Grpc.Core;
 using SheltersServer;
 using SheltersServer.Models;
 using SheltersServer.Services;
@@ -17,7 +18,7 @@ using SheltersServer.Services;
             contractService.CheckUser(User.ToUser(request.User));
 
             ContractsReply res = new ContractsReply();
-            var Contracts = contractService.GetContracts(User.ToUser(request.User),
+            var contracts = contractService.GetContracts(User.ToUser(request.User),
                                                       request.IdShelter,
                                                       request.FiltNum,
                                                       request.FiltCostStart,
@@ -28,12 +29,12 @@ using SheltersServer.Services;
                                                       request.IncludeKeep,
                                                       request.AllShelters);
             List<ContractReply> repls = new List<ContractReply>();
-            foreach (var item in Contracts.Item1)
+            foreach (var item in contracts.Item1)
             {
                 repls.Add(item.ToReply());
             }
             res.Contracts .AddRange(repls);
-            res.CountPage = repls.Count;
+            res.CountPage = contracts.Item2;
             return Task.FromResult(res);
         }
 
@@ -58,4 +59,11 @@ using SheltersServer.Services;
             isCorrectContr res = new isCorrectContr() { IsCorrect = isCorrect };
             return Task.FromResult(res);
         }
+
+    public override Task<isCorrectContr> UpdateContract(UpdateContractRequest request, ServerCallContext context)
+    {
+        Contract contr = Contract.ToContract(request.Contract);
+        bool isCorrect = contractService.UpdateContract(User.ToUser(request.User), contr);
+        return Task.FromResult(new isCorrectContr() { IsCorrect = isCorrect });
     }
+}

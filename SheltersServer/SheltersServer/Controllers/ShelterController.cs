@@ -78,5 +78,12 @@ public class ShelterController : ShelterPr.ShelterPrBase
         res.CityReply.Add(repls);
         return Task.FromResult(res);
     }
+
+    public override Task<isCorrectShelt> UpdateShelter(ShelterRequest request, ServerCallContext context)
+    {
+        Shelter shelter = Shelter.ToShelter(request.Shelt);
+        bool isCorrect = shelterService.UpdateShelter(User.ToUser(request.User), shelter);
+        return Task.FromResult(new isCorrectShelt() { IsCorrect = isCorrect});
+    }
 }
 

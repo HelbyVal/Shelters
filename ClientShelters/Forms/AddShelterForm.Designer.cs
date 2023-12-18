@@ -44,6 +44,7 @@
             // 
             // AcceptButton
             // 
+            AcceptButton.DialogResult = DialogResult.OK;
             AcceptButton.Location = new Point(43, 330);
             AcceptButton.Name = "AcceptButton";
             AcceptButton.Size = new Size(178, 29);

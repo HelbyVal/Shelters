@@ -36,5 +36,19 @@ namespace SheltersServer.Models
             return res;
         }
 
+        public static Shelter ToShelter(ShelterReply reply)
+        {
+            Shelter result = new Shelter()
+            {
+                Id_Shelter = reply.IdShelter,
+                Name = reply.Name,
+                INN = reply.INN,
+                KPP = reply.KPP,
+                OrgType = reply.OrgType,
+                Id_City = reply.IdCity,
+            };
+            return result;
+        }
+
     }
 }

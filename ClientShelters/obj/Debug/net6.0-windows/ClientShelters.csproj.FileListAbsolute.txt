@@ -42,3 +42,4 @@ C:\Users\Пользователь\source\repos\Shelters\ClientShelters\obj\Debug
 C:\Users\Пользователь\source\repos\Shelters\ClientShelters\obj\Debug\net6.0-windows\ClientShelters.genruntimeconfig.cache
 C:\Users\Пользователь\source\repos\Shelters\ClientShelters\obj\Debug\net6.0-windows\ref\ClientShelters.dll
 C:\Users\Пользователь\source\repos\Shelters\ClientShelters\obj\Debug\net6.0-windows\ClientShelters.Forms.AddShelterForm.resources
+C:\Users\Пользователь\source\repos\Shelters\ClientShelters\obj\Debug\net6.0-windows\ClientShelters.Forms.AddContractForm.resources

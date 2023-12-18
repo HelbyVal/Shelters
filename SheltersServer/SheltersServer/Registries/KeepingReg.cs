@@ -15,13 +15,21 @@ namespace SheltersServer.Registries
         public KeepingReg() {}
 
         public Keeping FindLastInAnimal(int chipNum)
-        { 
-            Keeping keep = dbSet.Where(x => x.ChipNum == chipNum).Last();
-            return keep;
+        {
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                DbSet<Keeping> dbSet = ContextDataBase.DB.Set<Keeping>();
+                Keeping keep = dbSet.Where(x => x.ChipNum == chipNum).Last();
+                return keep;
+            }
         }
         public List<Keeping> FindAllInContract(int id_contr, bool isFilled = false)
         {
-            return dbSet.Where(x => x.Number == id_contr && x.IsFilled == isFilled).ToList();
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                DbSet<Keeping> dbSet = ContextDataBase.DB.Set<Keeping>();
+                return dbSet.Where(x => x.Number == id_contr && x.IsFilled == isFilled).ToList();
+            }
         }
         public override void Add(Keeping entity)
         {

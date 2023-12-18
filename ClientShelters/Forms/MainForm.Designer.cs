@@ -53,9 +53,25 @@
             SheltersComboBox = new ComboBox();
             label3 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            ShelterFilters = new GroupBox();
+            IsCityNeedCheck = new CheckBox();
+            IsShelterNeedCheck = new CheckBox();
+            label8 = new Label();
+            KPPBox = new TextBox();
+            INNBox = new TextBox();
+            label7 = new Label();
+            label6 = new Label();
+            NameShelterBox = new TextBox();
+            label5 = new Label();
+            OrgTypeBox = new TextBox();
+            label4 = new Label();
+            CityComboBox = new ComboBox();
+            EnterFilters = new Button();
+            CancelFilters = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            ShelterFilters.SuspendLayout();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -96,7 +112,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { выйтиИзАккаунтаToolStripMenuItem, RegsMenu, ReportMenu });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1256, 28);
+            menuStrip1.Size = new Size(1266, 28);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -160,6 +176,7 @@
             UpdateButton.TabIndex = 6;
             UpdateButton.Text = "Изменить";
             UpdateButton.UseVisualStyleBackColor = true;
+            UpdateButton.Click += UpdateButton_Click;
             // 
             // DeleteButton
             // 
@@ -256,11 +273,159 @@
             label3.TabIndex = 14;
             label3.Text = "Приют:";
             // 
+            // ShelterFilters
+            // 
+            ShelterFilters.Controls.Add(IsCityNeedCheck);
+            ShelterFilters.Controls.Add(IsShelterNeedCheck);
+            ShelterFilters.Controls.Add(label8);
+            ShelterFilters.Controls.Add(KPPBox);
+            ShelterFilters.Controls.Add(INNBox);
+            ShelterFilters.Controls.Add(label7);
+            ShelterFilters.Controls.Add(label6);
+            ShelterFilters.Controls.Add(NameShelterBox);
+            ShelterFilters.Controls.Add(label5);
+            ShelterFilters.Controls.Add(OrgTypeBox);
+            ShelterFilters.Controls.Add(label4);
+            ShelterFilters.Controls.Add(CityComboBox);
+            ShelterFilters.Location = new Point(837, 140);
+            ShelterFilters.Name = "ShelterFilters";
+            ShelterFilters.Size = new Size(419, 466);
+            ShelterFilters.TabIndex = 15;
+            ShelterFilters.TabStop = false;
+            ShelterFilters.Text = "Фильтры для приютов";
+            ShelterFilters.Visible = false;
+            // 
+            // IsCityNeedCheck
+            // 
+            IsCityNeedCheck.AutoSize = true;
+            IsCityNeedCheck.Location = new Point(253, 373);
+            IsCityNeedCheck.Name = "IsCityNeedCheck";
+            IsCityNeedCheck.Size = new Size(156, 24);
+            IsCityNeedCheck.TabIndex = 12;
+            IsCityNeedCheck.Text = "Учитывать город?";
+            IsCityNeedCheck.UseVisualStyleBackColor = true;
+            // 
+            // IsShelterNeedCheck
+            // 
+            IsShelterNeedCheck.AutoSize = true;
+            IsShelterNeedCheck.Location = new Point(253, 412);
+            IsShelterNeedCheck.Name = "IsShelterNeedCheck";
+            IsShelterNeedCheck.Size = new Size(160, 24);
+            IsShelterNeedCheck.TabIndex = 11;
+            IsShelterNeedCheck.Text = "Учитывать приют?";
+            IsShelterNeedCheck.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(11, 289);
+            label8.Name = "label8";
+            label8.Size = new Size(43, 20);
+            label8.TabIndex = 10;
+            label8.Text = "КПП:";
+            // 
+            // KPPBox
+            // 
+            KPPBox.Location = new Point(229, 286);
+            KPPBox.Name = "KPPBox";
+            KPPBox.Size = new Size(184, 27);
+            KPPBox.TabIndex = 9;
+            // 
+            // INNBox
+            // 
+            INNBox.Location = new Point(229, 232);
+            INNBox.Name = "INNBox";
+            INNBox.Size = new Size(184, 27);
+            INNBox.TabIndex = 8;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(11, 235);
+            label7.Name = "label7";
+            label7.Size = new Size(45, 20);
+            label7.TabIndex = 7;
+            label7.Text = "ИНН:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(11, 183);
+            label6.Name = "label6";
+            label6.Size = new Size(137, 20);
+            label6.TabIndex = 6;
+            label6.Text = "Название приюта:";
+            // 
+            // NameShelterBox
+            // 
+            NameShelterBox.Location = new Point(229, 176);
+            NameShelterBox.Name = "NameShelterBox";
+            NameShelterBox.Size = new Size(184, 27);
+            NameShelterBox.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(11, 119);
+            label5.Name = "label5";
+            label5.Size = new Size(134, 20);
+            label5.TabIndex = 4;
+            label5.Text = "Тип организации:";
+            // 
+            // OrgTypeBox
+            // 
+            OrgTypeBox.Location = new Point(229, 116);
+            OrgTypeBox.Name = "OrgTypeBox";
+            OrgTypeBox.Size = new Size(184, 27);
+            OrgTypeBox.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(11, 61);
+            label4.Name = "label4";
+            label4.Size = new Size(54, 20);
+            label4.TabIndex = 2;
+            label4.Text = "Город:";
+            // 
+            // CityComboBox
+            // 
+            CityComboBox.FormattingEnabled = true;
+            CityComboBox.Location = new Point(229, 58);
+            CityComboBox.Name = "CityComboBox";
+            CityComboBox.Size = new Size(184, 28);
+            CityComboBox.TabIndex = 1;
+            // 
+            // EnterFilters
+            // 
+            EnterFilters.Location = new Point(1105, 612);
+            EnterFilters.Name = "EnterFilters";
+            EnterFilters.Size = new Size(149, 29);
+            EnterFilters.TabIndex = 16;
+            EnterFilters.Text = "Применить";
+            EnterFilters.UseVisualStyleBackColor = true;
+            EnterFilters.Visible = false;
+            EnterFilters.Click += EnterFilters_Click;
+            // 
+            // CancelFilters
+            // 
+            CancelFilters.Location = new Point(948, 612);
+            CancelFilters.Name = "CancelFilters";
+            CancelFilters.Size = new Size(151, 29);
+            CancelFilters.TabIndex = 17;
+            CancelFilters.Text = "Отменть фильтры";
+            CancelFilters.UseVisualStyleBackColor = true;
+            CancelFilters.Visible = false;
+            CancelFilters.Click += CancelFilters_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1256, 731);
+            ClientSize = new Size(1266, 731);
+            Controls.Add(CancelFilters);
+            Controls.Add(EnterFilters);
+            Controls.Add(ShelterFilters);
             Controls.Add(panel1);
             Controls.Add(Page);
             Controls.Add(label1);
@@ -280,6 +445,8 @@
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ShelterFilters.ResumeLayout(false);
+            ShelterFilters.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -310,5 +477,20 @@
         private ComboBox SheltersComboBox;
         private Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private GroupBox ShelterFilters;
+        private Button EnterFilters;
+        private Label label5;
+        private TextBox OrgTypeBox;
+        private Label label4;
+        private ComboBox CityComboBox;
+        private Label label8;
+        private TextBox KPPBox;
+        private TextBox INNBox;
+        private Label label7;
+        private Label label6;
+        private TextBox NameShelterBox;
+        private Button CancelFilters;
+        private CheckBox IsCityNeedCheck;
+        private CheckBox IsShelterNeedCheck;
     }
 }

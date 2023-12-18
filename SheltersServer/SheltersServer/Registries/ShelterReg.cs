@@ -1,4 +1,5 @@
-﻿using SheltersServer.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using SheltersServer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,24 +21,28 @@ namespace SheltersServer.Registries
                                          int lastId = 0,
                                          int count = 5)
         {
-            var shelters = dbSet.Where(x => true);
-            if (filtCity != -1) shelters = shelters.Where(x => x.Id_City == filtCity);
-            if (filtShelter != -1) shelters = shelters = shelters.Where(x => x.Id_Shelter == filtShelter);
-            if (filtOrgType != "") shelters = shelters.Where(x => x.OrgType == filtOrgType);
-            if (filtName != "") shelters = shelters.Where(x => x.Name == filtName);
-            if (filtINN != "") shelters = shelters.Where(x => x.INN == filtINN);
-            if (filtKPP != "") shelters = shelters.Where(x => x.KPP == filtKPP);
+            using (ContextDataBase db = new ContextDataBase())
+            {
+                DbSet<Shelter> dbSet = ContextDataBase.DB.Set<Shelter>();
+                var shelters = dbSet.Where(x => true);
+                if (filtCity != -1) shelters = shelters.Where(x => x.Id_City == filtCity);
+                if (filtShelter != -1) shelters = shelters = shelters.Where(x => x.Id_Shelter == filtShelter);
+                if (filtOrgType != "") shelters = shelters.Where(x => x.OrgType == filtOrgType);
+                if (filtName != "") shelters = shelters.Where(x => x.Name == filtName);
+                if (filtINN != "") shelters = shelters.Where(x => x.INN == filtINN);
+                if (filtKPP != "") shelters = shelters.Where(x => x.KPP == filtKPP);
 
-            int countPage = 0;
-            if (shelters.Count() % count == 0)
-                countPage = shelters.Count() / count;
-            else
-                countPage = shelters.Count() / count + 1;
-            shelters = shelters.OrderBy(x => x.Id_Shelter)
-                   .Where(x => x.Id_Shelter > lastId)
-                   .Take(count);
+                int countPage = 0;
+                if (shelters.Count() % count == 0)
+                    countPage = shelters.Count() / count;
+                else
+                    countPage = shelters.Count() / count + 1;
+                shelters = shelters.OrderBy(x => x.Id_Shelter)
+                       .Where(x => x.Id_Shelter > lastId)
+                       .Take(count);
 
-            return (shelters.ToList(), countPage);
+                return (shelters.ToList(), countPage);
+            }
         }
     }
 }

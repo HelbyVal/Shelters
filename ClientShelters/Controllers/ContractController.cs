@@ -23,7 +23,7 @@ namespace ClientShelters.Controllers
         int filtNum = -1;
         bool includeKeeps = true;
         bool allShelts = true;
-        void SetFilts(DateOnly filtStartDate,
+        public void SetFilts(DateOnly filtStartDate,
                       DateOnly filtEndDate,
                       double filtStartCost,
                       double filtEndCost,

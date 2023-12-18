@@ -13,6 +13,7 @@ namespace ClientShelters
         IController currentController;
         List<int> ides = new List<int>();
         private int currentPage = 1;
+        private bool allShelters = true;
         readonly User user;
         readonly AnimalController animalController = new AnimalController();
         readonly ShelterController shelterController = new ShelterController();
@@ -52,7 +53,7 @@ namespace ClientShelters
             {
                 AddShelter();
             }
-            if (currentController == contractController) 
+            if (currentController == contractController)
             {
                 AddContract();
             }
@@ -68,8 +69,9 @@ namespace ClientShelters
         {
             currentController = contractController;
             ShelterFilters.Visible = false;
-            EnterFilters.Visible = false;
-            CancelFilters.Visible = false;
+            ContractsFilters.Visible = true;
+            EnterFilters.Visible = true;
+            CancelFilters.Visible = true;
             UpdateGrid();
         }
 
@@ -320,7 +322,7 @@ namespace ClientShelters
                 }
             }
 
-        } 
+        }
 
         void AddContract()
         {
@@ -395,6 +397,54 @@ namespace ClientShelters
                                              KPPBox.Text.ToString());
             }
 
+            if (currentController == contractController)
+            {
+                int idshelt = -1;
+                double filtStartCost = 0;
+                double filtEndCost = 0;
+                int number = -1;
+                if (IsSheltNeedConCheck.Checked)
+                {
+                    idshelt = int.Parse(SheltersComboBox.SelectedValue.ToString());
+                }
+
+                if (FiltStartCostBox.Text == "" || Convert.ToDouble(FiltStartCostBox.Text) <= 0)
+                {
+                    filtStartCost = 0;
+                }
+                else
+                {
+                    filtStartCost = Convert.ToDouble(FiltStartCostBox.Text);
+                } 
+
+                if (FiltEndCostBox.Text == "" || Convert.ToDouble(FiltEndCostBox.Text) <= 0)
+                {
+                    filtEndCost = int.MaxValue;
+                }
+                else
+                {
+                    filtEndCost = Convert.ToDouble(FiltEndCostBox.Text);
+                }
+
+                if (int.Parse(FiltNumberBox.Text) <= 1 || FiltNumberBox.Text == "")
+                {
+                    number = -1;
+                }
+                else
+                {
+                    number = int.Parse(FiltNumberBox.Text);
+                }
+
+                contractController.SetFilts(DateOnly.FromDateTime(FiltStartConDate.Value),
+                                            DateOnly.FromDateTime(FiltEndConDate.Value),
+                                            filtStartCost,
+                                            filtEndCost,
+                                            idshelt,
+                                            number,
+                                            allShelters);
+
+            }
+
             UpdateGrid();
         }
 
@@ -402,10 +452,6 @@ namespace ClientShelters
         {
             currentController.CancelFilters();
             UpdateGrid();
-        }
-
-        private void IsShelterNeedButton_CheckedChanged(object sender, EventArgs e)
-        {
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)

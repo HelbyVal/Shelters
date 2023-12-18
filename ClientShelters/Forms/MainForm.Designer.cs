@@ -68,10 +68,23 @@
             CityComboBox = new ComboBox();
             EnterFilters = new Button();
             CancelFilters = new Button();
+            ContractsFilters = new GroupBox();
+            IsSheltNeedConCheck = new CheckBox();
+            FiltNumberBox = new TextBox();
+            label13 = new Label();
+            label12 = new Label();
+            FiltStartConDate = new DateTimePicker();
+            FiltEndConDate = new DateTimePicker();
+            label11 = new Label();
+            label10 = new Label();
+            FiltStartCostBox = new TextBox();
+            FiltEndCostBox = new TextBox();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ShelterFilters.SuspendLayout();
+            ContractsFilters.SuspendLayout();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -418,11 +431,123 @@
             CancelFilters.Visible = false;
             CancelFilters.Click += CancelFilters_Click;
             // 
+            // ContractsFilters
+            // 
+            ContractsFilters.Controls.Add(IsSheltNeedConCheck);
+            ContractsFilters.Controls.Add(FiltNumberBox);
+            ContractsFilters.Controls.Add(label13);
+            ContractsFilters.Controls.Add(label12);
+            ContractsFilters.Controls.Add(FiltStartConDate);
+            ContractsFilters.Controls.Add(FiltEndConDate);
+            ContractsFilters.Controls.Add(label11);
+            ContractsFilters.Controls.Add(label10);
+            ContractsFilters.Controls.Add(FiltStartCostBox);
+            ContractsFilters.Controls.Add(FiltEndCostBox);
+            ContractsFilters.Controls.Add(label9);
+            ContractsFilters.Location = new Point(835, 146);
+            ContractsFilters.Name = "ContractsFilters";
+            ContractsFilters.Size = new Size(419, 460);
+            ContractsFilters.TabIndex = 13;
+            ContractsFilters.TabStop = false;
+            ContractsFilters.Text = "Фильтры для контрактов";
+            ContractsFilters.Visible = false;
+            // 
+            // IsSheltNeedConCheck
+            // 
+            IsSheltNeedConCheck.AutoSize = true;
+            IsSheltNeedConCheck.Location = new Point(248, 421);
+            IsSheltNeedConCheck.Name = "IsSheltNeedConCheck";
+            IsSheltNeedConCheck.Size = new Size(160, 24);
+            IsSheltNeedConCheck.TabIndex = 10;
+            IsSheltNeedConCheck.Text = "Учитывать приют?";
+            IsSheltNeedConCheck.UseVisualStyleBackColor = true;
+            // 
+            // FiltNumberBox
+            // 
+            FiltNumberBox.Location = new Point(190, 49);
+            FiltNumberBox.Name = "FiltNumberBox";
+            FiltNumberBox.Size = new Size(218, 27);
+            FiltNumberBox.TabIndex = 9;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(14, 52);
+            label13.Name = "label13";
+            label13.Size = new Size(133, 20);
+            label13.TabIndex = 8;
+            label13.Text = "Номер контракта:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(14, 160);
+            label12.Name = "label12";
+            label12.Size = new Size(92, 20);
+            label12.TabIndex = 7;
+            label12.Text = "Период дат:";
+            // 
+            // FiltStartConDate
+            // 
+            FiltStartConDate.Location = new Point(14, 186);
+            FiltStartConDate.Name = "FiltStartConDate";
+            FiltStartConDate.Size = new Size(188, 27);
+            FiltStartConDate.TabIndex = 6;
+            // 
+            // FiltEndConDate
+            // 
+            FiltEndConDate.Location = new Point(221, 186);
+            FiltEndConDate.Name = "FiltEndConDate";
+            FiltEndConDate.Size = new Size(188, 27);
+            FiltEndConDate.TabIndex = 5;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(271, 110);
+            label11.Name = "label11";
+            label11.Size = new Size(28, 20);
+            label11.TabIndex = 4;
+            label11.Text = "До";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(125, 110);
+            label10.Name = "label10";
+            label10.Size = new Size(26, 20);
+            label10.TabIndex = 3;
+            label10.Text = "От";
+            // 
+            // FiltStartCostBox
+            // 
+            FiltStartCostBox.Location = new Point(157, 107);
+            FiltStartCostBox.Name = "FiltStartCostBox";
+            FiltStartCostBox.Size = new Size(103, 27);
+            FiltStartCostBox.TabIndex = 2;
+            // 
+            // FiltEndCostBox
+            // 
+            FiltEndCostBox.Location = new Point(306, 107);
+            FiltEndCostBox.Name = "FiltEndCostBox";
+            FiltEndCostBox.Size = new Size(103, 27);
+            FiltEndCostBox.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(14, 110);
+            label9.Name = "label9";
+            label9.Size = new Size(86, 20);
+            label9.TabIndex = 0;
+            label9.Text = "Стоимость:";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1266, 731);
+            Controls.Add(ContractsFilters);
             Controls.Add(CancelFilters);
             Controls.Add(EnterFilters);
             Controls.Add(ShelterFilters);
@@ -447,6 +572,8 @@
             panel1.PerformLayout();
             ShelterFilters.ResumeLayout(false);
             ShelterFilters.PerformLayout();
+            ContractsFilters.ResumeLayout(false);
+            ContractsFilters.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -492,5 +619,17 @@
         private Button CancelFilters;
         private CheckBox IsCityNeedCheck;
         private CheckBox IsShelterNeedCheck;
+        private GroupBox ContractsFilters;
+        private Label label9;
+        private DateTimePicker FiltStartConDate;
+        private DateTimePicker FiltEndConDate;
+        private Label label11;
+        private Label label10;
+        private TextBox FiltStartCostBox;
+        private TextBox FiltEndCostBox;
+        private Label label12;
+        private Label label13;
+        private TextBox FiltNumberBox;
+        private CheckBox IsSheltNeedConCheck;
     }
 }
